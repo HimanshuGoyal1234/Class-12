@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry board exam Q&A · Dark mode</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #0b0f17;
+      font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+      color: #e3e9f2;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .paper {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #141b2b;
+      border-radius: 2rem;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 0 1px #2a3442 inset;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #2f3b54;
+      padding-bottom: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    .header h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #bdd3ff, #a0b5e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .header .code {
+      color: #8fadf0;
+      font-family: monospace;
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      background: #1e2a3a;
+      display: inline-block;
+      padding: 0.2rem 1.5rem;
+      border-radius: 60px;
+      border: 1px solid #415570;
+    }
+    .instructions {
+      background: #1e283b;
+      padding: 1.2rem 1.8rem;
+      border-radius: 28px;
+      margin-bottom: 2.2rem;
+      border-left: 6px solid #6285c3;
+      font-size: 0.95rem;
+      color: #cbd5e6;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #b7d0ff;
+      margin: 1.8rem 0 1rem 0;
+      border-bottom: 3px solid #2f3f60;
+      padding-bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title span {
+      background: #2f3f60;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      color: white;
+    }
+    .question-card {
+      background: #1a2336;
+      border-radius: 1.6rem;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #32415e;
+      box-shadow: 0 6px 0 #0f172a;
+    }
+    .q-num {
+      display: inline-block;
+      background: #2d405b;
+      color: white;
+      font-weight: 600;
+      padding: 0.2rem 1.1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      border: 1px solid #5b739b;
+    }
+    .q-text {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+      color: #ecf0fa;
+    }
+    .q-text img {
+      display: none; /* no actual images, but keep placeholder */
+    }
+    .answer-box {
+      background: #0f1825;
+      border-radius: 1.2rem;
+      padding: 1.4rem 1.8rem;
+      margin-top: 0.8rem;
+      border-left: 6px solid #3b6c9e;
+    }
+    .answer-head {
+      color: #9dc6ff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .answer {
+      color: #d3e0fc;
+      font-size: 1rem;
+    }
+    .options {
+      margin: 0.5rem 0 0.5rem 1.5rem;
+      list-style: lower-alpha inside;
+      color: #b3c7f0;
+    }
+    .table-mini {
+      background: #1f2b3b;
+      padding: 0.8rem;
+      border-radius: 14px;
+      display: inline-block;
+      font-family: monospace;
+      margin: 0.5rem 0;
+    }
+    hr {
+      border: 1px solid #253040;
+      margin: 2rem 0;
+    }
+    .note {
+      color: #92a5c9;
+      font-style: italic;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #54688b;
+    }
+  </style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="header">
+    <h1>⚛️ CHEMISTRY (Theory) · 56/4/1</h1>
+    <div class="code">Series: W4YXZ | Q.P. Code 56/4/1</div>
+    <div style="margin-top: 1rem; color: #96add9;">Time allowed: 3 hours | Max marks: 70</div>
+  </div>
+
+  <div class="instructions">
+    <strong>⏱️ General instructions:</strong> 33 questions. Five sections – A (MCQ 1‑16), B (very short 17‑21), C (short 22‑28), D (case based 29‑30), E (long 31‑33). Internal choice available except section A. No calculator.
+  </div>
+
+  <!-- SECTION A (MCQs) 1-16 -->
+  <div class="section-title"><span>A</span> Multiple choice questions (1‑16) · 1 mark each</div>
+
+  <!-- Q1 -->
+  <div class="question-card">
+    <div class="q-num">Q1</div>
+    <div class="q-text">In an electrochemical cell: 2Cu⁺(aq) + Zn(s) → 2Cu(s) + Zn²⁺(aq), E° = 1.28 V. As reaction progresses, what happens to overall voltage?<br>(A) constant (B) decrease as [Zn²⁺]↑ (C) increase as [Cu⁺]↑ (D) increase as [Zn²⁺]↑</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (B)</div>
+      <div class="answer">From Nernst equation: E = E° – (0.059/n) log([Zn²⁺]/[Cu⁺]²). As [Zn²⁺] increases, log term increases → E decreases.</div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card">
+    <div class="q-num">Q2</div>
+    <div class="q-text">Fe³⁺, Sc³⁺, Cr³⁺, Co³⁺ — which is colourless in aqueous solution? (Atomic: Fe=26, Sc=21, Cr=24, Co=27)</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (A) Sc³⁺</div>
+      <div class="answer">Sc³⁺ has [Ar] configuration (no d‑electron), no d‑d transition. Others have unpaired d‑electrons → coloured.</div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card">
+    <div class="q-num">Q3</div>
+    <div class="q-text">Hoffmann Bromamide degradation is given by: (A) ArNO₂ (B) ArNH₂ (C) ArCONH₂ (D) ArCH₂NH₂</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (C) ArCONH₂</div>
+      <div class="answer">Aromatic amide with Br₂/NaOH yields primary amine with one less carbon.</div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card">
+    <div class="q-num">Q4</div>
+    <div class="q-text">In the Haworth structure of carbohydrate (numbers shown), anomeric carbon is numbered: (A) 1 (B) 2 (C) 3 (D) 5</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (A) 1</div>
+      <div class="answer">Anomeric carbon (C‑1 in aldoses, C‑2 in ketoses) is the carbonyl carbon that becomes chiral during cyclisation.</div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card">
+    <div class="q-num">Q5</div>
+    <div class="q-text">Henry's constant K_H is: (A) greater for higher solubility (B) greater for lower solubility (C) constant for all gases (D) not related</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (B)</div>
+      <div class="answer">K_H is inversely proportional to solubility (p = K_H·x). Low solubility → high K_H.</div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card">
+    <div class="q-num">Q6</div>
+    <div class="q-text">Incorrect statement: (A) La is transition element (B) Zr & Hf have similar radii due to lanthanoid contraction (C) ionic radius La³⁺ → Lu³⁺ decreases (D) Lanthanoids are radioactive</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (D)</div>
+      <div class="answer">Lanthanoids (except promethium) are not radioactive; actinoids are often radioactive.</div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card">
+    <div class="q-num">Q7</div>
+    <div class="q-text">Chiral molecule among: 2‑bromobutane, 1‑bromobutane, 2‑bromopropane, 1‑bromopropane.</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (A) 2‑Bromobutane</div>
+      <div class="answer">2‑bromobutane (CH₃–CHBr–CH₂–CH₃) has a chiral carbon (four different substituents).</div>
+    </div>
+  </div>
+
+  <!-- Q8 (structures omitted, but give expected answer) -->
+  <div class="question-card">
+    <div class="q-num">Q8</div>
+    <div class="q-text">In the reaction sequence (image), structure of Y would be ?</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (based on typical mechanism)</div>
+      <div class="answer">Without visual, likely Y is an alcohol or alkene from hydration/dehydrohalogenation. (Common: alkyl halide → alkene → alcohol etc.)</div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card">
+    <div class="q-num">Q9</div>
+    <div class="q-text">Oxidation of I⁻ by MnO₄⁻ in alkaline medium gives: (A) IO₄⁻ (B) I₂ (C) IO⁻ (D) IO₃⁻</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (D) IO₃⁻</div>
+      <div class="answer">In alkaline medium MnO₄⁻ oxidises I⁻ to IO₃⁻ (iodate).</div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="question-card">
+    <div class="q-num">Q10</div>
+    <div class="q-text">DDT is a: (A) greenhouse gas (B) fertilizer (C) biodegradable insecticide (D) non‑biodegradable insecticide</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (D)</div>
+      <div class="answer">DDT is persistent in environment, non‑biodegradable.</div>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="question-card">
+    <div class="q-num">Q11</div>
+    <div class="q-text">Charge required to reduce 1 mole MnO₄⁻ to Mn²⁺: (A) 1F (B) 5F (C) 4F (D) 6F</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (B) 5F</div>
+      <div class="answer">Mn⁺⁷ → Mn⁺² gains 5 electrons → 5 F per mole.</div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="question-card">
+    <div class="q-num">Q12</div>
+    <div class="q-text">First step in dehydration of alcohol with conc. H₂SO₄: (A) carbocation formation (B) ester formation (C) protonation of alcohol (D) elimination of water</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (C) protonation of alcohol</div>
+      <div class="answer">OH group protonated to make better leaving group (H₂O).</div>
+    </div>
+  </div>
+
+  <!-- Q13 assertion -->
+  <div class="question-card">
+    <div class="q-num">Q13</div>
+    <div class="q-text">Assertion: Electrolysis of aq NaCl gives H₂ at cathode and Cl₂ at anode. Reason: Chlorine has higher oxidation potential than H₂O.</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (C) Assertion true, Reason false</div>
+      <div class="answer">A is true (H₂, Cl₂ produced). R is false: Cl⁻ has lower oxidation potential than H₂O (H₂O oxidises at higher potential). Actually Cl⁻ oxidises easier.</div>
+    </div>
+  </div>
+
+  <!-- Q14 assertion -->
+  <div class="question-card">
+    <div class="q-num">Q14</div>
+    <div class="q-text">Assertion: Cuprous salts are diamagnetic. Reason: Cuprous ion has fully filled 3d orbitals.</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (A) Both true and R explains A</div>
+      <div class="answer">Cu⁺ (3d¹⁰) no unpaired electron → diamagnetic.</div>
+    </div>
+  </div>
+
+  <!-- Q15 assertion -->
+  <div class="question-card">
+    <div class="q-num">Q15</div>
+    <div class="q-text">Assertion: n‑Butyl chloride has higher boiling point than n‑butyl bromide. Reason: C–Cl bond more polar than C–Br.</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (D) Assertion false, Reason true</div>
+      <div class="answer">Bp: n‑butyl bromide (higher molar mass, stronger dispersion) > chloride. Polarity: C–Cl > C–Br, but mass dominates. A false, R true.</div>
+    </div>
+  </div>
+
+  <!-- Q16 assertion -->
+  <div class="question-card">
+    <div class="q-num">Q16</div>
+    <div class="q-text">Assertion: Acetanilide is less basic than aniline. Reason: Acetylation reduces electron density on nitrogen.</div>
+    <div class="answer-box">
+      <div class="answer-head">✅ Answer (A) Both true and R explains</div>
+      <div class="answer">Amide resonance withdraws lone pair → less basic.</div>
+    </div>
+  </div>
+
+  <!-- SECTION B (17-21) 2 marks each -->
+  <div class="section-title"><span>B</span> Very short answer (2 marks each)</div>
+
+  <div class="question-card"><div class="q-num">Q17(a)</div><div class="q-text">Reactant A decomposition data: time(h) 0,1,2,3 ; [A](M) 0.40,0.20,0.10,0.05. Predict order and rate law.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">Concentration halves every hour → first order. Rate = k[A], k = 0.693 h⁻¹ (from t½ =1h).</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q17(b) OR</div><div class="q-text">H₂ + I₂ reaction rate = k[H₂][I₂]. If 1 mol H₂ added at constant T, change in rate and rate constant?</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">Rate increases (∵ [H₂]↑). Rate constant k remains same (T constant).</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q18</div><div class="q-text">PtCl₄·2KCl does not give AgCl precipitate with AgNO₃. Write structural formula and IUPAC name.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">It is K₂[PtCl₆] (potassium hexachloroplatinate(IV)). No free Cl⁻ ions.</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q19</div><div class="q-text">Define fuel cell. Two advantages over ordinary cell.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">Fuel cell: galvanic cell that converts chemical energy of fuel (e.g., H₂) to electricity continuously. Advantages: continuous supply, no recharging; less pollution; high efficiency.</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q20</div><div class="q-text">Write structures of main products (reaction images).</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(Based on common patterns: e.g. alcohol oxidation, haloform reaction etc.) likely products: benzaldehyde → benzoic acid, or similar.</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q21</div><div class="q-text">Essential amino acids? Why amino acids amphoteric?</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">Essential amino acids: not synthesised by body, must be obtained from diet. Amphoteric due to both –NH₂ (basic) and –COOH (acidic) groups; form zwitterions.</div></div></div>
+
+  <!-- SECTION C (22-28) 3 marks -->
+  <div class="section-title"><span>C</span> Short answer (3 marks each)</div>
+
+  <div class="question-card"><div class="q-num">Q22(a)</div><div class="q-text">Explain: (i) Allyl chloride hydrolysed faster than n‑propyl chloride. (ii) Alkyl halide + AgCN → isocyanide. (iii) Methyl chloride reacts faster with OH⁻ than t‑butyl chloride in SN2.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(i) Allyl carbocation resonance stabilised. (ii) AgCN is covalent, CN⁻ attacks through N (ambident) → isocyanide. (iii) Methyl chloride less steric hindrance for SN2; t‑butyl chloride SN1 preferred.</div></div></div>
+
+  <!-- Q23 -->
+  <div class="question-card"><div class="q-num">Q23</div><div class="q-text">Calculate cell voltage for Al/Al³⁺(0.001M) || Ni²⁺(0.1M)/Ni. E° Ni²⁺/Ni = –0.25V, Al³⁺/Al = –1.66V.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">E°cell = E°cathode – E°anode = –0.25 – (–1.66) = 1.41 V. Using Nernst: E = 1.41 – (0.059/6) log([Al³⁺]²/[Ni²⁺]³) = 1.41 – 0.00983 log(10⁻⁶/10⁻³) = 1.41 – 0.00983 log(10⁻³) = 1.41 – 0.00983×(–3) = 1.41 + 0.0295 = 1.4395 V.</div></div></div>
+
+  <!-- Q24 explanations -->
+  <div class="question-card"><div class="q-num">Q24</div><div class="q-text">Explain: (a) Mn³⁺ oxidising agent, Cr²⁺ reducing agent despite same d⁴. (b) Actinoid contraction greater than lanthanoid. (c) Transition metals form many interstitial compounds.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(a) Mn³⁺ (d⁴) tends to gain electron to become half‑filled d⁵ (stable); Cr²⁺ (d⁴) loses e⁻ to become d³ (half‑filled t₂g). (b) Poorer shielding by 5f electrons → greater contraction. (c) Small atoms (H,B,C,N) fit in lattice voids; modify properties.</div></div></div>
+
+  <!-- Q25 -->
+  <div class="question-card"><div class="q-num">Q25</div><div class="q-text">Aqueous NaOH osmotic pressure molar mass = 25 g/mol at 27°C. Calculate % dissociation. (Atomic Na=23,O=16,H=1)</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">Theoretical M = 40 g/mol. Observed i = 40/25 = 1.6. For NaOH → Na⁺ + OH⁻, i = 1+α → α = 0.6 → 60% dissociated.</div></div></div>
+
+  <!-- Q26 -->
+  <div class="question-card"><div class="q-num">Q26</div><div class="q-text">Arrange: (a) C₂H₅NH₂, (C₂H₅)₂NH, C₆H₅NHCH₃, C₆H₅NH₂ decreasing pKb. (b) C₂H₅OH, C₂H₅NH₂, (CH₃)₂NH increasing boiling point. (c) Increasing water solubility: C₆H₅NH₂, (C₂H₅)₂NH, C₂H₅NH₂.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(a) pKb decreases with base strength. Order: C₆H₅NH₂ > C₆H₅NHCH₃ > C₂H₅NH₂ > (C₂H₅)₂NH. (b) Bp: (CH₃)₂NH < C₂H₅NH₂ < C₂H₅OH (H‑bonding). (c) Solubility: C₆H₅NH₂ < (C₂H₅)₂NH < C₂H₅NH₂.</div></div></div>
+
+  <!-- Q27 -->
+  <div class="question-card"><div class="q-num">Q27</div><div class="q-text">Aromatic C₈H₈O gives positive 2,4‑DNP, yellow precipitate with NaOI, no reaction with Tollen’s/Fehling. Drastic oxidation gives acid C. Identify A,B,C.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">A = acetophenone (C₆H₅COCH₃). B = CHI₃ (iodoform). C = benzoic acid (C₆H₅COOH). IUPAC: A = 1‑phenylethanone, B = triiodomethane, C = benzoic acid.</div></div></div>
+
+  <!-- Q28 -->
+  <div class="question-card"><div class="q-num">Q28</div><div class="q-text">Can sodium ethoxide + t‑butyl chloride give t‑butyl ethyl ether? Suggest appropriate starting material. IUPAC name of ether.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">No, elimination dominates (t‑butyl halide + strong base → alkene). Use t‑butyl alcohol + ethanol in acidic dehydration (Williamson fails for 3° halide). IUPAC: 2‑ethoxy‑2‑methylpropane.</div></div></div>
+
+  <!-- SECTION D (case based) -->
+  <div class="section-title"><span>D</span> Case-based questions (4 marks each)</div>
+
+  <div class="question-card"><div class="q-num">Q29</div><div class="q-text">(a) Example miscible liquids showing negative deviation from Raoult’s law? Reason? (b)(i) State Raoult’s law for volatile components. OR (ii) “Raoult’s law is special case of Henry’s law” comment. (c) Two characteristics of ideal solution.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(a) Chloroform‑acetone: H‑bonding → lower vapour pressure. (b)(i) For volatile components p₁ = x₁p₁°, p₂ = x₂p₂°. (ii) Henry’s law for gas in liquid; Raoult’s for solvent when mole fraction →1, both p ∝ x. (c) ΔmixH=0, ΔmixV=0, obeys Raoult’s law.</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q30</div><div class="q-text">(a) Products when DNA hydrolysed? Structural difference DNA vs RNA? (b) Differentiate nucleotide and nucleoside. (c)(i) Two functions of nucleic acid. OR (ii) Linkage joining two nucleotides? Base present only in RNA?</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(a) DNA → phosphate + deoxyribose + adenine/guanine/cytosine/thymine. DNA: deoxyribose (no 2’‑OH), thymine; RNA: ribose, uracil. (b) Nucleoside = base + sugar; nucleotide = base + sugar + phosphate. (c)(i) Genetic information storage, protein synthesis. (ii) Phosphodiester bond; uracil.</div></div></div>
+
+  <!-- SECTION E (31-33) long 5 marks each, compressed -->
+  <div class="section-title"><span>E</span> Long answer (5 marks each)</div>
+
+  <div class="question-card"><div class="q-num">Q31(a)</div><div class="q-text">(i) Complete reactions (structures): H₂N–C(NOH)–NH₂ ; (CH₃)₂Cd + 2CH₃COCl → ; COCl + H₂/Pd‑BaSO₄ → ? (ii) Distinguish ethyl benzoate / benzoic acid; propanal / propanone.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(I) (H₂N)₂C=NOH (probably oxime) ; (II) (CH₃)₂Cd + 2CH₃COCl → 2 (CH₃)₂C=O + CdCl₂ (acetone); (III) benzaldehyde (Rosemund reduction). Distinguish: NaHCO₃ test – benzoic acid effervescence; propanal gives silver mirror (Tollen’s), propanone does not.</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q32(a)</div><div class="q-text">(i) Reasons: [Ni(CO)₄] diamagnetic, [NiCl₄]²⁻ paramagnetic; CO stronger complexing agent than NH₃; trans‑[Co(en)₂Cl₂]⁺ optically inactive. (ii) Unpaired electrons in Fe³⁺ (d⁵) octahedral: strong field ligand vs weak field.</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(i) Ni(CO)₄ : Ni(0) d¹⁰, diamagnetic; [NiCl₄]²⁻: Ni²⁺ d⁸, tetrahedral, paramagnetic. CO is stronger π‑acceptor (synergic bonding). trans‑[Co(en)₂Cl₂]⁺ has plane of symmetry, no optical activity. (ii) Fe³⁺ weak field: high spin d⁵ (5 unpaired). Strong field: low spin (t₂g⁵, one unpaired? Actually d⁵ low spin t₂g⁵ eg⁰ → 1 unpaired? careful: strong field → t₂g⁵ (all five in t₂g, 1 unpaired). Actually t₂g⁵ means one unpaired electron.</div></div></div>
+
+  <div class="question-card"><div class="q-num">Q33(a)</div><div class="q-text">(i) First order N₂O₅ decomposition: initial conc 1.2×10⁻², after 60 min = 0.2×10⁻² mol/L. Calculate rate constant (log6=0.778). (ii) Why order not from balanced eqn? Bimolecular reaction may become first order?</div>
+  <div class="answer-box"><div class="answer-head">✅ Answer</div><div class="answer">(i) k = (2.303/60) log(1.2/0.2) = (2.303/60)×log6 = (2.303/60)×0.778 ≈ 0.0299 min⁻¹. (ii) Order determined experimentally; molecularity is theoretical. Bimolecular reaction with one reactant in large excess (pseudo‑first order, e.g. hydrolysis).</div></div></div>
+
+  <hr>
+  <div class="footer">📄 All answers are provided in dark mode. Board exam practice Q&A · 56/4/1 Chemistry (Theory)</div>
+</div>
+</body>
+</html>

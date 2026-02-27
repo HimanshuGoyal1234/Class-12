@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry XII (56/2/1) solutions · dark mode</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0f0f12;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #e3e3e8;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .paper-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #1a1a20;
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 0 1px #2c2c35 inset;
+        }
+        .header {
+            border-bottom: 2px solid #33333e;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #c0c0d0, #a0a0c0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .code {
+            display: inline-block;
+            background: #2b2b33;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            border: 1px solid #444450;
+            margin-top: 0.8rem;
+            color: #bdbdd0;
+        }
+        .question-block {
+            margin-bottom: 2.2rem;
+            background: #16161c;
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid #2b2b34;
+            transition: border 0.2s;
+        }
+        .question-block:hover {
+            border-color: #4e4e6e;
+        }
+        .q-num {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.2rem;
+            background: #2d2d3a;
+            color: #c8c8e0;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 1rem;
+            border: 1px solid #4a4a60;
+        }
+        .question-text {
+            font-size: 1.06rem;
+            margin-bottom: 1rem;
+            color: #dadaf0;
+            padding-left: 0.5rem;
+            border-left: 4px solid #6363a0;
+        }
+        .options {
+            margin: 0.8rem 0 1rem 1rem;
+            color: #bcbcd0;
+        }
+        .options p {
+            margin: 0.3rem 0;
+        }
+        .answer-box {
+            background: #0d0d12;
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            margin-top: 1rem;
+            border: 1px solid #2e2e42;
+            box-shadow: inset 0 2px 4px #00000060;
+        }
+        .answer-label {
+            font-weight: 600;
+            color: #9d9df5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            margin-bottom: 0.35rem;
+        }
+        .answer-content {
+            color: #f0f0ff;
+            font-size: 1rem;
+        }
+        .or-sep {
+            background: #2c2c3c;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            border: 1px dashed #6b6ba0;
+        }
+        .diagram-placeholder {
+            background: #2a2a35;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            color: #a9a9c0;
+            font-style: italic;
+            border: 1px dashed #6a6a90;
+            margin: 0.8rem 0;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: #2c2c38;
+            margin: 2rem 0;
+        }
+        .section-tag {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #afafda;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 6px solid #7171c0;
+            padding-left: 1rem;
+        }
+        .footnote {
+            text-align: right;
+            margin-top: 3rem;
+            color: #6f6f8a;
+            border-top: 1px solid #2e2e3e;
+            padding-top: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        td {
+            padding: 0.5rem;
+            background: #1e1e26;
+            border: 1px solid #3b3b4c;
+        }
+    </style>
+</head>
+<body>
+<div class="paper-container">
+    <div class="header">
+        <h1>📘 CHEMISTRY (Theory) 56/2/1</h1>
+        <span class="code">Max Marks: 70 | Time: 3 hrs</span>
+        <span class="code" style="margin-left: 1rem;">Dark edition · solutions</span>
+    </div>
+
+    <!-- ========== SECTION A (MCQ) ========== -->
+    <div class="section-tag">✦ SECTION A (16 × 1 = 16)</div>
+
+    <!-- Q1 -->
+    <div class="question-block">
+        <div class="q-num">Q1</div>
+        <div class="question-text">The charge required for the reduction of 1 mol of MnO₄⁻ to MnO₂ is</div>
+        <div class="options">
+            <p>(A) 1 F</p><p>(B) 3 F</p><p>(C) 5 F</p><p>(D) 6 F</p>
+        </div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (B) 3 F</div>
+            <div class="answer-content">MnO₄⁻ → MnO₂ ; Mn changes from +7 to +4 (gain of 3 e⁻ per Mn). For 1 mol MnO₄⁻, charge = 3 F.</div>
+        </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block">
+        <div class="q-num">Q2</div>
+        <div class="question-text">Which among the following is a false statement?</div>
+        <div class="options">
+            <p>(A) Rate of zero order reaction is independent of initial concentration of reactant.</p>
+            <p>(B) Half-life of a zero order reaction is inversely proportional to the rate constant.</p>
+            <p>(C) Molecularity of a reaction may be zero.</p>
+            <p>(D) For a first order reaction, t₁/₂ = 0.693/k</p>
+        </div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (C) false</div>
+            <div class="answer-content">Molecularity is always a positive integer (1,2,3...). It cannot be zero. All others are correct.</div>
+        </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block">
+        <div class="q-num">Q3</div>
+        <div class="question-text">The number of molecules that react with each other in an elementary reaction is a measure of the :</div>
+        <div class="options"><p>(A) activation energy</p><p>(B) stoichiometry</p><p>(C) molecularity</p><p>(D) order</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (C) molecularity</div>
+            <div class="answer-content">For an elementary step, molecularity = number of reacting species.</div>
+        </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block">
+        <div class="q-num">Q4</div>
+        <div class="question-text">The element having [Ar]3d¹⁰4s¹ electronic configuration is</div>
+        <div class="options"><p>(A) Cu</p><p>(B) Zn</p><p>(C) Cr</p><p>(D) Mn</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (A) Cu</div>
+            <div class="answer-content">Cu (Z=29) : [Ar] 3d¹⁰ 4s¹ (anomalous). Zn = 3d¹⁰4s²; Cr = 3d⁵4s¹; Mn = 3d⁵4s².</div>
+        </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-block">
+        <div class="q-num">Q5</div>
+        <div class="question-text">The complex ions [Co(NH₃)₅(NO₂)]²⁺ and [Co(NH₃)₅(ONO)]²⁺ are called</div>
+        <div class="options"><p>(A) Ionization isomers</p><p>(B) Linkage isomers</p><p>(C) Co-ordination isomers</p><p>(D) Geometrical isomers</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (B) Linkage isomers</div>
+            <div class="answer-content">NO₂⁻ can bind through N (nitro) or O (nitrito).</div>
+        </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="question-block">
+        <div class="q-num">Q6</div>
+        <div class="question-text">The diamagnetic species is : [Co=27, Fe=26, Ni=28]</div>
+        <div class="options"><p>(A) [Ni(CN)₄]²⁻</p><p>(B) [NiCl₄]²⁻</p><p>(C) [Fe(CN)₆]³⁻</p><p>(D) [CoF₆]³⁻</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (A) [Ni(CN)₄]²⁻</div>
+            <div class="answer-content">Ni²⁺ (d⁸) with strong CN⁻ → square planar, dsp², all paired → diamagnetic. Others: paramagnetic.</div>
+        </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="question-block">
+        <div class="q-num">Q7</div>
+        <div class="question-text">Which is the correct IUPAC name for (chloro methyl benzene)?</div>
+        <div class="diagram-placeholder">[diagram: 1-chloro-4-methylbenzene]</div>
+        <div class="options"><p>(A) Methylchlorobenzene</p><p>(B) Toluene</p><p>(C) 1‑Chloro‑4‑Methylbenzene</p><p>(D) 1‑Methyl‑4‑Chlorobenzene</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (C) 1‑Chloro‑4‑Methylbenzene</div>
+            <div class="answer-content">Substituents in alphabetical order (chloro before methyl). Numbering gives lowest locant: 1‑chloro‑4‑methylbenzene.</div>
+        </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="question-block">
+        <div class="q-num">Q8</div>
+        <div class="question-text">Oxidation of secondary alcohol with chromic anhydride (CrO₃) gives:</div>
+        <div class="options"><p>(A) Aldehyde</p><p>(B) Ketone</p><p>(C) Carboxylic acid</p><p>(D) Ester</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (B) Ketone</div>
+            <div class="answer-content">Secondary alcohols oxidize to ketones (no further oxidation easily).</div>
+        </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="question-block">
+        <div class="q-num">Q9</div>
+        <div class="question-text">Conversion of phenol to salicylic acid is accomplished by:</div>
+        <div class="options"><p>(A) Reimer‑Tiemann</p><p>(B) Friedel‑Crafts</p><p>(C) Kolbe reaction</p><p>(D) Coupling</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (C) Kolbe reaction</div>
+            <div class="answer-content">Phenol + NaOH + CO₂ under pressure, then acidification → salicylic acid (Kolbe–Schmitt).</div>
+        </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="question-block">
+        <div class="q-num">Q10</div>
+        <div class="question-text">Examples of denaturation of protein:</div>
+        <div class="options"><p>(A) Coagulation of egg white</p><p>(B) Curdling of milk</p><p>(C) Clotting of blood</p><p>(D) Both (A) and (B)</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (D) Both (A) and (B)</div>
+            <div class="answer-content">Denaturation = loss of native structure. Egg white coagulation and milk curdling are examples. Clotting involves more than denaturation.</div>
+        </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="question-block">
+        <div class="q-num">Q11</div>
+        <div class="question-text">Nucleotides are joined together by</div>
+        <div class="options"><p>(A) Glycosidic</p><p>(B) Peptide</p><p>(C) Hydrogen bonding</p><p>(D) Phosphodiester linkage</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (D) Phosphodiester linkage</div>
+            <div class="answer-content">In DNA/RNA, nucleotides connect via phosphodiester bonds between sugar and phosphate.</div>
+        </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="question-block">
+        <div class="q-num">Q12</div>
+        <div class="question-text">Scurvy is caused due to deficiency of</div>
+        <div class="options"><p>(A) Vitamin B1</p><p>(B) Vitamin B2</p><p>(C) Ascorbic acid</p><p>(D) Glutamic acid</p></div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (C) Ascorbic acid</div>
+            <div class="answer-content">Vitamin C (ascorbic acid) deficiency causes scurvy.</div>
+        </div>
+    </div>
+
+    <!-- Q13 to Q16 assertion reason -->
+    <div class="question-block">
+        <div class="q-num">Q13</div>
+        <div class="question-text">Assertion (A): In a first order reaction, if the concentration of the reactant is doubled, its half-life is also doubled.<br>Reason (R): The half‑life of a reaction does not depend upon the initial concentration of the reactant in a first order reaction.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (D) A false, R true</div>
+            <div class="answer-content">For first order, t₁/₂ is independent of initial conc. So A is false, R true.</div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <div class="q-num">Q14</div>
+        <div class="question-text">Assertion (A): Cu cannot liberate H₂ on reaction with dilute mineral acids.<br>Reason (R): Cu has positive electrode potential.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (A) Both true, R correct explanation</div>
+            <div class="answer-content">E°Cu²⁺/Cu = +0.34V (positive). Cu cannot reduce H⁺ (requires negative E°).</div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <div class="q-num">Q15</div>
+        <div class="question-text">Assertion (A): Aromatic primary amines cannot be prepared by Gabriel phthalimide synthesis.<br>Reason (R): Aryl halides do not undergo nucleophilic substitution with the anion formed by phthalimide.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (A) Both true, R correct explanation</div>
+            <div class="answer-content">Gabriel uses alkyl halides (SN2); aryl halides are unreactive towards nucleophile.</div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <div class="q-num">Q16</div>
+        <div class="question-text">Assertion (A): Vitamin D cannot be stored in our body.<br>Reason (R): Vitamin D is fat soluble vitamin and is not excreted from the body in urine.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (D) A false, R true</div>
+            <div class="answer-content">Vitamin D is fat‑soluble (stored in liver, fatty tissues). A is false; R true.</div>
+        </div>
+    </div>
+
+    <!-- ========== SECTION B (2 marks each) ========== -->
+    <div class="section-tag">✦ SECTION B (2 marks each)</div>
+
+    <!-- Q17 (A) -->
+    <div class="question-block">
+        <div class="q-num">Q17 (A)</div>
+        <div class="question-text">Rate constant for zero order A → P = 0.0030 mol L⁻¹s⁻¹. Initial conc 0.10 M to 0.075 M. Find time.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">For zero order: [A]ₜ = [A]₀ – kt ⇒ t = ([A]₀ – [A]ₜ)/k = (0.10 – 0.075)/0.0030 = 0.025/0.0030 = 8.33 s.</div>
+        </div>
+    </div>
+    <!-- OR 17(B) -->
+    <div class="question-block">
+        <div class="q-num">Q17 (B) OR</div>
+        <div class="question-text">Decomposition of NH₃ on Pt: zero order, k = 2.5×10⁻⁴ mol L⁻¹s⁻¹. Rates of production of N₂ and H₂?</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">2NH₃ → N₂ + 3H₂. Rate = –½ d[NH₃]/dt = k = 2.5×10⁻⁴. So d[N₂]/dt = k = 2.5×10⁻⁴, d[H₂]/dt = 3k = 7.5×10⁻⁴ mol L⁻¹s⁻¹.</div>
+        </div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="question-block">
+        <div class="q-num">Q18</div>
+        <div class="question-text">Define: (a) Pseudo first order reaction (b) Half-life period.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) Reaction that appears to be first order due to high excess of one reactant (e.g., hydrolysis of ester).<br>(b) Time taken for initial concentration to reduce to half, t₁/₂ = 0.693/k for first order.</div>
+        </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="question-block">
+        <div class="q-num">Q19</div>
+        <div class="question-text">Explain: (a) Transition elements form coloured compounds. (b) Zn not regarded as transition element.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) Due to d-d transitions of unpaired d-electrons. (b) Zn has full d¹⁰ configuration in both ground state and common ions; no partly filled d subshell.</div>
+        </div>
+    </div>
+
+    <!-- Q20 IUPAC names -->
+    <div class="question-block">
+        <div class="q-num">Q20</div>
+        <div class="question-text">Name: (a) [Co(NH₃)₄(H₂O)Cl]Cl₂  (b) [CrCl₂(en)₂]Cl</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) Tetraammineaquachloridocobalt(III) chloride<br>(b) Dichloridobis(ethane-1,2-diamine)chromium(III) chloride</div>
+        </div>
+    </div>
+
+    <!-- Q21 -->
+    <div class="question-block">
+        <div class="q-num">Q21</div>
+        <div class="diagram-placeholder">[structural pair: faster SN1]</div>
+        <div class="question-text">(a) Which halogen compound undergoes SN1 faster and why? (b) Arrange 2‑bromo‑2‑methylbutane, 1‑bromopentane, 2‑bromopentane in increasing SN2 reactivity.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) Tertiary alkyl halide (if present) faster SN1 due to stable carbocation. (b) Increasing SN2: 2‑bromo‑2‑methylbutane (3°) < 2‑bromopentane (2°) < 1‑bromopentane (1°).</div>
+        </div>
+    </div>
+
+    <!-- ========== SECTION C (3 marks) ========== -->
+    <div class="section-tag">✦ SECTION C (3 marks each)</div>
+
+    <!-- Q22 -->
+    <div class="question-block">
+        <div class="q-num">Q22</div>
+        <div class="question-text">At 25°C vapour pressure of water = 24 mm Hg. Find vapour pressure of 5% aqueous urea solution (molar mass urea 60).</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">5% = 5 g urea in 100 g solution → water = 95 g. n_urea = 5/60 = 0.08333 mol; n_water = 95/18 = 5.2778 mol; mole fraction water = 5.2778/(5.2778+0.08333)=0.9845. p = p°× X_water = 24×0.9845 = 23.63 mm Hg.</div>
+        </div>
+    </div>
+
+    <!-- Q23 -->
+    <div class="question-block">
+        <div class="q-num">Q23</div>
+        <div class="question-text">0.05 M NaOH column area 0.8 cm², length 40 cm, resistance 5×10³ ohm. Find resistivity, conductivity, molar conductivity.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">R = ρ(l/A) → ρ = R·A/l = 5000×(0.8×10⁻⁴ m²)/(0.4 m) = 5000×2×10⁻⁴ = 1.0 Ωm. Conductivity κ = 1/ρ = 1.0 S m⁻¹. Molar cond. Λₘ = κ/c = 1.0 / 50 = 0.02 S m² mol⁻¹ = 200 S cm² mol⁻¹ (since 1 S m²/mol = 10⁴ S cm²/mol? careful: 1 S m⁻¹ = 0.01 S cm⁻¹; better in S cm² mol⁻¹: κ = 0.01 S cm⁻¹, c=0.05 mol/L = 5×10⁻⁵ mol cm⁻³, Λₘ = 0.01/(5e-5)=200 S cm² mol⁻¹).</div>
+        </div>
+    </div>
+
+    <!-- Q24 balance equations -->
+    <div class="question-block">
+        <div class="q-num">Q24</div>
+        <div class="question-text">Complete & balance: (a) MnO₄⁻ + C₂O₄²⁻ + H⁺ →  (b) KMnO₄ →(513K) (c) Cr₂O₇²⁻ + H₂S + H⁺ →</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O<br>(b) 2KMnO₄ →(513K) K₂MnO₄ + MnO₂ + O₂<br>(c) Cr₂O₇²⁻ + 3H₂S + 8H⁺ → 2Cr³⁺ + 3S + 7H₂O</div>
+        </div>
+    </div>
+
+    <!-- Q25 VBT -->
+    <div class="question-block">
+        <div class="q-num">Q25</div>
+        <div class="question-text">VBT: hybridization & magnetic behaviour of [Co(NH₃)₆]³⁺ and [Ni(CO)₄].</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">[Co(NH₃)₆]³⁺: Co³⁺ = 3d⁶, strong NH₃ → d²sp³, inner orbital, diamagnetic (all paired). [Ni(CO)₄]: Ni(0) = 3d⁸4s², CO strong field → sp³, tetrahedral, diamagnetic.</div>
+        </div>
+    </div>
+
+    <!-- Q26 -->
+    <div class="question-block">
+        <div class="q-num">Q26</div>
+        <div class="question-text">(a) Define enantiomers, racemic mixture. (b) Why chlorobenzene resistant to nucleophilic substitution?</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) Enantiomers: non‑superimposable mirror images. Racemic mixture: equimolar mixture of enantiomers, optically inactive. (b) Due to resonance, C–Cl bond has partial double bond character; also sp² carbon is more electronegative; and aryl cation unstable.</div>
+        </div>
+    </div>
+
+    <!-- Q27 (A) -->
+    <div class="question-block">
+        <div class="q-num">Q27 (A)</div>
+        <div class="question-text">Explain with equations: (a) Wolff‑Kishner reduction (b) Etard reaction (c) Cannizzaro reaction.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) Carbonyl → alkane via hydrazine, KOH. (b) Toluene → benzaldehyde using CrO₂Cl₂. (c) Aldehyde without α‑H → alcohol + carboxylic acid (e.g., 2HCHO + OH⁻ → CH₃OH + HCOO⁻).</div>
+        </div>
+    </div>
+
+    <!-- Q28 definitions -->
+    <div class="question-block">
+        <div class="q-num">Q28</div>
+        <div class="question-text">Define: glycosidic linkage, invert sugar, oligosaccharides.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">Glycosidic linkage: ether bond between two monosaccharides. Invert sugar: equimolar mixture of glucose+fructose from sucrose hydrolysis (dextrorotatory to laevorotatory). Oligosaccharides: 2‑10 monosaccharide units.</div>
+        </div>
+    </div>
+
+    <!-- ========== SECTION D (passage based) ========== -->
+    <div class="section-tag">✦ SECTION D (case based)</div>
+
+    <!-- Q29 -->
+    <div class="question-block">
+        <div class="q-num">Q29</div>
+        <div class="question-text">(a) Define reverse osmosis. Name one SPM used in RO. (b)(i) What happens to RBC in 0.5% NaCl? OR (b)(ii) Higher osmotic pressure: 1M KCl or 1M urea? (c) Why osmotic pressure is colligative?</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) RO: solvent flows from concentrated to dilute side by applying pressure > osmotic pressure; SPM: cellulose acetate/polyamide. (b)(i) 0.5% NaCl is hypotonic (0.9% is isotonic) → RBC swell & burst. (b)(ii) KCl dissociates → 2 particles, urea 1 particle, so KCl has higher π. (c) Depends on number of solute particles, not identity.</div>
+        </div>
+    </div>
+
+    <!-- Q30 -->
+    <div class="question-block">
+        <div class="q-num">Q30</div>
+        <div class="diagram-placeholder">[aniline derivatives basicity order]</div>
+        <div class="question-text">(a) Increasing basic order (given structures) and reason. (b) Why pKb aniline > methylamine? (c)(i) Arrange (CH₃)N, (CH₃)₂NH, NH₃, CH₃NH₂ in increasing basicity in water OR (c)(ii) Why ammonolysis not good for pure amines?</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) Aniline < p‑toluidine < p‑anisidine (electron donating increases basicity). (b) Aniline: lone pair delocalised into benzene ring; methylamine: +I of CH₃ increases basicity → lower pKb. (c)(i) NH₃ < (CH₃)₃N < CH₃NH₂ < (CH₃)₂NH (order in water: 2° > 1° > 3° > NH₃). (c)(ii) Ammonolysis gives mixture of primary, secondary, tertiary amines and quaternary salt.</div>
+        </div>
+    </div>
+
+    <!-- ========== SECTION E (5 marks) ========== -->
+    <div class="section-tag">✦ SECTION E (5 marks each)</div>
+
+    <!-- Q31 (A) -->
+    <div class="question-block">
+        <div class="q-num">Q31 (A)</div>
+        <div class="question-text">(a) IUPAC name of CH₃–CH=CH–CHO. (b) Chemical test to distinguish propanal & propanone. (c) Convert: (i) toluene → benzoic acid (ii) ethanol → propan‑2‑ol (iii) propanal → 2‑hydroxypropanoic acid.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) But-2-enal. (b) Iodoform test: propanone gives yellow ppt (CHI₃) with I₂/NaOH, propanal does not. (c)(i) Toluene → side chain chlorination (hv) → hydrolysis → benzoic acid. (ii) Ethanol → oxidise to acetaldehyde → Grignard (CH₃MgBr) → propan‑2‑ol. (iii) Propanal + HCN → cyanohydrin → hydrolysis → 2‑hydroxypropanoic acid.</div>
+        </div>
+    </div>
+
+    <!-- Q31 (B) OR incomplete fill -->
+    <div class="question-block">
+        <div class="q-num">Q31 (B) OR</div>
+        <div class="diagram-placeholder">[missing reagent / product puzzles]</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer (typical)</div>
+            <div class="answer-content">(a) Carbonyl + NH₂OH gives oxime. (b) Ozonolysis of alkene gives carbonyls.</div>
+        </div>
+    </div>
+
+    <!-- Q32 (A) -->
+    <div class="question-block">
+        <div class="q-num">Q32 (A)</div>
+        <div class="question-text">(a) ΔG° for Au(s)+Ca²⁺→Au³⁺+Ca(s) using E°(Au³⁺/Au)=+1.5V, E°(Ca²⁺/Ca)= –2.87V. Spontaneous? (b) Can tarnish (Ag₂S) be removed by Al pan in NaCl? E° Ag₂S/Ag = –0.71V, E° Al³⁺/Al = –1.66V.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(a) E°cell = cathode – anode = (–2.87) – (+1.5) = –4.37 V (non‑spontaneous). ΔG° = –nFE°cell = –6×96500×(-4.37)= +2530 kJ (positive, not spontaneous). (b) E°(Ag₂S/Ag) = –0.71 (cathode) ; Al³⁺/Al = –1.66 (anode) → E°cell = –0.71 – (–1.66) = +0.95 V >0, spontaneous, tarnish can be removed (Al reduces Ag⁺ to Ag).</div>
+        </div>
+    </div>
+
+    <!-- Q33 (A) -->
+    <div class="question-block">
+        <div class="q-num">Q33 (A)</div>
+        <div class="question-text">Compound A (C₂H₆O) + CrO₃ → B. B + I₂/NaOH → yellow C. A + conc H₂SO₄ at 413 K → D, D + HI excess → E. Identify A–E with equations.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">A = ethanol (C₂H₅OH); B = acetaldehyde (CH₃CHO); C = iodoform (CHI₃); D = ethene (C₂H₄) (dehydration); E = iodoethane (C₂H₅I). Equations: CH₃CHO + 3I₂ + 4NaOH → CHI₃ + HCOONa + 3NaI +3H₂O; C₂H₅OH →(H₂SO₄,413K) C₂H₄; C₂H₄ + HI → C₂H₅I.</div>
+        </div>
+    </div>
+
+    <!-- Q33 (B) OR -->
+    <div class="question-block">
+        <div class="q-num">Q33 (B) OR</div>
+        <div class="question-text">(a) Write equations: (i) phenol + conc HNO₃ (ii) propene + B₂H₆ then H₂O₂/OH⁻ (iii) sodium t‑butoxide + CH₃Cl. (b) Distinguish butan‑1‑ol and butan‑2‑ol. (c) Acid strength order: phenol, ethanol, water.</div>
+        <div class="answer-box">
+            <div class="answer-label">✅ Answer</div>
+            <div class="answer-content">(i) phenol + HNO₃ → picric acid (2,4,6‑trinitrophenol) (ii) propene →(B₂H₆) tripropylborane →(H₂O₂/OH⁻) propan‑1‑ol (anti‑Markovnikov) (iii) (CH₃)₃CONa + CH₃Cl → (CH₃)₃COCH₃ + NaI (SN2, but t‑butoxide hindered, but here chloride gives ether). (b) Iodoform test: butan‑2‑ol (secondary alcohol with CH₃‑CHOH‑) gives yellow ppt; butan‑1‑ol does not. (c) ethanol < water < phenol (phenol most acidic due to phenoxide resonance).</div>
+        </div>
+    </div>
+
+    <div class="footnote">⚛️ Solutions based on NCERT/ CBSE marking scheme · 56/2/1</div>
+</div>
+</body>
+</html>
