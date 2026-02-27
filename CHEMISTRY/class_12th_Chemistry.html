@@ -1,851 +1,924 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 12 Chemistry - The Ultimate Revision Guide</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
-            --light: #f1f5f9;
-            --white: #ffffff;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --success: #10b981;
-            --text: #334155;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Class 12 Chemistry - The Ultimate Revision Guide</title>
+        <style>
+            :root {
+                --primary: #2563eb;
+                --dark: #1e293b;
+                --light: #f1f5f9;
+                --white: #ffffff;
+                --accent: #f59e0b;
+                --danger: #ef4444;
+                --success: #10b981;
+                --text: #334155;
+            }
 
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+            body {
+                background-color: var(--light);
+                color: var(--text);
+                line-height: 1.6;
+            }
 
-        header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
+            /* Header */
+            header {
+                background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+                color: white;
+                padding: 2rem 1rem;
+                text-align: center;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
 
-        header p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+            header h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
 
-        /* Navigation */
-        .nav-scroll {
-            display: flex;
-            overflow-x: auto;
-            background: white;
-            padding: 0.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 85px; /* Adjust based on header height */
-            z-index: 999;
-        }
+            header p {
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
 
-        .nav-scroll a {
-            text-decoration: none;
-            color: var(--dark);
-            padding: 8px 15px;
-            margin-right: 10px;
-            background: #e2e8f0;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
+            /* Navigation */
+            .nav-scroll {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 85px;
+    z-index: 999;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+            }
 
-        .nav-scroll a:hover {
-            background: var(--primary);
-            color: white;
-        }
+            .nav-scroll a {
+                text-decoration: none;
+                color: var(--dark);
+                padding: 8px 15px;
+                background: #e2e8f0;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                white-space: nowrap;
+                margin: 5px;
+                transition: 0.3s;
+            }
 
-        /* Main Layout */
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
+            .nav-scroll a:hover {
+                background: var(--primary);
+                color: white;
+            }
 
-        /* Chapter Cards */
-        .chapter-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            border-left: 6px solid var(--primary);
-        }
+            /* Main Layout */
+            .container {
+                max-width: 900px;
+                margin: 20px auto;
+                padding: 0 15px;
+            }
 
-        .chapter-title {
-            color: var(--dark);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
-        }
+            /* Chapter Cards */
+            .chapter-card {
+                background: var(--white);
+                border-radius: 12px;
+                padding: 20px;
+                margin-bottom: 25px;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                border-left: 6px solid var(--primary);
+            }
 
-        /* Expandable Details */
-        details {
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
+            .chapter-title {
+                color: var(--dark);
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                border-bottom: 2px solid #e2e8f0;
+                padding-bottom: 10px;
+            }
 
-        summary {
-            background: #e2e8f0;
-            padding: 12px 15px;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none; /* Hide default triangle */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        summary::after {
-            content: '+';
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+            /* Expandable Details */
+            details {
+                background: #f8fafc;
+                border: 1px solid #cbd5e1;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
 
-        details[open] summary::after {
-            content: '-';
-        }
+            summary {
+                background: #e2e8f0;
+                padding: 12px 15px;
+                font-weight: 600;
+                cursor: pointer;
+                list-style: none;
+                /* Hide default triangle */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-        details[open] summary {
-            border-bottom: 1px solid #cbd5e1;
-            color: var(--primary);
-        }
+            summary::after {
+                content: '+';
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
 
-        .content-box {
-            padding: 15px;
-            font-size: 0.95rem;
-        }
+            details[open] summary::after {
+                content: '-';
+            }
 
-        /* Typography inside content */
-        h4 {
-            color: var(--primary);
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
+            details[open] summary {
+                border-bottom: 1px solid #cbd5e1;
+                color: var(--primary);
+            }
 
-        ul {
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
+            .content-box {
+                padding: 15px;
+                font-size: 0.95rem;
+            }
 
-        li {
-            margin-bottom: 5px;
-        }
+            /* Typography inside content */
+            h4 {
+                color: var(--primary);
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
 
-        /* Special Boxes */
-        .formula-box {
-            background: #fffbeb;
-            border-left: 4px solid var(--accent);
-            padding: 10px;
-            margin: 10px 0;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: #92400e;
-        }
+            ul {
+                margin-left: 20px;
+                margin-bottom: 10px;
+            }
 
-        .def-box {
-            background: #ecfdf5;
-            border-left: 4px solid var(--success);
-            padding: 10px;
-            margin: 10px 0;
-        }
+            li {
+                margin-bottom: 5px;
+            }
 
-        .note-box {
-            background: #eff6ff;
-            border-left: 4px solid var(--primary);
-            padding: 10px;
-            margin: 10px 0;
-            font-style: italic;
-        }
+            /* Special Boxes */
+            .formula-box {
+                background: #fffbeb;
+                border-left: 4px solid var(--accent);
+                padding: 10px;
+                margin: 10px 0;
+                font-family: 'Courier New', monospace;
+                font-weight: bold;
+                color: #92400e;
+            }
 
-        .warning-box {
-            background: #fef2f2;
-            border-left: 4px solid var(--danger);
-            padding: 10px;
-            margin: 10px 0;
-        }
+            .def-box {
+                background: #ecfdf5;
+                border-left: 4px solid var(--success);
+                padding: 10px;
+                margin: 10px 0;
+            }
 
-        .reaction {
-            background: #334155;
-            color: white;
-            padding: 8px;
-            border-radius: 4px;
-            font-family: monospace;
-            margin: 5px 0;
-            display: block;
-            overflow-x: auto;
-        }
+            .note-box {
+                background: #eff6ff;
+                border-left: 4px solid var(--primary);
+                padding: 10px;
+                margin: 10px 0;
+                font-style: italic;
+            }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: var(--dark);
-            color: white;
-            margin-top: 40px;
-        }
-    </style>
-</head>
-<body>
+            .warning-box {
+                background: #fef2f2;
+                border-left: 4px solid var(--danger);
+                padding: 10px;
+                margin: 10px 0;
+            }
 
-    <header>
-        <h1>🔬 Class 12 Chemistry: The Ultimate Guide</h1>
-        <p>Har Chapter, Har Formula, Har Reaction, Har Concept - Detailed Explanation!</p>
-    </header>
+            .reaction {
+                background: #334155;
+                color: white;
+                padding: 8px;
+                border-radius: 4px;
+                font-family: monospace;
+                margin: 5px 0;
+                display: block;
+                overflow-x: auto;
+            }
 
-    <div class="nav-scroll" id="navbar">
-        <a href="#ch1">1. Solutions</a>
-        <a href="#ch2">2. Electrochemistry</a>
-        <a href="#ch3">3. Kinetics</a>
-        <a href="#ch4">4. d & f Block</a>
-        <a href="#ch5">5. Coordination</a>
-        <a href="#ch6">6. Haloalkanes</a>
-        <a href="#ch7">7. Alcohols</a>
-        <a href="#ch8">8. Aldehydes</a>
-        <a href="#ch9">9. Amines</a>
-        <a href="#ch10">10. Biomolecules</a>
-    </div>
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 20px;
+                background: var(--dark);
+                color: white;
+                margin-top: 40px;
+            }
+        </style>
+    </head>
 
-    <div class="container">
+    <body>
 
-        <!-- CHAPTER 1 -->
-        <div class="chapter-card" id="ch1">
-            <h2 class="chapter-title">Chapter 1: Solutions</h2>
-            
-            <details>
-                <summary>1. Basic Concepts & Types of Solutions</summary>
-                <div class="content-box">
-                    <div class="def-box">
-                        <strong>Definition:</strong> Solution ek homogenous mixture hai jisme ek chhoti amount ki cheez (Solute) badi amount ki cheez (Solvent) mein ghul jaati hai.
-                    </div>
-                    <h4>Types based on Solvent state:</h4>
-                    <ul>
-                        <li><strong>Gaseous Solution:</strong> Gas in Gas (Air), Gas in Liquid (Oxygen in water).</li>
-                        <li><strong>Liquid Solution:</strong> Liquid in Liquid (Alcohol in water), Solid in Liquid (Sugar in water).</li>
-                        <li><strong>Solid Solution:</strong> Solid in Solid (Alloys like Brass).</li>
-                    </ul>
-                    <div class="note-box">
-                        <strong>Note:</strong> Alloy (e.g., Brass, Bronze) ek solid solution mana jata hai.
-                    </div>
-                </div>
-            </details>
+        <header>
+            <h1>🔬 Class 12 Chemistry: The Ultimate Guide</h1>
+            <p>Har Chapter, Har Formula, Har Reaction, Har Concept - Detailed Explanation!</p>
+        </header>
 
-            <details>
-                <summary>2. Concentration Terms (Formulas)</summary>
-                <div class="content-box">
-                    <div class="formula-box">
-                        Molarity (M) = Moles of Solute / Volume of Solution (in L)<br>
-                        Molality (m) = Moles of Solute / Mass of Solvent (in kg)<br>
-                        Mole Fraction (X) = Moles of Component / Total Moles
-                    </div>
-                    <h4>Important Relation (Temperature Dependence):</h4>
-                    <ul>
-                        <li><strong>Molarity:</strong> Temperature badhne se change hoti hai kyunki volume expand karta hai. (Isliye ye temperature dependent hai).</li>
-                        <li><strong>Molality:</strong> Temperature badhne pe change nahi hoti kyunki mass constant rehta hai. (Temperature independent).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Raoult's Law & Vapour Pressure</summary>
-                <div class="content-box">
-                    <div class="def-box">
-                        <strong>Raoult's Law (For Volatile Liquids):</strong> Solution ka total vapour pressure, har component ke partial vapour pressure ka sum hota hai. <br>P_total = P_A° + P_B°
-                    </div>
-                    <h4>Ideal vs Non-Ideal Solutions:</h4>
-                    <ul>
-                        <li><strong>Ideal:</strong> Raoult's law follow karte hain. ΔH_mix = 0, ΔV_mix = 0. Example: Benzene + Toluene.</li>
-                        <li><strong>Non-Ideal (Positive Deviation):</strong> P_observed > P_calculated. ΔH > 0 (Endothermic). Example: Acetone + Ethanol.</li>
-                        <li><strong>Non-Ideal (Negative Deviation):</strong> P_observed < P_calculated. ΔH < 0 (Exothermic). Example: Chloroform + Acetone.</li>
-                    </ul>
-                    <h4>Azeotropes:</h4>
-                    <p>Ye aise mixtures hain jo distillation ke dauran same composition ke sath boil karte hain.</p>
-                    <ul>
-                        <li><strong>Minimum Boiling Azeotrope:</strong> Positive deviation (95% Ethanol + Water).</li>
-                        <li><strong>Maximum Boiling Azeotrope:</strong> Negative deviation (68% Nitric Acid + Water).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>4. Colligative Properties (The Heart of Chapter)</summary>
-                <div class="content-box">
-                    <p>Ye properties sirf solute ke particles ki <em>number</em> par depend karti hain, unki <em>nature</em> par nahi.</p>
-                    
-                    <h4>(a) Relative Lowering of Vapour Pressure:</h4>
-                    <div class="formula-box">ΔP / P° = X_solute (Mole fraction of solute)</div>
-
-                    <h4>(b) Elevation in Boiling Point (ΔT_b):</h4>
-                    <p>Impurity dalne se liquid ko boil karne ke liye zyada heat chahiye.</p>
-                    <div class="formula-box">ΔT_b = K_b * m (K_b = Molal elevation constant)</div>
-
-                    <h4>(c) Depression in Freezing Point (ΔT_f):</h4>
-                    <p>Impurity dalne se liquid jaldi freeze hota hai.</p>
-                    <div class="formula-box">ΔT_f = K_f * m (K_f = Molal depression constant)</div>
-
-                    <h4>(d) Osmotic Pressure (π):</h4>
-                    <p>Semipermeable membrane ke through solvent ka flow. Ye sabse best method hai molar mass nikalne ke liye kyunki isse temperature ka effect kam padta hai.</p>
-                    <div class="formula-box">π = CRT (C = Molarity, R = Gas const, T = Temp)</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>5. Abnormal Molar Mass & Van't Hoff Factor (i)</summary>
-                <div class="content-box">
-                    <p>Kabhi-kabhi electrolytes (jaise NaCl) water mein toot ke ions ban jaate hain, toh particles ka number badh jata hai. Isliye molar mass abnormal milta hai.</p>
-                    <div class="formula-box">
-                        i = Normal Molar Mass / Observed Molar Mass<br>
-                        i = 1 + (n-1)α (n = ions count, α = dissociation degree)
-                    </div>
-                    <div class="warning-box">
-                        <strong>Yaad Rakho:</strong>
-                        <br>ΔT_b (observed) = i * K_b * m
-                        <br>ΔT_f (observed) = i * K_f * m
-                        <br>Osmotic Pressure (π) = i * CRT
-                    </div>
-                </div>
-            </details>
+        <div class="nav-scroll" id="navbar">
+            <a href="#ch1">1. Solutions</a>
+            <a href="#ch2">2. Electrochemistry</a>
+            <a href="#ch3">3. Kinetics</a>
+            <a href="#ch4">4. d & f Block</a>
+            <a href="#ch5">5. Coordination</a>
+            <a href="#ch6">6. Haloalkanes</a>
+            <a href="#ch7">7. Alcohols</a>
+            <a href="#ch8">8. Aldehydes</a>
+            <a href="#ch9">9. Amines</a>
+            <a href="#ch10">10. Biomolecules</a>
+            <a href="Question_paper_56-1-1_Chemistry_2025.html" style="background: linear-gradient(45deg, red,blue);color: white;">Question PAPER 1</a>
+            <a href="Question_paper_56-2-1_Chemistry_2025.html" style="background: linear-gradient(45deg, red,blue);color: white;">Question PAPER 2</a>
+            <a href="Question_paper_56-4-1_Chemistry_2025.html" style="background: linear-gradient(45deg, red,blue);color: white;">Question PAPER 3</a>
+            <a href="Competency_based_question_answers.html" style="background: linear-gradient(45deg, red,blue);color: white;">Competency Based Question Answers</a>
         </div>
 
-        <!-- CHAPTER 2 -->
-        <div class="chapter-card" id="ch2">
-            <h2 class="chapter-title">Chapter 2: Electrochemistry</h2>
+        <div class="container">
 
-            <details>
-                <summary>1. Galvanic Cells (Voltaic Cells)</summary>
-                <div class="content-box">
-                    <p>Yahan chemical energy convert hoti hai electrical energy mein.</p>
-                    <h4>Electrodes:</h4>
-                    <ul>
-                        <li><strong>Anode:</strong> Oxidation hoti hai. Electrons bahar nikalte hain. Iska sign <strong>Negative (-)</strong> hota hai.</li>
-                        <li><strong>Cathode:</strong> Reduction hoti hai. Electrons aate hain. Iska sign <strong>Positive (+)</strong> hota hai.</li>
-                    </ul>
-                    <span class="reaction">Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s)</span>
-                    <p><em>(Left side Anode, Right side Cathode, || = Salt Bridge)</em></p>
-                </div>
-            </details>
+            <!-- CHAPTER 1 -->
+            <div class="chapter-card" id="ch1">
+                <h2 class="chapter-title">Chapter 1: Solutions</h2>
 
-            <details>
-                <summary>2. Standard Electrode Potential (E°)</summary>
-                <div class="content-box">
-                    <p>Standard Hydrogen Electrode (SHE) ko reference maana jata hai jiska potential 0.00V hai.</p>
-                    <div class="formula-box">
-                        E°_cell = E°_cathode - E°_anode<br>
-                        ΔG° = -nFE°_cell (n = moles of e- exchanged)
+                <details>
+                    <summary>1. Basic Concepts & Types of Solutions</summary>
+                    <div class="content-box">
+                        <div class="def-box">
+                            <strong>Definition:</strong> Solution ek homogenous mixture hai jisme ek chhoti amount ki
+                            cheez (Solute) badi amount ki cheez (Solvent) mein ghul jaati hai.
+                        </div>
+                        <h4>Types based on Solvent state:</h4>
+                        <ul>
+                            <li><strong>Gaseous Solution:</strong> Gas in Gas (Air), Gas in Liquid (Oxygen in water).
+                            </li>
+                            <li><strong>Liquid Solution:</strong> Liquid in Liquid (Alcohol in water), Solid in Liquid
+                                (Sugar in water).</li>
+                            <li><strong>Solid Solution:</strong> Solid in Solid (Alloys like Brass).</li>
+                        </ul>
+                        <div class="note-box">
+                            <strong>Note:</strong> Alloy (e.g., Brass, Bronze) ek solid solution mana jata hai.
+                        </div>
                     </div>
-                    <div class="note-box">
-                        Agar E°_cell positive hai, toh reaction spontaneous hoga.
+                </details>
+
+                <details>
+                    <summary>2. Concentration Terms (Formulas)</summary>
+                    <div class="content-box">
+                        <div class="formula-box">
+                            Molarity (M) = Moles of Solute / Volume of Solution (in L)<br>
+                            Molality (m) = Moles of Solute / Mass of Solvent (in kg)<br>
+                            Mole Fraction (X) = Moles of Component / Total Moles
+                        </div>
+                        <h4>Important Relation (Temperature Dependence):</h4>
+                        <ul>
+                            <li><strong>Molarity:</strong> Temperature badhne se change hoti hai kyunki volume expand
+                                karta hai. (Isliye ye temperature dependent hai).</li>
+                            <li><strong>Molality:</strong> Temperature badhne pe change nahi hoti kyunki mass constant
+                                rehta hai. (Temperature independent).</li>
+                        </ul>
                     </div>
-                </div>
-            </details>
+                </details>
 
-            <details>
-                <summary>3. Nernst Equation</summary>
-                <div class="content-box">
-                    <p>Ye equation batati hai ki agar concentration non-standard ho, toh cell potential kaise calculate karein.</p>
-                    <div class="formula-box">
-                        E_cell = E°_cell - (0.059 / n) * log ([Product]/[Reactant])
+                <details>
+                    <summary>3. Raoult's Law & Vapour Pressure</summary>
+                    <div class="content-box">
+                        <div class="def-box">
+                            <strong>Raoult's Law (For Volatile Liquids):</strong> Solution ka total vapour pressure, har
+                            component ke partial vapour pressure ka sum hota hai. <br>P_total = P_A° + P_B°
+                        </div>
+                        <h4>Ideal vs Non-Ideal Solutions:</h4>
+                        <ul>
+                            <li><strong>Ideal:</strong> Raoult's law follow karte hain. ΔH_mix = 0, ΔV_mix = 0. Example:
+                                Benzene + Toluene.</li>
+                            <li><strong>Non-Ideal (Positive Deviation):</strong> P_observed > P_calculated. ΔH > 0
+                                (Endothermic). Example: Acetone + Ethanol.</li>
+                            <li><strong>Non-Ideal (Negative Deviation):</strong> P_observed < P_calculated. ΔH < 0
+                                    (Exothermic). Example: Chloroform + Acetone.</li>
+                        </ul>
+                        <h4>Azeotropes:</h4>
+                        <p>Ye aise mixtures hain jo distillation ke dauran same composition ke sath boil karte hain.</p>
+                        <ul>
+                            <li><strong>Minimum Boiling Azeotrope:</strong> Positive deviation (95% Ethanol + Water).
+                            </li>
+                            <li><strong>Maximum Boiling Azeotrope:</strong> Negative deviation (68% Nitric Acid +
+                                Water).</li>
+                        </ul>
                     </div>
-                    <p>Isse hum equilibrium constant (Kc) bhi nikaal sakte hain jab E_cell = 0 ho.</p>
-                </div>
-            </details>
+                </details>
 
-            <details>
-                <summary>4. Conductance & Kohlrausch's Law</summary>
-                <div class="content-box">
-                    <p>Resistance (R) aur Conductance (G) ulta hote hain.</p>
-                    <div class="formula-box">
-                        G = 1 / R<br>
-                        κ (Kappa) = Specific Conductance = 1/R * (l/A)<br>
-                        Λ_m = Molar Conductivity = κ * (1000/M)
+                <details>
+                    <summary>4. Colligative Properties (The Heart of Chapter)</summary>
+                    <div class="content-box">
+                        <p>Ye properties sirf solute ke particles ki <em>number</em> par depend karti hain, unki
+                            <em>nature</em> par nahi.</p>
+
+                        <h4>(a) Relative Lowering of Vapour Pressure:</h4>
+                        <div class="formula-box">ΔP / P° = X_solute (Mole fraction of solute)</div>
+
+                        <h4>(b) Elevation in Boiling Point (ΔT_b):</h4>
+                        <p>Impurity dalne se liquid ko boil karne ke liye zyada heat chahiye.</p>
+                        <div class="formula-box">ΔT_b = K_b * m (K_b = Molal elevation constant)</div>
+
+                        <h4>(c) Depression in Freezing Point (ΔT_f):</h4>
+                        <p>Impurity dalne se liquid jaldi freeze hota hai.</p>
+                        <div class="formula-box">ΔT_f = K_f * m (K_f = Molal depression constant)</div>
+
+                        <h4>(d) Osmotic Pressure (π):</h4>
+                        <p>Semipermeable membrane ke through solvent ka flow. Ye sabse best method hai molar mass
+                            nikalne ke liye kyunki isse temperature ka effect kam padta hai.</p>
+                        <div class="formula-box">π = CRT (C = Molarity, R = Gas const, T = Temp)</div>
                     </div>
-                    <h4>Kohlrausch's Law:</h4>
-                    <p>Limiting molar conductivity of an electrolyte = Sum of limiting molar conductivities of its ions.</p>
-                    <div class="formula-box">Λ°_m = ν⁺ * λ°₊ + ν⁻ * λ°₋</div>
-                    <p><strong>Application:</strong> Weak electrolytes (jaise CH3COOH) ki limiting conductivity nikalne ke liye Strong electrolytes (jaise HCl, NaCl) ka use karte hain.</p>
-                </div>
-            </details>
+                </details>
 
-            <details>
-                <summary>5. Electrolysis & Batteries</summary>
-                <div class="content-box">
-                    <h4>Faraday's First Law:</h4>
-                    <div class="formula-box">m = Z * I * t (Z = Electrochemical equivalent)</div>
-                    
-                    <h4>Batteries Types:</h4>
-                    <ul>
-                        <li><strong>Primary Cells:</strong> Recharge nahi ho sakte. (Example: Dry Cell, Mercury Cell).</li>
-                        <li><strong>Secondary Cells:</strong> Recharge ho sakte hain. (Example: Lead Acid Battery, Ni-Cd, Li-ion).</li>
-                        <li><strong>Fuel Cells:</strong> Continuous supply of fuel se chalte hain, pollution bahut kam. (H2 - O2 Fuel Cell).</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
-
-        <!-- CHAPTER 3 -->
-        <div class="chapter-card" id="ch3">
-            <h2 class="chapter-title">Chapter 3: Chemical Kinetics</h2>
-
-            <details>
-                <summary>1. Rate of Reaction</summary>
-                <div class="content-box">
-                    <div class="formula-box">Rate = -d[R]/dt = +d[P]/dt</div>
-                    <p>Instantaneous rate batata hai ki us particular pal par reaction kitni tezi se ho raha hai.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>2. Order vs Molecularity</summary>
-                <div class="content-box">
-                    <table border="1" style="width:100%; border-collapse: collapse;">
-                        <tr style="background:#e2e8f0;">
-                            <th>Order</th>
-                            <th>Molecularity</th>
-                        </tr>
-                        <tr>
-                            <td>Experiment ke nikaalte hain.</td>
-                            <td>Theoretical concept hai.</td>
-                        </tr>
-                        <tr>
-                            <td>Zero, fractional ho sakta hai.</td>
-                            <td>Hamesha whole number (1, 2, 3) hota hai.</td>
-                        </tr>
-                        <tr>
-                            <td>Complex reactions ke liye apply hota hai.</td>
-                            <td>Sirf elementary steps ke liye.</td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Integrated Rate Laws (Sabse Important)</summary>
-                <div class="content-box">
-                    <h4>Zero Order Reaction:</h4>
-                    <p>Rate independent hai concentration se.</p>
-                    <div class="formula-box">k = [R]_0 - [R]_t / t | t½ = [R]_0 / 2k</div>
-                    
-                    <h4>First Order Reaction:</h4>
-                    <p>Rate directly proportional hai concentration ke square ke.</p>
-                    <div class="formula-box">k = (2.303/t) * log ([R]_0/[R]_t) | t½ = 0.693 / k</div>
-                    <div class="note-box">
-                        <strong>Graphs:</strong> Zero order: [R] vs Time is straight line (negative slope). First order: log[R] vs Time is straight line.
+                <details>
+                    <summary>5. Abnormal Molar Mass & Van't Hoff Factor (i)</summary>
+                    <div class="content-box">
+                        <p>Kabhi-kabhi electrolytes (jaise NaCl) water mein toot ke ions ban jaate hain, toh particles
+                            ka number badh jata hai. Isliye molar mass abnormal milta hai.</p>
+                        <div class="formula-box">
+                            i = Normal Molar Mass / Observed Molar Mass<br>
+                            i = 1 + (n-1)α (n = ions count, α = dissociation degree)
+                        </div>
+                        <div class="warning-box">
+                            <strong>Yaad Rakho:</strong>
+                            <br>ΔT_b (observed) = i * K_b * m
+                            <br>ΔT_f (observed) = i * K_f * m
+                            <br>Osmotic Pressure (π) = i * CRT
+                        </div>
                     </div>
-                </div>
-            </details>
+                </details>
+            </div>
 
-            <details>
-                <summary>4. Arrhenius Equation & Temperature</summary>
-                <div class="content-box">
-                    <p>Temperature badhne se rate badhti hai kyunki zyada molecules activation energy (Ea) ko cross kar lete hain.</p>
-                    <div class="formula-box">
-                        k = A e^(-Ea/RT)<br>
-                        log k = log A - (Ea/2.303R) * (1/T)
+            <!-- CHAPTER 2 -->
+            <div class="chapter-card" id="ch2">
+                <h2 class="chapter-title">Chapter 2: Electrochemistry</h2>
+
+                <details>
+                    <summary>1. Galvanic Cells (Voltaic Cells)</summary>
+                    <div class="content-box">
+                        <p>Yahan chemical energy convert hoti hai electrical energy mein.</p>
+                        <h4>Electrodes:</h4>
+                        <ul>
+                            <li><strong>Anode:</strong> Oxidation hoti hai. Electrons bahar nikalte hain. Iska sign
+                                <strong>Negative (-)</strong> hota hai.</li>
+                            <li><strong>Cathode:</strong> Reduction hoti hai. Electrons aate hain. Iska sign
+                                <strong>Positive (+)</strong> hota hai.</li>
+                        </ul>
+                        <span class="reaction">Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s)</span>
+                        <p><em>(Left side Anode, Right side Cathode, || = Salt Bridge)</em></p>
                     </div>
-                    <p><strong>Catalyst:</strong> Ea ko kam karta hai, taaki zyada molecules react kar sakein. Rate constant (k) badh jata hai.</p>
-                </div>
-            </details>
-        </div>
+                </details>
 
-        <!-- CHAPTER 4 -->
-        <div class="chapter-card" id="ch4">
-            <h2 class="chapter-title">Chapter 4: d- and f-Block Elements</h2>
-
-            <details>
-                <summary>1. Transition Metals (d-Block) Properties</summary>
-                <div class="content-box">
-                    <ul>
-                        <li><strong>Electronic Config:</strong> (n-1)d¹-¹⁰ ns⁰-². Exception: Cr (3d⁵4s¹) aur Cu (3d¹⁰4s¹).</li>
-                        <li><strong>Variable Oxidation States:</strong> Kyunki ns aur (n-1)d dono electrons lose ho sakte hain. (Example: Mn -2 se +7 tak).</li>
-                        <li><strong>Coloured Ions:</strong> d-d transition ki wajah se. Agar d-orbital empty (Sc³⁺) ya fully filled (Zn²⁺) hai, toh colourless honge.</li>
-                        <li><strong>Catalytic Properties:</strong> Enthalpies of activation kam karte hain. (Example: V₂O₅ in Contact Process, Fe in Haber's Process).</li>
-                        <li><strong>Magnetic Properties:</strong> Unpaired electrons hone par Paramagnetic, paired hone par Diamagnetic.</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>2. Important Compounds</summary>
-                <div class="content-box">
-                    <h4>Potassium Dichromate (K₂Cr₂O₇):</h4>
-                    <ul>
-                        <li>Orange crystals, strong oxidizing agent.</li>
-                        <li>Acidic medium mein Cr₂O₇²⁻ (Orange) → Cr³⁺ (Green).</li>
-                        <li><strong>Chromyl Chloride Test:</strong> NaCl + K₂Cr₂O₇ + H₂SO₄ → Red vapours (CrO₂Cl₂) aate hain ( confirms Cl⁻).</li>
-                    </ul>
-                    
-                    <h4>Potassium Permanganate (KMnO₄):</h4>
-                    <ul>
-                        <li>Purple crystals, self-indicator in titrations.</li>
-                        <li><strong>Preparation:</strong> Pyrolusite ore (MnO₂) + KOH + O₂ (fusion) → K₂MnO₄ (Green). Electrolytic oxidation se KMnO₄ banta hai.</li>
-                        <li><strong>Uses:</strong> Oxidizing agent, disinfectant.</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Lanthanoids & Actinoids</summary>
-                <div class="content-box">
-                    <h4>Lanthanoid Contraction:</h4>
-                    <p>4f electrons poori tarah se nucleus ko shield nahi kar pate, isliye effective nuclear charge badh jata hai aur size kam ho jata hai. Is wajah se Zr aur Hf, Nb aur Ta ka same size hota hai.</p>
-                    <h4>Actinoids:</h4>
-                    <p>Radioactive hote hain. Oxidation states +3 sabse common, lekin +4, +5, +6, +7 bhi milte hain (jaise U, Pu, Np).</p>
-                </div>
-            </details>
-        </div>
-
-        <!-- CHAPTER 5 -->
-        <div class="chapter-card" id="ch5">
-            <h2 class="chapter-title">Chapter 5: Coordination Compounds</h2>
-
-            <details>
-                <summary>1. Terminology (Kya Kya Hai)</summary>
-                <div class="content-box">
-                    <ul>
-                        <li><strong>Ligand:</strong> Electron donor jo metal se bind hota hai. (Example: NH₃, H₂O, CN⁻, CO).</li>
-                        <li><strong>Coordination Number (CN):</strong> Metal ke paas kitne bonds hain.</li>
-                        <li><strong>Coordination Sphere:</strong> Brackets ke andar ka hissa (Central atom + Ligands).</li>
-                        <li><strong>Counter Ions:</strong> Brackets ke bahar wale ions jo balancing ke liye hote hain.</li>
-                        <li><strong>Denticity:</strong> Ligand kitne points se bind ho raha hai (Mono, Bi, Tri, Polydentate).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>2. IUPAC Nomenclature (Rules)</summary>
-                <div class="content-box">
-                    <ol>
-                        <li>Ligands ko alphabetical order mein likho.</li>
-                        <li>Phir Central Atom ka naam.</li>
-                        <li>Oxidation state Roman numerals mein brackets mein.</li>
-                        <li>Cation pehle, Anion baad mein.</li>
-                    </ol>
-                    <div class="note-box">
-                        Example: [Co(NH₃)₆]Cl₃ -> Hexaamminecobalt(III) chloride.
+                <details>
+                    <summary>2. Standard Electrode Potential (E°)</summary>
+                    <div class="content-box">
+                        <p>Standard Hydrogen Electrode (SHE) ko reference maana jata hai jiska potential 0.00V hai.</p>
+                        <div class="formula-box">
+                            E°_cell = E°_cathode - E°_anode<br>
+                            ΔG° = -nFE°_cell (n = moles of e- exchanged)
+                        </div>
+                        <div class="note-box">
+                            Agar E°_cell positive hai, toh reaction spontaneous hoga.
+                        </div>
                     </div>
-                </div>
-            </details>
+                </details>
 
-            <details>
-                <summary>3. Isomerism</summary>
-                <div class="content-box">
-                    <h4>Structural Isomerism:</h4>
-                    <ul>
-                        <li>Linkage Isomerism: NO₂ (Nitro) vs ONO (Nitrito).</li>
-                        <li>Coordination Isomerism: Cation aur Anion dono metals hone.</li>
-                        <li>Ionisation Isomerism: Counter ion change karta hai.</li>
-                    </ul>
-                    <h4>Stereoisomerism:</h4>
-                    <ul>
-                        <li>Geometrical (Cis-Trans): Square planar aur Octahedral mein common.</li>
-                        <li>Optical: Mirror images (Non-superimposable). Chiral molecules hoti hain.</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>4. Bonding Theories (VBT & CFT)</summary>
-                <div class="content-box">
-                    <h4>Werner's Theory:</h4>
-                    <p>Primary Valency (Oxidation state, ionizable) aur Secondary Valency (Coordination number, non-ionizable).</p>
-                    
-                    <h4>Crystal Field Theory (CFT):</h4>
-                    <p>Ligands metal ke d-orbitals ko split karte hain.</p>
-                    <ul>
-                        <li><strong>Strong Field Ligands (CN⁻, CO):</strong> Large splitting (Δ₀ large). Low spin complex (Unpaired electrons kam). Example: [Fe(CN)₆]⁴⁻ (Diamagnetic).</li>
-                        <li><strong>Weak Field Ligands (H₂O, F⁻):</strong> Small splitting. High spin complex (Unpaired electrons zyada). Example: [Fe(H₂O)₆]²⁺ (Paramagnetic).</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
-
-        <!-- CHAPTER 6 -->
-        <div class="chapter-card" id="ch6">
-            <h2 class="chapter-title">Chapter 6: Haloalkanes and Haloarenes</h2>
-
-            <details>
-                <summary>1. Classification & Nomenclature</summary>
-                <div class="content-box">
-                    <p>Alkyl halides ke 3 types:</p>
-                    <ul>
-                        <li><strong>Primary (1°):</strong> Halogen attached to C jo sirf 1 C se juda hai.</li>
-                        <li><strong>Secondary (2°):</strong> Halogen attached to C jo 2 C se juda hai.</li>
-                        <li><strong>Tertiary (3°):</strong> Halogen attached to C jo 3 C se juda hai.</li>
-                    </ul>
-                    <p>Naming: Prefix use hoga (Chloro, Bromo, Iodo).</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>2. SN1 vs SN2 Mechanisms (Crucial)</summary>
-                <div class="content-box">
-                    <h4>SN2 (Substitution Nucleophilic Bimolecular):</h4>
-                    <ul>
-                        <li>One step mechanism.</li>
-                        <li>Rate = k [RX][Nu⁻].</li>
-                        <li>Backside attack, Inversion of configuration (Walden Inversion).</li>
-                        <li>Order: Methyl > 1° > 2° >>> 3° (3° mein nahi hota).</li>
-                    </ul>
-                    <h4>SN1 (Substitution Nucleophilic Unimolecular):</h4>
-                    <ul>
-                        <li>Two step mechanism (Carbocation intermediate).</li>
-                        <li>Rate = k [RX].</li>
-                        <li>Racemisation (Racemic mixture ban jata hai).</li>
-                        <li>Order: 3° > 2° > 1° (Stable carbocyte chahiye).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Important Reactions & Tests</summary>
-                <div class="content-box">
-                    <h4>Grignard Reagent:</h4>
-                    <span class="reaction">R-X + Mg (dry ether) → R-Mg-X</span>
-                    <p>Ye bahut reactive hai, organic synthesis mein Carbon-Carbon bond banane ke liye use hota hai.</p>
-                    
-                    <h4>Tests:</h4>
-                    <ul>
-                        <li><strong>Lucas Test:</strong> Alcohol mein alkyl halide convert karne ke liye. 3° instantly, 2° takes 5-10 min, 1° no reaction (at room temp).</li>
-                        <li><strong>Finkelstein Reaction:</strong> R-Cl + NaI (acetone) → R-I (NaCl precipitates).</li>
-                        <li><strong>Swarts Reaction:</strong> R-Cl + AgF → R-F.</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
-
-        <!-- CHAPTER 7 -->
-        <div class="chapter-card" id="ch7">
-            <h2 class="chapter-title">Chapter 7: Alcohols, Phenols & Ethers</h2>
-
-            <details>
-                <summary>1. Alcohols (Reactions & Prep)</summary>
-                <div class="content-box">
-                    <h4>Preparation:</h4>
-                    <ul>
-                        <li>Hydroboration-oxidation: Anti-Markovnikov alcohol (1°).</li>
-                        <li>Acid catalyzed hydration: Markovnikov alcohol.</li>
-                        <li>Reduction: Carbonyl compounds (RCHO/RCOR') → NaBH₄ / LiAlH₄ → Alcohol.</li>
-                    </ul>
-                    <h4>Reactions:</h4>
-                    <ul>
-                        <li><strong>Dehydration:</strong> Conc. H₂SO₄, 443K → Alkene (Saytzeff rule - more substituted alkene).</li>
-                        <li><strong>Oxidation:</strong> PCC → Aldehyde; Acidic K₂Cr₂O₇ → Carboxylic Acid.</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>2. Phenols (Acidity & Reactions)</summary>
-                <div class="content-box">
-                    <h4>Acidity:</h4>
-                    <p>Phenol alcohol se zyada acidic hai. Kyunki Phenoxide ion resonance se stabilize ho jata hai. Electron withdrawing groups (-NO₂) acidity badha dete hain.</p>
-                    
-                    <h4>Electrophilic Substitution:</h4>
-                    <ul>
-                        <li><strong>Nitration:</strong> Dilute HNO₃ → o-Nitrophenol + p-Nitrophenol.</li>
-                        <li><strong>Kolbe's Reaction:</strong> Phenoxide + CO₂ → Salicylic Acid (Ortho-hydroxybenzoic acid).</li>
-                        <li><strong>Reimer-Tiemann:</strong> Phenol + CHCl₃ + NaOH → Salicylaldehyde (Aldehyde group).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Ethers</summary>
-                <div class="content-box">
-                    <h4>Williamson's Synthesis:</h4>
-                    <p>Best method to make unsymmetrical ethers.</p>
-                    <span class="reaction">R-X + R'-O⁻Na⁺ → R-O-R' + NaX</span>
-                    <div class="warning-box">
-                        <strong>Important:</strong> 3° alkyl halide use mat karo, elimination (alkene) ho jayega.
+                <details>
+                    <summary>3. Nernst Equation</summary>
+                    <div class="content-box">
+                        <p>Ye equation batati hai ki agar concentration non-standard ho, toh cell potential kaise
+                            calculate karein.</p>
+                        <div class="formula-box">
+                            E_cell = E°_cell - (0.059 / n) * log ([Product]/[Reactant])
+                        </div>
+                        <p>Isse hum equilibrium constant (Kc) bhi nikaal sakte hain jab E_cell = 0 ho.</p>
                     </div>
-                </div>
-            </details>
+                </details>
+
+                <details>
+                    <summary>4. Conductance & Kohlrausch's Law</summary>
+                    <div class="content-box">
+                        <p>Resistance (R) aur Conductance (G) ulta hote hain.</p>
+                        <div class="formula-box">
+                            G = 1 / R<br>
+                            κ (Kappa) = Specific Conductance = 1/R * (l/A)<br>
+                            Λ_m = Molar Conductivity = κ * (1000/M)
+                        </div>
+                        <h4>Kohlrausch's Law:</h4>
+                        <p>Limiting molar conductivity of an electrolyte = Sum of limiting molar conductivities of its
+                            ions.</p>
+                        <div class="formula-box">Λ°_m = ν⁺ * λ°₊ + ν⁻ * λ°₋</div>
+                        <p><strong>Application:</strong> Weak electrolytes (jaise CH3COOH) ki limiting conductivity
+                            nikalne ke liye Strong electrolytes (jaise HCl, NaCl) ka use karte hain.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>5. Electrolysis & Batteries</summary>
+                    <div class="content-box">
+                        <h4>Faraday's First Law:</h4>
+                        <div class="formula-box">m = Z * I * t (Z = Electrochemical equivalent)</div>
+
+                        <h4>Batteries Types:</h4>
+                        <ul>
+                            <li><strong>Primary Cells:</strong> Recharge nahi ho sakte. (Example: Dry Cell, Mercury
+                                Cell).</li>
+                            <li><strong>Secondary Cells:</strong> Recharge ho sakte hain. (Example: Lead Acid Battery,
+                                Ni-Cd, Li-ion).</li>
+                            <li><strong>Fuel Cells:</strong> Continuous supply of fuel se chalte hain, pollution bahut
+                                kam. (H2 - O2 Fuel Cell).</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 3 -->
+            <div class="chapter-card" id="ch3">
+                <h2 class="chapter-title">Chapter 3: Chemical Kinetics</h2>
+
+                <details>
+                    <summary>1. Rate of Reaction</summary>
+                    <div class="content-box">
+                        <div class="formula-box">Rate = -d[R]/dt = +d[P]/dt</div>
+                        <p>Instantaneous rate batata hai ki us particular pal par reaction kitni tezi se ho raha hai.
+                        </p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. Order vs Molecularity</summary>
+                    <div class="content-box">
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <tr style="background:#e2e8f0;">
+                                <th>Order</th>
+                                <th>Molecularity</th>
+                            </tr>
+                            <tr>
+                                <td>Experiment ke nikaalte hain.</td>
+                                <td>Theoretical concept hai.</td>
+                            </tr>
+                            <tr>
+                                <td>Zero, fractional ho sakta hai.</td>
+                                <td>Hamesha whole number (1, 2, 3) hota hai.</td>
+                            </tr>
+                            <tr>
+                                <td>Complex reactions ke liye apply hota hai.</td>
+                                <td>Sirf elementary steps ke liye.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Integrated Rate Laws (Sabse Important)</summary>
+                    <div class="content-box">
+                        <h4>Zero Order Reaction:</h4>
+                        <p>Rate independent hai concentration se.</p>
+                        <div class="formula-box">k = [R]_0 - [R]_t / t | t½ = [R]_0 / 2k</div>
+
+                        <h4>First Order Reaction:</h4>
+                        <p>Rate directly proportional hai concentration ke square ke.</p>
+                        <div class="formula-box">k = (2.303/t) * log ([R]_0/[R]_t) | t½ = 0.693 / k</div>
+                        <div class="note-box">
+                            <strong>Graphs:</strong> Zero order: [R] vs Time is straight line (negative slope). First
+                            order: log[R] vs Time is straight line.
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>4. Arrhenius Equation & Temperature</summary>
+                    <div class="content-box">
+                        <p>Temperature badhne se rate badhti hai kyunki zyada molecules activation energy (Ea) ko cross
+                            kar lete hain.</p>
+                        <div class="formula-box">
+                            k = A e^(-Ea/RT)<br>
+                            log k = log A - (Ea/2.303R) * (1/T)
+                        </div>
+                        <p><strong>Catalyst:</strong> Ea ko kam karta hai, taaki zyada molecules react kar sakein. Rate
+                            constant (k) badh jata hai.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 4 -->
+            <div class="chapter-card" id="ch4">
+                <h2 class="chapter-title">Chapter 4: d- and f-Block Elements</h2>
+
+                <details>
+                    <summary>1. Transition Metals (d-Block) Properties</summary>
+                    <div class="content-box">
+                        <ul>
+                            <li><strong>Electronic Config:</strong> (n-1)d¹-¹⁰ ns⁰-². Exception: Cr (3d⁵4s¹) aur Cu
+                                (3d¹⁰4s¹).</li>
+                            <li><strong>Variable Oxidation States:</strong> Kyunki ns aur (n-1)d dono electrons lose ho
+                                sakte hain. (Example: Mn -2 se +7 tak).</li>
+                            <li><strong>Coloured Ions:</strong> d-d transition ki wajah se. Agar d-orbital empty (Sc³⁺)
+                                ya fully filled (Zn²⁺) hai, toh colourless honge.</li>
+                            <li><strong>Catalytic Properties:</strong> Enthalpies of activation kam karte hain.
+                                (Example: V₂O₅ in Contact Process, Fe in Haber's Process).</li>
+                            <li><strong>Magnetic Properties:</strong> Unpaired electrons hone par Paramagnetic, paired
+                                hone par Diamagnetic.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. Important Compounds</summary>
+                    <div class="content-box">
+                        <h4>Potassium Dichromate (K₂Cr₂O₇):</h4>
+                        <ul>
+                            <li>Orange crystals, strong oxidizing agent.</li>
+                            <li>Acidic medium mein Cr₂O₇²⁻ (Orange) → Cr³⁺ (Green).</li>
+                            <li><strong>Chromyl Chloride Test:</strong> NaCl + K₂Cr₂O₇ + H₂SO₄ → Red vapours (CrO₂Cl₂)
+                                aate hain ( confirms Cl⁻).</li>
+                        </ul>
+
+                        <h4>Potassium Permanganate (KMnO₄):</h4>
+                        <ul>
+                            <li>Purple crystals, self-indicator in titrations.</li>
+                            <li><strong>Preparation:</strong> Pyrolusite ore (MnO₂) + KOH + O₂ (fusion) → K₂MnO₄
+                                (Green). Electrolytic oxidation se KMnO₄ banta hai.</li>
+                            <li><strong>Uses:</strong> Oxidizing agent, disinfectant.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Lanthanoids & Actinoids</summary>
+                    <div class="content-box">
+                        <h4>Lanthanoid Contraction:</h4>
+                        <p>4f electrons poori tarah se nucleus ko shield nahi kar pate, isliye effective nuclear charge
+                            badh jata hai aur size kam ho jata hai. Is wajah se Zr aur Hf, Nb aur Ta ka same size hota
+                            hai.</p>
+                        <h4>Actinoids:</h4>
+                        <p>Radioactive hote hain. Oxidation states +3 sabse common, lekin +4, +5, +6, +7 bhi milte hain
+                            (jaise U, Pu, Np).</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 5 -->
+            <div class="chapter-card" id="ch5">
+                <h2 class="chapter-title">Chapter 5: Coordination Compounds</h2>
+
+                <details>
+                    <summary>1. Terminology (Kya Kya Hai)</summary>
+                    <div class="content-box">
+                        <ul>
+                            <li><strong>Ligand:</strong> Electron donor jo metal se bind hota hai. (Example: NH₃, H₂O,
+                                CN⁻, CO).</li>
+                            <li><strong>Coordination Number (CN):</strong> Metal ke paas kitne bonds hain.</li>
+                            <li><strong>Coordination Sphere:</strong> Brackets ke andar ka hissa (Central atom +
+                                Ligands).</li>
+                            <li><strong>Counter Ions:</strong> Brackets ke bahar wale ions jo balancing ke liye hote
+                                hain.</li>
+                            <li><strong>Denticity:</strong> Ligand kitne points se bind ho raha hai (Mono, Bi, Tri,
+                                Polydentate).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. IUPAC Nomenclature (Rules)</summary>
+                    <div class="content-box">
+                        <ol>
+                            <li>Ligands ko alphabetical order mein likho.</li>
+                            <li>Phir Central Atom ka naam.</li>
+                            <li>Oxidation state Roman numerals mein brackets mein.</li>
+                            <li>Cation pehle, Anion baad mein.</li>
+                        </ol>
+                        <div class="note-box">
+                            Example: [Co(NH₃)₆]Cl₃ -> Hexaamminecobalt(III) chloride.
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Isomerism</summary>
+                    <div class="content-box">
+                        <h4>Structural Isomerism:</h4>
+                        <ul>
+                            <li>Linkage Isomerism: NO₂ (Nitro) vs ONO (Nitrito).</li>
+                            <li>Coordination Isomerism: Cation aur Anion dono metals hone.</li>
+                            <li>Ionisation Isomerism: Counter ion change karta hai.</li>
+                        </ul>
+                        <h4>Stereoisomerism:</h4>
+                        <ul>
+                            <li>Geometrical (Cis-Trans): Square planar aur Octahedral mein common.</li>
+                            <li>Optical: Mirror images (Non-superimposable). Chiral molecules hoti hain.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>4. Bonding Theories (VBT & CFT)</summary>
+                    <div class="content-box">
+                        <h4>Werner's Theory:</h4>
+                        <p>Primary Valency (Oxidation state, ionizable) aur Secondary Valency (Coordination number,
+                            non-ionizable).</p>
+
+                        <h4>Crystal Field Theory (CFT):</h4>
+                        <p>Ligands metal ke d-orbitals ko split karte hain.</p>
+                        <ul>
+                            <li><strong>Strong Field Ligands (CN⁻, CO):</strong> Large splitting (Δ₀ large). Low spin
+                                complex (Unpaired electrons kam). Example: [Fe(CN)₆]⁴⁻ (Diamagnetic).</li>
+                            <li><strong>Weak Field Ligands (H₂O, F⁻):</strong> Small splitting. High spin complex
+                                (Unpaired electrons zyada). Example: [Fe(H₂O)₆]²⁺ (Paramagnetic).</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 6 -->
+            <div class="chapter-card" id="ch6">
+                <h2 class="chapter-title">Chapter 6: Haloalkanes and Haloarenes</h2>
+
+                <details>
+                    <summary>1. Classification & Nomenclature</summary>
+                    <div class="content-box">
+                        <p>Alkyl halides ke 3 types:</p>
+                        <ul>
+                            <li><strong>Primary (1°):</strong> Halogen attached to C jo sirf 1 C se juda hai.</li>
+                            <li><strong>Secondary (2°):</strong> Halogen attached to C jo 2 C se juda hai.</li>
+                            <li><strong>Tertiary (3°):</strong> Halogen attached to C jo 3 C se juda hai.</li>
+                        </ul>
+                        <p>Naming: Prefix use hoga (Chloro, Bromo, Iodo).</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. SN1 vs SN2 Mechanisms (Crucial)</summary>
+                    <div class="content-box">
+                        <h4>SN2 (Substitution Nucleophilic Bimolecular):</h4>
+                        <ul>
+                            <li>One step mechanism.</li>
+                            <li>Rate = k [RX][Nu⁻].</li>
+                            <li>Backside attack, Inversion of configuration (Walden Inversion).</li>
+                            <li>Order: Methyl > 1° > 2° >>> 3° (3° mein nahi hota).</li>
+                        </ul>
+                        <h4>SN1 (Substitution Nucleophilic Unimolecular):</h4>
+                        <ul>
+                            <li>Two step mechanism (Carbocation intermediate).</li>
+                            <li>Rate = k [RX].</li>
+                            <li>Racemisation (Racemic mixture ban jata hai).</li>
+                            <li>Order: 3° > 2° > 1° (Stable carbocyte chahiye).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Important Reactions & Tests</summary>
+                    <div class="content-box">
+                        <h4>Grignard Reagent:</h4>
+                        <span class="reaction">R-X + Mg (dry ether) → R-Mg-X</span>
+                        <p>Ye bahut reactive hai, organic synthesis mein Carbon-Carbon bond banane ke liye use hota hai.
+                        </p>
+
+                        <h4>Tests:</h4>
+                        <ul>
+                            <li><strong>Lucas Test:</strong> Alcohol mein alkyl halide convert karne ke liye. 3°
+                                instantly, 2° takes 5-10 min, 1° no reaction (at room temp).</li>
+                            <li><strong>Finkelstein Reaction:</strong> R-Cl + NaI (acetone) → R-I (NaCl precipitates).
+                            </li>
+                            <li><strong>Swarts Reaction:</strong> R-Cl + AgF → R-F.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 7 -->
+            <div class="chapter-card" id="ch7">
+                <h2 class="chapter-title">Chapter 7: Alcohols, Phenols & Ethers</h2>
+
+                <details>
+                    <summary>1. Alcohols (Reactions & Prep)</summary>
+                    <div class="content-box">
+                        <h4>Preparation:</h4>
+                        <ul>
+                            <li>Hydroboration-oxidation: Anti-Markovnikov alcohol (1°).</li>
+                            <li>Acid catalyzed hydration: Markovnikov alcohol.</li>
+                            <li>Reduction: Carbonyl compounds (RCHO/RCOR') → NaBH₄ / LiAlH₄ → Alcohol.</li>
+                        </ul>
+                        <h4>Reactions:</h4>
+                        <ul>
+                            <li><strong>Dehydration:</strong> Conc. H₂SO₄, 443K → Alkene (Saytzeff rule - more
+                                substituted alkene).</li>
+                            <li><strong>Oxidation:</strong> PCC → Aldehyde; Acidic K₂Cr₂O₇ → Carboxylic Acid.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. Phenols (Acidity & Reactions)</summary>
+                    <div class="content-box">
+                        <h4>Acidity:</h4>
+                        <p>Phenol alcohol se zyada acidic hai. Kyunki Phenoxide ion resonance se stabilize ho jata hai.
+                            Electron withdrawing groups (-NO₂) acidity badha dete hain.</p>
+
+                        <h4>Electrophilic Substitution:</h4>
+                        <ul>
+                            <li><strong>Nitration:</strong> Dilute HNO₃ → o-Nitrophenol + p-Nitrophenol.</li>
+                            <li><strong>Kolbe's Reaction:</strong> Phenoxide + CO₂ → Salicylic Acid
+                                (Ortho-hydroxybenzoic acid).</li>
+                            <li><strong>Reimer-Tiemann:</strong> Phenol + CHCl₃ + NaOH → Salicylaldehyde (Aldehyde
+                                group).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Ethers</summary>
+                    <div class="content-box">
+                        <h4>Williamson's Synthesis:</h4>
+                        <p>Best method to make unsymmetrical ethers.</p>
+                        <span class="reaction">R-X + R'-O⁻Na⁺ → R-O-R' + NaX</span>
+                        <div class="warning-box">
+                            <strong>Important:</strong> 3° alkyl halide use mat karo, elimination (alkene) ho jayega.
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 8 -->
+            <div class="chapter-card" id="ch8">
+                <h2 class="chapter-title">Chapter 8: Aldehydes, Ketones & Carboxylic Acids</h2>
+
+                <details>
+                    <summary>1. Aldehydes vs Ketones (Structure & Reactivity)</summary>
+                    <div class="content-box">
+                        <p>Dono mein carbonyl group (>C=O) hota hai.</p>
+                        <ul>
+                            <li><strong>Aldehydes (R-CHO):</strong> Terminal H atom hota hai. Zyada reactive. Easily
+                                oxidized (Reducing agents).</li>
+                            <li><strong>Ketones (R-CO-R):</strong> No terminal H. Kam reactive. Difficult to oxidize.
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. Nucleophilic Addition Reaction</summary>
+                    <div class="content-box">
+                        <p>C=O bond polar hota hai. Carbon +ve (electrophile), Oxygen -ve. Nucleophile (+ve charge wala)
+                            Carbon par attack karta hai.</p>
+                        <h4>Important Reagents:</h4>
+                        <ul>
+                            <li>HCN → Cyanohydrin formation.</li>
+                            <li>NaHSO₃ → Bisulphite adduct (crystalline solid).</li>
+                            <li>Grignard Reagent → Secondary/Tertiary alcohols.</li>
+                            <li>Derivatives: 2,4-DNP (Orange crystals), Oxime, Semicarbazone, Hydrazone.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Special Reactions</summary>
+                    <div class="content-box">
+                        <h4>Aldol Condensation:</h4>
+                        <p>2 molecules of Aldehyde/Ketone (having α-hydrogen) mix karke β-hydroxyaldehyde/ketone banate
+                            hain. Heat denge toh Alkene banega.</p>
+
+                        <h4>Cannizzaro Reaction:</h4>
+                        <p>Aldehyde jisme α-hydrogen nahi hota (jaise HCHO, C₆H₅CHO), base ke saath self-oxidation aur
+                            self-reduction karta hai.</p>
+                        <span class="reaction">2 HCHO + NaOH → CH₃OH + HCOONa</span>
+
+                        <h4>Carboxylic Acids:</h4>
+                        <p>Acidic nature (RCOOH ⇌ RCOO⁻ + H⁺). H-bonding ki wajah se high boiling point.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 9 -->
+            <div class="chapter-card" id="ch9">
+                <h2 class="chapter-title">Chapter 9: Amines</h2>
+
+                <details>
+                    <summary>1. Structure & Classification</summary>
+                    <div class="content-box">
+                        <p>Nitrogen ke aas paas groups ke hisaab se:</p>
+                        <ul>
+                            <li><strong>Primary (1°):</strong> R-NH₂</li>
+                            <li><strong>Secondary (2°):</strong> R₂NH</li>
+                            <li><strong>Tertiary (3°):</strong> R₃N</li>
+                        </ul>
+                        <p>Nitrogen sp³ hybridized hota hai, pyramidal shape (105° bond angle, lone pair repulsion).</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. Basicity Order (Most Asked)</summary>
+                    <div class="content-box">
+                        <p>Basicity ka matlab H⁺ accept karne ki power.</p>
+                        <h4>Gaseous Phase:</h4>
+                        <p>(CH₃)₃N > (CH₃)₂NH > CH₃NH₃ > NH₃ (Inductive effect dominates).</p>
+                        <h4>Aqueous Solution:</h4>
+                        <p>(CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃ <br>(Reason: 2° amine stable ion bana leta hai + Solvation
+                            effect).</p>
+                        <h4>Aromatic Amines:</h4>
+                        <p>Ph-NH₂ < NH₃ (Aniline weak base hai kyuki lone pair resonance mein involvement ho jati
+                                hai).</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Reactions & Diazonium Salts</summary>
+                    <div class="content-box">
+                        <h4>Hoffmann Bromamide Degradation:</h4>
+                        <p>Amide ko 1° amine mein badalne wala reaction (1 carbon less).</p>
+                        <span class="reaction">RCONH₂ + Br₂ + 4NaOH → RNH₂ + Na₂CO₃ + 2NaBr + 2H₂O</span>
+
+                        <h4>Diazonium Salts (ArN₂⁺X⁻):</h4>
+                        <p>Benzene diazonium chloride unstable hota hai, isliye 0-5°C par banate hain.</p>
+                        <ul>
+                            <li><strong>Sandmeyer Reaction:</strong> CuCl/CuBr use karke Cl/Br replace karna.</li>
+                            <li><strong>Gatterberg Reaction:</strong> CuCN/HCl use karke CN lagana.</li>
+                            <li><strong>Coupling Reaction:</strong> Phenol/Amine se milke Azodye (rang) banate hain.
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CHAPTER 10 -->
+            <div class="chapter-card" id="ch10">
+                <h2 class="chapter-title">Chapter 10: Biomolecules</h2>
+
+                <details>
+                    <summary>1. Carbohydrates (Glucose & Fructose)</summary>
+                    <div class="content-box">
+                        <div class="formula-box">(CH₂O)n</div>
+                        <h4>Glucose Structure:</h4>
+                        <ul>
+                            <li>Open chain (Fischer projection) aur Cyclic (Haworth projection).</li>
+                            <li>α-D-Glucose (OH below plane at C1) vs β-D-Glucose (OH above plane at C1).</li>
+                            <li><strong>Mutarotation:</strong> Pure α ya β glucose solution mein rakhne do, specific
+                                rotation change hota hai (equilibrium mixture ban jata hai).</li>
+                        </ul>
+                        <h4>Disaccharides:</h4>
+                        <ul>
+                            <li><strong>Sucrose:</strong> Non-reducing sugar (Glc + Fru).</li>
+                            <li><strong>Maltose:</strong> Reducing sugar (Glc + Glc).</li>
+                            <li><strong>Lactose:</strong> Reducing sugar (Gal + Glc).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. Proteins (Amino Acids)</summary>
+                    <div class="content-box">
+                        <p>Amino acids α-amino carboxylic acids hote hain.</p>
+                        <h4>Structure of Protein:</h4>
+                        <ul>
+                            <li><strong>Primary:</strong> Amino acids ki sequence (Peptide bond).</li>
+                            <li><strong>Secondary:</strong> α-Helix (Right handed) ya β-Pleated Sheet (H-bonding).</li>
+                            <li><strong>Tertiary:</strong> 3D folding (Disulfide bonds, H-bonds, etc).</li>
+                            <li><strong>Quaternary:</strong> Multiple subunits (e.g., Hemoglobin).</li>
+                        </ul>
+                        <h4>Denaturation:</h4>
+                        <p>Protein ka 2°, 3°, 4° structure bigad jana (biological activity khatam), lekin 1° structure
+                            rehta hai. (Example: Egg boiling).</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. Vitamins & Nucleic Acids</summary>
+                    <div class="content-box">
+                        <h4>Vitamins Classification:</h4>
+                        <ul>
+                            <li><strong>Fat Soluble:</strong> A, D, E, K (Stored in body).</li>
+                            <li><strong>Water Soluble:</strong> B complex, C (Excreted out).</li>
+                        </ul>
+                        <h4>Nucleic Acids (DNA/RNA):</h4>
+                        <ul>
+                            <li><strong>DNA:</strong> Deoxyribose sugar, Double helix, Genetic info store karta hai.
+                            </li>
+                            <li><strong>RNA:</strong> Ribose sugar, Single strand, Protein synthesis mein kaam aata hai.
+                            </li>
+                        </ul>
+                        <p>Base pairing (Chargaff's rule): A=T, G≡C.</p>
+                    </div>
+                </details>
+            </div>
+
         </div>
 
-        <!-- CHAPTER 8 -->
-        <div class="chapter-card" id="ch8">
-            <h2 class="chapter-title">Chapter 8: Aldehydes, Ketones & Carboxylic Acids</h2>
+        <footer>
+            <p>Chemistry MasterClass | 2023 Revision Edition</p>
+        </footer>
 
-            <details>
-                <summary>1. Aldehydes vs Ketones (Structure & Reactivity)</summary>
-                <div class="content-box">
-                    <p>Dono mein carbonyl group (>C=O) hota hai.</p>
-                    <ul>
-                        <li><strong>Aldehydes (R-CHO):</strong> Terminal H atom hota hai. Zyada reactive. Easily oxidized (Reducing agents).</li>
-                        <li><strong>Ketones (R-CO-R):</strong> No terminal H. Kam reactive. Difficult to oxidize.</li>
-                    </ul>
-                </div>
-            </details>
+    </body>
 
-            <details>
-                <summary>2. Nucleophilic Addition Reaction</summary>
-                <div class="content-box">
-                    <p>C=O bond polar hota hai. Carbon +ve (electrophile), Oxygen -ve. Nucleophile (+ve charge wala) Carbon par attack karta hai.</p>
-                    <h4>Important Reagents:</h4>
-                    <ul>
-                        <li>HCN → Cyanohydrin formation.</li>
-                        <li>NaHSO₃ → Bisulphite adduct (crystalline solid).</li>
-                        <li>Grignard Reagent → Secondary/Tertiary alcohols.</li>
-                        <li>Derivatives: 2,4-DNP (Orange crystals), Oxime, Semicarbazone, Hydrazone.</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Special Reactions</summary>
-                <div class="content-box">
-                    <h4>Aldol Condensation:</h4>
-                    <p>2 molecules of Aldehyde/Ketone (having α-hydrogen) mix karke β-hydroxyaldehyde/ketone banate hain. Heat denge toh Alkene banega.</p>
-                    
-                    <h4>Cannizzaro Reaction:</h4>
-                    <p>Aldehyde jisme α-hydrogen nahi hota (jaise HCHO, C₆H₅CHO), base ke saath self-oxidation aur self-reduction karta hai.</p>
-                    <span class="reaction">2 HCHO + NaOH → CH₃OH + HCOONa</span>
-
-                    <h4>Carboxylic Acids:</h4>
-                    <p>Acidic nature (RCOOH ⇌ RCOO⁻ + H⁺). H-bonding ki wajah se high boiling point.</p>
-                </div>
-            </details>
-        </div>
-
-        <!-- CHAPTER 9 -->
-        <div class="chapter-card" id="ch9">
-            <h2 class="chapter-title">Chapter 9: Amines</h2>
-
-            <details>
-                <summary>1. Structure & Classification</summary>
-                <div class="content-box">
-                    <p>Nitrogen ke aas paas groups ke hisaab se:</p>
-                    <ul>
-                        <li><strong>Primary (1°):</strong> R-NH₂</li>
-                        <li><strong>Secondary (2°):</strong> R₂NH</li>
-                        <li><strong>Tertiary (3°):</strong> R₃N</li>
-                    </ul>
-                    <p>Nitrogen sp³ hybridized hota hai, pyramidal shape (105° bond angle, lone pair repulsion).</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>2. Basicity Order (Most Asked)</summary>
-                <div class="content-box">
-                    <p>Basicity ka matlab H⁺ accept karne ki power.</p>
-                    <h4>Gaseous Phase:</h4>
-                    <p>(CH₃)₃N > (CH₃)₂NH > CH₃NH₃ > NH₃ (Inductive effect dominates).</p>
-                    <h4>Aqueous Solution:</h4>
-                    <p>(CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃ <br>(Reason: 2° amine stable ion bana leta hai + Solvation effect).</p>
-                    <h4>Aromatic Amines:</h4>
-                    <p>Ph-NH₂ < NH₃ (Aniline weak base hai kyuki lone pair resonance mein involvement ho jati hai).</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Reactions & Diazonium Salts</summary>
-                <div class="content-box">
-                    <h4>Hoffmann Bromamide Degradation:</h4>
-                    <p>Amide ko 1° amine mein badalne wala reaction (1 carbon less).</p>
-                    <span class="reaction">RCONH₂ + Br₂ + 4NaOH → RNH₂ + Na₂CO₃ + 2NaBr + 2H₂O</span>
-                    
-                    <h4>Diazonium Salts (ArN₂⁺X⁻):</h4>
-                    <p>Benzene diazonium chloride unstable hota hai, isliye 0-5°C par banate hain.</p>
-                    <ul>
-                        <li><strong>Sandmeyer Reaction:</strong> CuCl/CuBr use karke Cl/Br replace karna.</li>
-                        <li><strong>Gatterberg Reaction:</strong> CuCN/HCl use karke CN lagana.</li>
-                        <li><strong>Coupling Reaction:</strong> Phenol/Amine se milke Azodye (rang) banate hain.</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
-
-        <!-- CHAPTER 10 -->
-        <div class="chapter-card" id="ch10">
-            <h2 class="chapter-title">Chapter 10: Biomolecules</h2>
-
-            <details>
-                <summary>1. Carbohydrates (Glucose & Fructose)</summary>
-                <div class="content-box">
-                    <div class="formula-box">(CH₂O)n</div>
-                    <h4>Glucose Structure:</h4>
-                    <ul>
-                        <li>Open chain (Fischer projection) aur Cyclic (Haworth projection).</li>
-                        <li>α-D-Glucose (OH below plane at C1) vs β-D-Glucose (OH above plane at C1).</li>
-                        <li><strong>Mutarotation:</strong> Pure α ya β glucose solution mein rakhne do, specific rotation change hota hai (equilibrium mixture ban jata hai).</li>
-                    </ul>
-                    <h4>Disaccharides:</h4>
-                    <ul>
-                        <li><strong>Sucrose:</strong> Non-reducing sugar (Glc + Fru).</li>
-                        <li><strong>Maltose:</strong> Reducing sugar (Glc + Glc).</li>
-                        <li><strong>Lactose:</strong> Reducing sugar (Gal + Glc).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>2. Proteins (Amino Acids)</summary>
-                <div class="content-box">
-                    <p>Amino acids α-amino carboxylic acids hote hain.</p>
-                    <h4>Structure of Protein:</h4>
-                    <ul>
-                        <li><strong>Primary:</strong> Amino acids ki sequence (Peptide bond).</li>
-                        <li><strong>Secondary:</strong> α-Helix (Right handed) ya β-Pleated Sheet (H-bonding).</li>
-                        <li><strong>Tertiary:</strong> 3D folding (Disulfide bonds, H-bonds, etc).</li>
-                        <li><strong>Quaternary:</strong> Multiple subunits (e.g., Hemoglobin).</li>
-                    </ul>
-                    <h4>Denaturation:</h4>
-                    <p>Protein ka 2°, 3°, 4° structure bigad jana (biological activity khatam), lekin 1° structure rehta hai. (Example: Egg boiling).</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>3. Vitamins & Nucleic Acids</summary>
-                <div class="content-box">
-                    <h4>Vitamins Classification:</h4>
-                    <ul>
-                        <li><strong>Fat Soluble:</strong> A, D, E, K (Stored in body).</li>
-                        <li><strong>Water Soluble:</strong> B complex, C (Excreted out).</li>
-                    </ul>
-                    <h4>Nucleic Acids (DNA/RNA):</h4>
-                    <ul>
-                        <li><strong>DNA:</strong> Deoxyribose sugar, Double helix, Genetic info store karta hai.</li>
-                        <li><strong>RNA:</strong> Ribose sugar, Single strand, Protein synthesis mein kaam aata hai.</li>
-                    </ul>
-                    <p>Base pairing (Chargaff's rule): A=T, G≡C.</p>
-                </div>
-            </details>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>Chemistry MasterClass | 2023 Revision Edition</p>
-    </footer>
-
-</body>
 </html>
