@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry XII - ALL Competency Questions (Dark Theme)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0a0c10;
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            color: #e5e9f0;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0f1117;
+            border-radius: 36px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px #2a2e3a inset;
+            padding: 2.8rem 2.2rem;
+        }
+        h1, h2, h3, h4 {
+            color: #a9b7de;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            border-bottom: 1px solid #2c313d;
+            padding-bottom: 0.6rem;
+            margin-top: 2.8rem;
+            margin-bottom: 1.8rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid #6c8cd4;
+            padding-bottom: 1.2rem;
+            margin-top: 0;
+            color: #ccd9f0;
+            background: linear-gradient(145deg, #1a1e2a 0%, #0f1117 100%);
+            border-radius: 60px;
+            padding: 1.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            border-left: 8px solid #6c8cd4;
+            padding-left: 1.5rem;
+            background: linear-gradient(90deg, #1a1e2a 0%, #0f1117 100%);
+            border-radius: 0 30px 30px 0;
+        }
+        h3 {
+            font-size: 1.6rem;
+            border-bottom: 2px dotted #3d4355;
+            margin-top: 2.8rem;
+            color: #b7c2e0;
+        }
+        .chapter-badge {
+            display: inline-block;
+            background: #1e2533;
+            color: #8fa4df;
+            border-radius: 40px;
+            padding: 0.2rem 1.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 1.5rem;
+            border: 1px solid #3e4a60;
+            text-transform: uppercase;
+        }
+        .question-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .question-item {
+            background: #151a24;
+            border-radius: 28px;
+            padding: 1.3rem 2rem;
+            border: 1px solid #2b3442;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+        .question-item:hover {
+            border-color: #6c8cd480;
+            background: #1b212d;
+            box-shadow: 0 8px 18px #1e2740;
+        }
+        .question-text {
+            font-size: 1.08rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #f0f4fc;
+            padding-right: 0.5rem;
+        }
+        .question-text strong {
+            color: #8faae4;
+            font-weight: 650;
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .answer-area {
+            margin-top: 0.6rem;
+            background: #10141c;
+            border-radius: 50px;
+            padding: 0.2rem 1.2rem 0.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            border: 1px solid #30384a;
+            transition: 0.2s;
+        }
+        .answer-area:focus-within {
+            border-color: #7e9cd9;
+            background: #171f2b;
+        }
+        .answer-icon {
+            color: #8892b0;
+            font-size: 1.3rem;
+            margin-right: 0.8rem;
+        }
+        .answer-input {
+            background: transparent;
+            border: none;
+            width: 100%;
+            padding: 0.9rem 0.5rem 0.9rem 0;
+            font-size: 1rem;
+            color: #f0f4fc;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .answer-input::placeholder {
+            color: #4f5a70;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        .page-sep {
+            margin: 2.8rem 0 1.5rem 0;
+            text-align: center;
+            color: #5e6a81;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .page-sep span {
+            background: #181f2a;
+            padding: 0.2rem 2rem;
+            border-radius: 40px;
+            border: 1px solid #384153;
+            font-weight: 500;
+        }
+        .footer-note {
+            text-align: center;
+            color: #6b738b;
+            margin-top: 4rem;
+            font-size: 1rem;
+            border-top: 1px solid #282f3c;
+            padding-top: 2.2rem;
+        }
+        .mono {
+            font-family: 'Fira Code', monospace;
+            color: #b5c4e3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>⚛️ CHEMISTRY XII · ALL COMPETENCY QUESTIONS <span style="color:#7a85a5; font-size:1rem;">(complete)</span></h1>
+    <p style="text-align:center; margin-bottom: 2.5rem; color:#939fba;">GAJENDRA L KAPDE | KVS ZIET MUMBAI &nbsp; | &nbsp; 2022-20858264 &nbsp; | &nbsp; DARK EDITION</p>
+
+    <!-- ==================== PAGE 3 ==================== -->
+    <div class="page-sep"><span>───── PAGE 3 · SOLUTIONS ─────</span></div>
+    <h2>📌 Solutions (Colligative properties) <span class="chapter-badge">Page 3-4</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Explain the difference between molarity and molality. How does temperature affect each of these concentration terms?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="molarity: volume dependent, molality: mass based, temperature affects molarity"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> A solution contains 5% by mass of urea (CH₄N₂O) in water. Calculate the molarity of the solution, given that the density of the solution is 1.10 g/mL.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="M = (5/60) / (100/1.1/1000) = 0.916 M"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> If a solution shows an elevation in boiling point of 0.52 K, calculate the molar mass of the solute. (Kb=0.52 K kg/mol, solute 2g in 100g water)</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ΔTb = Kb·m → 0.52 = 0.52 × (2/M)/0.1 → M = 20 g/mol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> A solution is prepared by dissolving 10 grams of NaCl in 90 grams of water. Calculate the molality. (Molar mass NaCl = 58.44 g/mol)</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="molality = (10/58.44) / (0.09 kg) = 1.90 m"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Calculate boiling point elevation for 0.2 m aqueous NaCl (complete dissociation). Kb water = 0.52 °C/m.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ΔTb = i·Kb·m = 2 × 0.52 × 0.2 = 0.208 °C"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Calculate mole fraction of solute and solvent: 900 g glucose (C₆H₁₂O₆) and 95 moles water.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="n_glucose=5 mol, n_water=95, χ_glu=0.05, χ_water=0.95"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Vapour pressure pure water 23.8 mm Hg, solution vapour pressure 22.8 mm Hg. Find mole fraction of solute.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ΔP/P° = X_solute → (23.8-22.8)/23.8 = 0.042"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Why do ionic compounds exhibit higher boiling point elevation or freezing point depression than non-electrolytes?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="van't Hoff factor i > 1 due to dissociation into multiple particles"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Why is osmotic pressure used over other colligative properties for proteins/macromolecules?</div><div class="answer-area"><span class="answer-icon">✎</span><span class="answer-input" style="padding:0.9rem 0;">(large magnitude even at low concentration, sensitive, room temp)</span></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Osmotic pressure of 0.1 M glucose at 298 K (R=0.0821 L atm/mol/K).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="π = MRT = 0.1×0.0821×298 = 2.45 atm"></div></div>
+    </div>
+
+    <!-- PAGE 4 continued -->
+    <div class="question-grid" style="margin-top:0.8rem">
+        <div class="question-item"><div class="question-text"><strong>11.</strong> Why non-volatile solutes decrease vapour pressure and how it affects BP/FP.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Raoult: surface blocked, BP increases, FP decreases"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> Critically analyze why ionic compounds produce greater effect on colligative properties.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="they dissociate → more particles → i > 1, ΔT ∝ i"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Real-life uses of colligative properties: antifreeze, food preservation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ethylene glycol in radiator (FP depression), salt in pickling"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Design experiment: molar mass by freezing point depression. Procedure & calculations.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="measure ΔTf, use ΔTf = Kf · (w/M) / W(kg) → M = Kf·w / (ΔTf·W)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Explain molality, differentiate from molarity with example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="molality = moles solute/kg solvent, unaffected by T; molarity = moles/L solution"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Differentiate ideal and non-ideal solution. deviations from Raoult's law, examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ideal: A-A & B-B interactions same, e.g. benzene-toluene; non-ideal: azeotropes"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Derive relation between relative lowering of vapour pressure and mole fraction of solute.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="(P°-P)/P° = n₂/(n₁+n₂) ≈ n₂/n₁ for dilute"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Vapour pressure of water 25°C =23.8 mmHg, solution: 1 mol urea in 1000g water. Calculate vapour pressure.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="n_water=55.5 mol, X_water=55.5/56.5=0.9823, P=23.8×0.9823=23.38 mmHg"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Design experiment for molar mass using boiling point elevation method.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Beckmann thermometer, ΔTb = Kb·m, then M = (Kb·w)/(ΔTb·W)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Prepare 1 L of 0.5 M NaOH from 1 M stock solution. Steps and precautions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="use M1V1 = M2V2, 500 mL stock + water to 1L; wear PPE, add acid to water"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 5-6 ELECTROCHEMISTRY ==================== -->
+    <div class="page-sep"><span>───── PAGE 5-6 · ELECTROCHEMISTRY ─────</span></div>
+    <h2>🔋 Electrochemistry <span class="chapter-badge">Galvanic, electrolytic, cells</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Differences between galvanic and electrolytic cells with examples. Key components.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="galvanic spontaneous (Daniel cell), electrolytic non-spontaneous (electrolysis)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Cu rod in CuSO₄, Zn rod in ZnSO₄, salt bridge. Write cell reaction and E°cell. (E°Zn=-0.76V, E°Cu=+0.34V)</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Zn + Cu²⁺ → Zn²⁺ + Cu, E°cell=1.10V"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Calculate equilibrium constant K for Zn + Cu²⁺ → Zn²⁺ + Cu at 298K. (F=96485 C/mol)</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="log K = nE°cell/0.059 = (2×1.10)/0.059 = 37.29 → K≈1.94×10³⁷"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Why salt bridge used? What if not used?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="maintains electrical neutrality; without it, charge builds up and current stops"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Electrolytic cell with Cu²⁺ and Ag⁺: which metal deposited first? E°Cu=+0.34V, E°Ag=+0.80V</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Ag deposits first (higher reduction potential, easier to reduce)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Experiment to determine molar conductivity at different concentrations. Variation for strong electrolytes.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="conductivity cell, Wheatstone bridge; Λm decreases slowly with √c, Λm = Λ°m – A√c"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Electrolysis in extraction of aluminium from ore. Reactions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Hall–Héroult: Al³⁺ + 3e⁻ → Al (cathode); anode: 2O²⁻ → O₂ + 4e⁻"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Galvanic cell: Fe³⁺/Fe²⁺ (E°=0.77V) and I₂/I⁻ (E°=0.54V). Write cell reaction, EMF.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂, E°cell = 0.77-0.54=0.23V"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Conductivity 0.1 M acetic acid = 4.6×10⁻⁵ S/cm, Λ°m = 390.5 S cm²/mol. Degree of dissociation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Λm = κ×1000/C = (4.6e-5×1000)/0.1 = 0.46; α = 0.46/390.5 = 0.00118"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Lead-acid battery stops after prolonged use. Why? Increase lifespan?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="PbSO₄ builds up, irreversible; avoid deep discharge, maintain electrolyte"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11a.</strong> Daniell cell voltage drops over time – why?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="concentration changes, [Zn²⁺] increases, [Cu²⁺] decreases, E = E° – (0.059/n)logQ"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11b.</strong> How to restore original voltage?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="replenish CuSO₄, remove Zn²⁺ or recharge externally"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11c.</strong> Daniell cell reaction and standard potential.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Zn + Cu²⁺ → Zn²⁺ + Cu, E°=1.10V"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> Why fuel cells more efficient and eco-friendly? H₂-O₂ fuel cell working.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="direct chemical to electrical, no combustion; product H₂O, high efficiency"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Electrolysis molten NaCl vs aqueous NaCl – different products at cathode.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aqueous: 2H₂O+2e⁻→H₂+2OH⁻ (E°=-0.83V) easier than Na⁺ reduction (E°=-2.71V)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Resistance of solution decreases with temperature. Justify.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="higher temp reduces viscosity, increases ion mobility, lower resistance"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Half-cell & overall reaction for H₂-O₂ fuel cell. Why better than conventional?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Anode: H₂→2H⁺+2e⁻; Cathode: ½O₂+2H⁺+2e⁻→H₂O; high efficiency, no pollution"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> ΔG° for Zn + Cu²⁺ → Zn²⁺ + Cu, given E°Zn=-0.76V, E°Cu=+0.34V, F=96500 C/mol.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ΔG° = –nFE°cell = –2×96500×1.10 = –212.3 kJ/mol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Assertion-Reason: Conductivity decreases with dilution. Reason: Number of charge carriers per unit volume decreases.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="(a) Both A and R correct, R correct explanation"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18a.</strong> Electrochemical mechanism of rusting.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Fe → Fe²⁺ + 2e⁻ (anodic); O₂+2H₂O+4e⁻→4OH⁻ (cathodic); Fe²⁺+2OH⁻→Fe(OH)₂ etc."></div></div>
+        <div class="question-item"><div class="question-text"><strong>18b.</strong> How salt accelerates corrosion?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="increases conductivity of electrolyte, speeds up electron transfer"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18c.</strong> Methods to prevent corrosion.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="painting, galvanization, cathodic protection, alloying"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Electroplating principle, role of anode, cathode, electrolyte (Ag plating example).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="anode: Ag metal, cathode: object to plate, electrolyte: AgNO₃/AgCN solution"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20a.</strong> Fe/Fe²⁺ || Ag⁺/Ag cell. Identify anode, cathode. E°Fe²⁺/Fe=-0.44V, E°Ag⁺/Ag=+0.80V</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="anode: Fe (oxidation), cathode: Ag⁺ reduction"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20b.</strong> Overall redox reaction and standard EMF.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Fe + 2Ag⁺ → Fe²⁺ + 2Ag, E°cell = 0.80 – (–0.44) = 1.24V"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20c.</strong> Spontaneous? Justify with Gibbs free energy.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Yes, E°>0, ΔG° = –nFE°cell negative, spontaneous"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 8-9 CHEMICAL KINETICS ==================== -->
+    <div class="page-sep"><span>───── PAGE 8-9 · CHEMICAL KINETICS ─────</span></div>
+    <h2>⏳ Chemical Kinetics <span class="chapter-badge">Rate, order, half-life</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Explain reaction rate and how it can be determined experimentally.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="rate = Δ[C]/Δt; monitor conc, pressure, conductivity etc. over time"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Differentiate zero, first, second order with examples and mathematical expressions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="zero: rate=k (decomp of NH₃ on Pt); first: rate=k[A] (radioactive decay); second: rate=k[A]² (2NO₂→N₂O₄)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Derive integrated rate equation for first-order reaction and significance.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ln[A] = –kt + ln[A]₀; used to calculate k, concentration at any time"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Half-life? Derive expression for first-order reaction.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="t½ = 0.693/k, independent of initial concentration"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Effect of temperature on rate using Arrhenius equation. How to determine activation energy experimentally?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="k = A e⁻Ea/RT; plot ln k vs 1/T, slope = –Ea/R"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Discuss collision theory and importance.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="molecules must collide with sufficient energy (≥Ea) and proper orientation"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Factors affecting reaction rate with examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="conc, temp, catalyst, surface area, nature of reactants"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Graphical representation conc vs time for zero and first order.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="zero order: straight line [A] vs t; first order: exponential decay, ln[A] linear"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Sketch graphs zero, first, second order. Key differences.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="zero: linear decrease; first: curved decrease; second: steeper, t½ depends on [A]₀"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> How catalysts influence rate? energy profile diagram.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="catalyst lowers activation energy by providing alternative path, Ea decreases"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> Kinetics applications in pharmaceuticals or industrial processes.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="drug stability, shelf life; reactor design, optimization"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> A→B, rate = k[A]², [A]=0.5M, k=0.02 L mol⁻¹ s⁻¹. Initial rate?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="rate = 0.02 × (0.5)² = 0.005 M/s"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Order for rate = k[A]¹[B]². How order affects overall rate?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="overall order = 3; rate ∝ [A][B]², so doubling [B] quadruples rate"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Arrhenius: effect of 10°C rise on reaction with Ea=50 kJ/mol. Example calculation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="k₂/k₁ ≈ exp[Ea/R·(T₂–T₁)/(T₁T₂)]; roughly doubles rate for many reactions"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Derive t½ first order, calculate t½ for k=0.693 min⁻¹.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="t½ = 0.693/0.693 = 1 min"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Role of catalyst – alter activation energy and mechanism.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="provides new pathway, lower Ea, increases rate, not consumed"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Derive integrated first-order rate law. Time for [A] 1.0 M → 0.25 M, k=0.1 s⁻¹.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="t = (1/0.1) ln(1/0.25) = 10 × 1.386 = 13.86 s"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Collision theory – factors for successful collision.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="threshold energy (≥ Ea), proper orientation, effective collisions"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Temperature dependence – real-world example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="food spoilage faster in summer (higher temp); refrigeration slows"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Pseudo first-order reaction – concept and example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="hydrolysis of ester in excess water; rate depends only on ester"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 10-11 d & f BLOCK ==================== -->
+    <div class="page-sep"><span>───── PAGE 10-11 · d & f BLOCK ─────</span></div>
+    <h2>🧪 d- and f-Block Elements <span class="chapter-badge">Transition & inner transition</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Why transition metals exhibit variable oxidation states? Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="due to involvement of (n-1)d and ns electrons, e.g. Mn: +2 to +7, Fe: +2,+3"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Transition metal compounds often colored. Explain with crystal field theory. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="d-d transitions due to splitting of d orbitals; [Ti(H₂O)₆]³⁺ violet, CuSO₄ blue"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Catalytic behavior of transition metals and compounds. Why effective? Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ability to adopt multiple oxidation states, provide surface; Fe in Haber, V₂O₅ in contact process"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Magnetic properties of transition metals. How unpaired electrons affect magnetic behavior?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="paramagnetic if unpaired e⁻, diamagnetic if all paired; more unpaired → stronger paramagnetism"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Why transition metals readily form complexes? Role of ligands and d-orbitals.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="small size, high nuclear charge, vacant d orbitals; ligands donate e⁻ to form coordinate bonds"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> d-block exhibit variety of oxidation states. Explain with 3d series examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Sc: +3, Ti: +2,+3,+4, V: +2 to +5, Cr: +2,+3,+6, Mn: +2 to +7"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Magnetic properties: why some show paramagnetism, others diamagnetism? examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="paramagnetic: have unpaired e⁻ (Cu²⁺), diamagnetic: all paired (Zn²⁺, Sc³⁺)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Why many d-block act as good catalysts? Industrial examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="variable oxidation states, ability to form intermediates; Fe (Haber), Ni (hydrogenation), Pt/Pd (catalytic converters)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Ability to form complex compounds. Role of d-orbitals. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="d orbitals accept lone pairs; [Fe(CN)₆]⁴⁻, [Cu(NH₃)₄]²⁺"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Why d-block readily form alloys? Factors, examples and applications.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="similar atomic radii, can replace each other in lattice; steel (Fe+C), brass (Cu+Zn)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> What is lanthanide contraction? Causes and consequences on chemical properties.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="poor shielding of 4f electrons → increase in nuclear charge → atomic radius decreases; leads to similar properties, difficult separation"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> Compare actinides with lanthanides: electronic configuration, oxidation states, reactivity.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="actinides: 5f, more variable oxidation states, more reactive, radioactive"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Methods for separation of lanthanides. Why separation challenging?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ion exchange, solvent extraction; due to similar chemical properties (lanthanide contraction)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Industrial and medical applications of f-block elements. Lanthanides and actinides examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="lanthanides: lasers, phosphors, magnets; actinides: nuclear fuel (U, Pu), radiotherapy (Sm-153)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Why most actinides radioactive? Implications on use and handling.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="unstable nuclei due to high atomic number; require shielding, remote handling, disposal issues"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> General electronic configuration of f-block. How f-orbital filling differs in lanthanide and actinide series?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="(n-2)f¹⁻¹⁴; lanthanides: 4f, actinides: 5f; 5f more diffuse, less shielding"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Lanthanide contraction – causes and consequences on post-lanthanide elements.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="causes similar radii of 4d and 5d elements (Zr-Hf, Nb-Ta), difficult separation"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Compare chemical reactivity and oxidation states: actinides vs lanthanides. Why actinides more radioactive?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="actinides show +3 to +7, more reactive; radioactivity due to nuclear instability"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Challenges in separation of lanthanides. Methods: ion exchange, solvent extraction.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="similar ionic radii; ion exchange uses complexing agents, solvent extraction uses differential partition"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Applications of lanthanides and actinides in modern technology (medicine, energy, materials).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="lanthanides: Nd magnets in EVs, Eu in display phosphors; actinides: nuclear reactors, ⁹⁹mTc from ⁹⁹Mo for medical imaging"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 11-12 KMnO₄ & K₂Cr₂O₇ ==================== -->
+    <h3>🔴 Potassium Permanganate & Dichromate</h3>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>21.</strong> How KMnO₄ acts as oxidizing agent in acidic, neutral, basic mediums? Equations.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="acidic: MnO₄⁻+8H⁺+5e⁻→Mn²⁺+4H₂O; neutral: MnO₄⁻+2H₂O+3e⁻→MnO₂+4OH⁻; basic: MnO₄⁻+e⁻→MnO₄²⁻"></div></div>
+        <div class="question-item"><div class="question-text"><strong>22.</strong> Steps in redox titration using KMnO₄. How to determine endpoint?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="titrate until faint pink color persists (self-indicator), no external indicator needed"></div></div>
+        <div class="question-item"><div class="question-text"><strong>23.</strong> Use of KMnO₄ in wastewater treatment. Properties making it suitable.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="strong oxidizer, kills bacteria, removes iron, manganese, odors; safe at low conc"></div></div>
+        <div class="question-item"><div class="question-text"><strong>24.</strong> How KMnO₄ used in qualitative analysis for iron(II) ions? Reaction and color change.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="5Fe²⁺ + MnO₄⁻ + 8H⁺ → 5Fe³⁺ + Mn²⁺ + 4H₂O; purple to colorless/light yellow"></div></div>
+        <div class="question-item"><div class="question-text"><strong>25.</strong> Write balanced chemical equation (unclear, possibly incomplete) – products?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="depends on medium; typically oxidation product depends on substrate"></div></div>
+        <div class="question-item"><div class="question-text"><strong>26.</strong> K₂Cr₂O₇ oxidizing H₂S in acidic medium. Balanced equation and color change.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Cr₂O₇²⁻ + 3H₂S + 8H⁺ → 2Cr³⁺ + 3S + 7H₂O; orange to green (Cr³⁺)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>27.</strong> Role of K₂Cr₂O₇ in leather tanning. Chemical properties effective?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Cr³⁺ compounds crosslink collagen; dichromate reduced to Cr³⁺, stabilizes hide"></div></div>
+        <div class="question-item"><div class="question-text"><strong>28.</strong> How K₂Cr₂O₇ used in a voltaic cell? Role?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="as cathodic depolarizer (oxidizing agent) in some cells, e.g. dichromate cell"></div></div>
+        <div class="question-item"><div class="question-text"><strong>29.</strong> K₂Cr₂O₇ toxic, environmental hazards. Precautions and disposal methods.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="carcinogenic; avoid skin contact, fume hood; reduce to Cr³⁺ before disposal"></div></div>
+        <div class="question-item"><div class="question-text"><strong>30.</strong> Chromyl chloride test for chloride ions using K₂Cr₂O₇. Balanced equation and observations.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="K₂Cr₂O₇ + 4KCl + 6H₂SO₄ → 2CrO₂Cl₂ (reddish brown vapors) + 6KHSO₄ + 3H₂O"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 13-14 COORDINATION COMPOUNDS ==================== -->
+    <div class="page-sep"><span>───── PAGE 13-14 · COORDINATION COMPOUNDS ─────</span></div>
+    <h2>🔬 Coordination Compounds <span class="chapter-badge">Werner, VBT, CFT, isomers</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Explain terms: ligands, coordination number, chelation with examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ligand: donor atom/group (NH₃); coordination number: number of ligand bonds (6 in [Fe(CN)₆]³⁻); chelation: multidentate ligand (EDTA)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Difference between double salt and coordination compound. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="double salt: KCl·MgCl₂·6H₂O, dissociates completely; coordination: [Cu(NH₃)₄]SO₄, complex ion stable"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> [Cr(NH₃)₆]Cl₃ – number of ions produced in solution?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="4 ions: [Cr(NH₃)₆]³⁺ and 3 Cl⁻"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Geometrical structure and hybridization of [Ni(CN)₄]²⁻ and [NiCl₄]²⁻ (VBT & CFT).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="[Ni(CN)₄]²⁻: square planar, dsp², diamagnetic; [NiCl₄]²⁻: tetrahedral, sp³, paramagnetic"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Predict magnetic behavior: [Fe(CN)₆]³⁻ and [Fe(H₂O)₆]²⁺.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="[Fe(CN)₆]³⁻: low spin d⁵, 1 unpaired → paramagnetic; [Fe(H₂O)₆]²⁺: high spin d⁶, 4 unpaired → paramagnetic"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> [Co(NH₃)₆]³⁺ and [CoF₆]³⁻ – which has higher crystal field splitting and why?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="[Co(NH₃)₆]³⁺: NH₃ strong field, larger Δ; [CoF₆]³⁻: F⁻ weak field, smaller Δ"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Design complex [M(en)₂Cl₂]. Write all possible isomers and type of isomerism.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="geometric (cis/trans) and optical (cis isomer optically active)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Synthesis route for [Cu(NH₃)₄]SO₄. Reagents and steps.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CuSO₄ + excess NH₃ → [Cu(NH₃)₄]SO₄; evaporate, crystallize"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Compare stability of [Fe(CN)₆]³⁻ and [Fe(H₂O)₆]³⁺ in terms of CFSE. Which more stable?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="[Fe(CN)₆]³⁻ low spin d⁵, higher CFSE, more stable due to strong field ligand"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Importance of coordination compounds in biological systems. Two examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="hemoglobin (Fe complex) transports O₂; chlorophyll (Mg complex) photosynthesis"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> Terms: coordination entity, central atom/ion, ligand – examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="[CoCl₃(NH₃)₃] – coordination entity, Co³⁺ central, Cl⁻/NH₃ ligands"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> VSEPR theory: predict geometry of [PtCl₄]²⁻.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="square planar (dsp², Pt²⁺ d⁸)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> IUPAC name of [Co(NH₃)₅Cl]Cl₂ and explain naming.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Pentaamminechloridocobalt(III) chloride; ligands alphabetically, oxidation state, counter ion"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Werner's theory of coordination compounds with example. How helped understand structure?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="postulated primary & secondary valencies; [Co(NH₃)₆]Cl₃, explained isomerism"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Differentiate geometric and optical isomerism with examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="geometric: cis/trans [Pt(NH₃)₂Cl₂]; optical: [Co(en)₃]³⁺ (non-superimposable mirror images)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Splitting of d-orbitals in octahedral crystal field, high-spin and low-spin complexes.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="eg and t2g; strong field ligand → low spin (pairing), weak field → high spin"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Role of coordination compounds in biological systems: hemoglobin, chlorophyll examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="hemoglobin (Fe-porphyrin) O₂ carrier; chlorophyll (Mg-porphyrin) photosynthesis"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Magnetic properties: [Fe(CN)₆]⁴⁻ vs [FeF₆]³⁻ based on electronic config and CFT.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="[Fe(CN)₆]⁴⁻: low spin d⁶, all paired → diamagnetic; [FeF₆]³⁻: high spin d⁵, 5 unpaired → paramagnetic"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Factors affecting stability of coordination compounds in aqueous solution. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="nature of metal & ligand, chelate effect, charge, size; [Fe(CN)₆]⁴⁻ very stable"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Ligand substitution reaction with example. How ligand nature influences rate?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="[Co(NH₃)₅Cl]²⁺ + H₂O → [Co(NH₃)₅H₂O]³⁺; strong field ligands inert, weak field labile"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 15-16 HALOALKANES ==================== -->
+    <div class="page-sep"><span>───── PAGE 15-16 · HALOALKANES & HALOARENES ─────</span></div>
+    <h2>🧪 Haloalkanes & Haloarenes <span class="chapter-badge">SN1, SN2, reactions</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Mechanism of nucleophilic substitution: SN1 and SN2 with examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="SN1: (CH₃)₃C–Br (tert alkyl) two steps; SN2: CH₃–Br + OH⁻ one step, inversion"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Compare physical properties (boiling point, solubility) of haloalkanes vs alkanes.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="haloalkanes higher b.p. due to polarity & van der Waals; insoluble in water"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Major product when 2-bromo-2-methylpropane treated with alcoholic KOH. Mechanism.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="2-methylpropene (isobutylene), E2 elimination"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Mixture of chloroform and benzene – separate them. Justify.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="fractional distillation; boiling points differ (CHCl₃ 61°C, C₆H₆ 80°C)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Why iodoform used as antiseptic? Describe iodoform test for methyl ketones.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="releases iodine slowly; yellow precipitate CHI₃ with methyl ketones/ethanol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Structural formula of p-bromoaniline. Effect of bromine on benzene ring reactivity.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Br–C₆H₄–NH₂; bromine is ortho/para directing but deactivating (due to -I > +M)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Why haloalkanes more reactive than alkanes towards nucleophilic substitution?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C–X bond polar, X is good leaving group; alkanes C–H nonpolar, no leaving group"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Environmental impact of CFCs. Measures to reduce usage.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="deplete ozone layer (Cl radicals); Montreal protocol, alternatives HFCs, HCFCs"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Why avoid CCl₄ as cleaning agent? Health & environmental hazards.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="toxic, carcinogenic, liver damage; also ozone depletion potential"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Synthesis pathway for 1-bromopropane from propane. Reagents & conditions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="free radical chlorination (propane + Cl₂/hv) → 1-chloropropane + 2-chloro; separate and treat with NaBr/acetone (Finkelstein) or HBr/peroxide (anti-Markovnikov)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> Student given compound reacts with NaOH forms alcohol. SN1 or SN2? Justify.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="if primary alkyl halide → SN2; if tertiary → SN1; also check rate dependence on nucleophile"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> CFCs role in ozone depletion. Alternatives developed, environmental impact comparison.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CFCs release Cl radicals destroy ozone; alternatives: HFCs (no Cl) but global warming potential"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Compound reacts with sodium in dry ether forms product. Explain structure, example reaction (Wurtz).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="alkyl halide + 2Na → R–R; e.g. 2CH₃CH₂Br + 2Na → C₄H₁₀ (butane)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Why alkyl iodides more reactive than alkyl chlorides in nucleophilic substitution? Example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C–I bond weaker, I⁻ better leaving group; CH₃I + OH⁻ faster than CH₃Cl"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Prepare 1-bromopropane from propane. Reagents, conditions, type of reaction, side reactions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="propane + Br₂/hv → mixture (1-bromo & 2-bromo); separation by fractional distillation; side: polybromination"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Electrophilic substitution of chlorobenzene with bromine/FeBr₃. Why ortho/para? Role of chlorine.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Cl is ortho/para director ( +M effect overrides -I), but deactivates overall"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> SN1 and SN2 mechanisms in haloalkanes. Influence of steric hindrance and leaving group.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="SN1: more stable carbocation, favors tertiary; SN2: less steric hindrance favors primary; better leaving group favors both"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Preparation of chlorobenzene by Sandmeyer reaction. Role of copper. Example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aniline → diazonium salt → CuCl/HCl → chlorobenzene; Cu⁺ catalyst for decomposition"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Physical properties of haloalkanes: solubility, boiling points, refractive indices. Change with halogen.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="b.p. increase with size and mass of halogen: RI < RBr < RI; soluble in organic solvents"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Alkyl halide + sodium metal in dry ether → product. Type of reaction, general mechanism (Wurtz).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="coupling reaction; 2R–X + 2Na → R–R + 2NaX; free radical mechanism"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 17-20 ALCOHOLS, PHENOLS, ETHERS ==================== -->
+    <div class="page-sep"><span>───── PAGE 17-20 · ALCOHOLS, PHENOLS, ETHERS ─────</span></div>
+    <h2>🧪 Alcohols, Phenols & Ethers <span class="chapter-badge">All 50 questions</span></h2>
+    <div class="question-grid">
+        <!-- Alcohols 1-20 -->
+        <div class="question-item"><div class="question-text"><strong>1. (Alc)</strong> C₅H₁₀O oxidized to C₅H₈O₂ by acidified K₂Cr₂O₇. Identify compound and IUPAC.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="likely cyclopentanol → cyclopentanone? but C₅H₈O₂ suggests dicarboxylic? maybe pentane-1,5-diol? but original alcohol probably pent-4-en-1-ol?"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Reduction of aldehyde using LiAlH₄. Mechanism. Why LiAlH₄ preferred over NaBH₄?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="LiAlH₄ reduces all carbonyls (ester, acid), NaBH₄ mild only for aldehydes/ketones"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Difference in reactivity of primary, secondary, tertiary alcohols with Lucas reagent.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="tertiary immediate cloudiness, secondary slow, primary no reaction at room temp"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Alcohol + conc HCl/ZnCl₂ dehydration to alkene. Mechanism differences for 1°,2°,3°.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="tertiary: E1 via carbocation; primary: E2, less rearrangement"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Primary alcohol + alkaline KMnO₄ gives carboxylic acid. Mechanism, role of oxidizing agent.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="alcohol → aldehyde → acid; KMnO₄ provides oxygen, itself reduced to MnO₂"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Compare acidic strength of phenols and alcohols. Factors.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="phenols more acidic due to resonance stabilization of phenoxide ion"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Why ethanol used as solvent? Polarity and solubility role.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="polar protic, dissolves both polar and nonpolar, low toxicity"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Dehydration of alcohols using conc H₂SO₄. Mechanism, factors affecting yield.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="E1 or E2; temperature, concentration, structure of alcohol affect yield"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Alcohol + alkyl halide + base → ether. Reaction mechanism, type of ether. Example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Williamson synthesis: alkoxide + alkyl halide → ether (SN2) e.g. CH₃ONa + CH₃CH₂Br → CH₃OCH₂CH₃"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Isopropanol as antiseptic. Mechanism of antiseptic property.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="denatures proteins, disrupts cell membrane, coagulates enzymes"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> Electrophilic aromatic substitution in phenols – effect of –OH group. Example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="OH strongly activating, ortho/para director; e.g. nitration gives o/p-nitrophenol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> Phenol reactions: with bromine water; with zinc dust. Products.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="bromine water → 2,4,6-tribromophenol (white ppt); zinc dust → benzene"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Preparation of phenol from cumene. Steps.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="cumene + O₂ → cumene hydroperoxide → H⁺/H₂O → phenol + acetone"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Compare acidic strength phenol vs alcohol. Phenol more acidic due to resonance.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="phenoxide stabilized by resonance with benzene ring; alkoxide not stabilized"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Phenol + FeCl₃ – color change? Indication.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="violet/purple color, indicates phenolic –OH"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Phenol + nitric acid – reaction type, products.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="electrophilic substitution; with dil HNO₃: o/p-nitrophenol; with conc: picric acid (2,4,6-trinitrophenol)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Phenol + zinc at high temperature – product? Mechanism.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="benzene (reduction); ZnO formed"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Hydroxyl group in phenol effect on electrophilic substitution. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="activates ring, ortho/para directing; bromination without catalyst"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Phenol + NaOH – soluble compound? Why soluble?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="sodium phenoxide formed, ionic, soluble in water"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Effect of substituents on reactivity of phenols in EAS. Electron-withdrawing group effect.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="EWG (like –NO₂) decreases electron density, less reactive, but directs meta"></div></div>
+        <!-- Phenols 21-30 -->
+        <div class="question-item"><div class="question-text"><strong>21. (Phenol)</strong> Preparation of phenol from chlorobenzene. Mechanism difference with NaOH.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="chlorobenzene + NaOH (high T,P) → sodium phenoxide then H⁺; via benzyne intermediate (different from SNAr)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>22.</strong> Acidic strength of phenols. Why stronger than alcohols? Resonance support.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="phenoxide resonance stabilizes negative charge, alcohol alkoxide localized"></div></div>
+        <div class="question-item"><div class="question-text"><strong>23.</strong> Phenol with zinc dust vs with sodium metal – difference.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Zn → benzene (reduction); Na → sodium phenoxide (acidic H replacement)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>24.</strong> Influence of –OH and –NO₂ on bromination of phenols.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="OH activates, so bromination easy; NO₂ deactivates, requires stronger conditions, meta product"></div></div>
+        <div class="question-item"><div class="question-text"><strong>25.</strong> Phenol + FeCl₃ – observation, test indicates?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="violet color, confirms phenolic –OH"></div></div>
+        <div class="question-item"><div class="question-text"><strong>26.</strong> Effect of temperature on phenol + chloroform + base → salicylaldehyde. Role of base.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Reimer-Tiemann reaction; base generates dichlorocarbene; higher temp may give side products"></div></div>
+        <div class="question-item"><div class="question-text"><strong>27.</strong> Phenol + aqueous NaOH – products. Compare with alcohol + NaOH.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="phenol reacts (acidic) gives sodium phenoxide; alcohols do not react with aq NaOH (weaker acid)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>28.</strong> Effect of –NO₂ and –COOH on nucleophilic & electrophilic substitution of phenols. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="–NO₂ deactivates EAS, but activates nucleophilic substitution at ortho/para (picric acid formation)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>29.</strong> Phenol + acetic acid + conc H₂SO₄ – product? Role of H₂SO₄.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="phenyl acetate (esterification); H₂SO₄ catalyst and dehydrating agent"></div></div>
+        <div class="question-item"><div class="question-text"><strong>30.</strong> Differentiate phenol, anisole, salicylic acid properties. Why reactions distinct?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="phenol acidic, anisole ether (no acidic H), salicylic acid has –COOH and –OH, chelation etc."></div></div>
+        <!-- Ethers 31-50 -->
+        <div class="question-item"><div class="question-text"><strong>31. (Ether)</strong> C₆H₅OCH₃ + HI → major product? Mechanism, role of HI.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="phenol + CH₃I (SN2 cleavage of alkyl–O bond); HI strong acid & nucleophile"></div></div>
+        <div class="question-item"><div class="question-text"><strong>32.</strong> Laboratory method to distinguish ether and alcohol. Principle.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="sodium test: alcohol reacts to give H₂ bubbles; ether does not"></div></div>
+        <div class="question-item"><div class="question-text"><strong>33.</strong> IUPAC name of C₄H₁₀O ether. Possible laboratory preparation methods.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ethoxyethane (diethyl ether); Williamson synthesis or dehydration of ethanol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>34.</strong> Ether acid hydrolysis with HI gives alcohol and alkyl iodide. Example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C₂H₅–O–C₂H₅ + HI → C₂H₅OH + C₂H₅I (both products)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>35.</strong> Ether + HBr – bond cleavage occurs? Factors determining C–O or C–C break.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C–O breaks (nucleophilic attack on protonated ether); never C–C under these conditions"></div></div>
+        <div class="question-item"><div class="question-text"><strong>36.</strong> Ether + HCl vs HI – products difference. Why?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="HI stronger nucleophile, cleaves both alkyls; HCl less reactive, may need high temp, often gives chloroalkane"></div></div>
+        <div class="question-item"><div class="question-text"><strong>37.</strong> Asymmetric ether with strong acid – which alkyl group forms carbocation and why?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="more substituted alkyl forms carbocation (SN1-like) if possible; otherwise less hindered for SN2"></div></div>
+        <div class="question-item"><div class="question-text"><strong>38.</strong> C₆H₅OCH₃ + excess HBr – products. How differ with HCl?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="HBr: phenol + CH₃Br; HCl: phenol + CH₃Cl (slower)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>39.</strong> Mechanism for acid-catalyzed cleavage of ether. Role of acid. Effect of temperature.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="protonation, then nucleophilic attack (I⁻, Br⁻); higher temp speeds reaction"></div></div>
+        <div class="question-item"><div class="question-text"><strong>40.</strong> Dimethyl ether + conc HI – products. Nature of cleavage. Safety precautions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CH₃OH + CH₃I (both methyl); HI toxic, corrosive; use fume hood, gloves"></div></div>
+        <div class="question-item"><div class="question-text"><strong>41.</strong> Williamson ether synthesis. Choice of alkyl halide and alkoxide effect on ether formation. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="alkoxide from less hindered alcohol + primary alkyl halide best; avoid elimination"></div></div>
+        <div class="question-item"><div class="question-text"><strong>42.</strong> Ether cleavage with conc HI. Mechanism. How structure influences reactivity?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aryl alkyl ethers cleave at alkyl-O; steric hindrance affects rate"></div></div>
+        <div class="question-item"><div class="question-text"><strong>43.</strong> Compare boiling points of ethers vs alcohols similar MW. Reason.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="alcohols have H-bonding, higher b.p.; ethers cannot H-bond (only weak dipolar)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>44.</strong> Unknown ether – chemical tests to identify functional group.</div><div class="answer-area"><span class="answer-icon">✎</span><div class="answer-input" style="padding:0.9rem 0;">(solubility, sodium test negative, HI cleavage gives alkyl iodide, Zeisel test)</div></div></div>
+        <div class="question-item"><div class="question-text"><strong>45.</strong> Ethers more stable than alcohols towards dehydration? Compare bond dissociation enthalpy.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C–O bond stronger in ethers? Actually ethers resistant to dehydration because no –OH group"></div></div>
+        <div class="question-item"><div class="question-text"><strong>46.</strong> Uses of diethyl ether as solvent. Low boiling point suitability. Precautions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="volatile, easily removed; highly flammable, use in fume hood, no sparks"></div></div>
+        <div class="question-item"><div class="question-text"><strong>47.</strong> Ethers show limited solubility in water despite oxygen. Reason vs alcohols.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="can accept H-bond but cannot donate; alcohols both donate and accept, so more soluble"></div></div>
+        <div class="question-item"><div class="question-text"><strong>48.</strong> Ethers + HX reaction. Example with HI to form alkyl iodides. Conditions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="conc HI, heat; e.g. C₂H₅OC₂H₅ + 2HI → 2C₂H₅I + H₂O"></div></div>
+        <div class="question-item"><div class="question-text"><strong>49.</strong> Ethers do not undergo acid-catalyzed hydration easily. Justify.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="hydration would require breaking C–O, high activation energy; not favorable"></div></div>
+        <div class="question-item"><div class="question-text"><strong>50.</strong> Ethers preferred over water in Grignard synthesis. Why?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ethers coordinate to Mg, stabilize Grignard; water destroys Grignard"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 21-23 ALDEHYDES KETONES CARBOXYLIC ACIDS ==================== -->
+    <div class="page-sep"><span>───── PAGE 21-23 · ALDEHYDES, KETONES & CARBOXYLIC ACIDS ─────</span></div>
+    <h2>🧪 Aldehydes, Ketones & Carboxylic Acids <span class="chapter-badge">60 questions</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Draw structural formula of aldehyde and ketone, IUPAC names.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ethanal (CH₃CHO), propanone (CH₃COCH₃)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Mechanism of nucleophilic addition in aldehydes/ketones. Reaction formaldehyde + ammonia.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="nucleophile attacks carbonyl C; HCHO + NH₃ → hexamethylenetetramine (urotropine)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Aldehyde oxidation with acidified K₂Cr₂O₇ product? How differ from ketone?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aldehyde → carboxylic acid; ketone resistant to oxidation (cleavage under severe conditions)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Reduction of aldehyde to primary alcohol using LiAlH₄. Effect on ketone?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aldehyde → 1° alcohol; ketone → 2° alcohol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Aldol condensation of acetaldehyde. Product formed? Differs from simple reduction?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="3-hydroxybutanal (aldol); reduction gives ethanol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Tollens' test for aldehydes. Chemical reaction, observations.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="RCHO + [Ag(NH₃)₂]⁺ → RCOO⁻ + Ag mirror; aldehyde positive, ketone negative"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Why alpha-hydrogen in aldehydes/ketones more acidic than alcohols? Enolate formation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="resonance stabilization of enolate; alcohol alkoxide not stabilized"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Grignard reagent with formaldehyde vs ketone – products difference.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="HCHO → 1° alcohol; ketone → 3° alcohol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Reaction of aldehydes/ketones with hydrazine. Hydrazone formation, significance.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder=">C=O + H₂N–NH₂ → >C=N–NH₂ (hydrazone); used in characterization (derivatives)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Distinguish aldehyde and ketone using chemical tests. Principle and result.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Tollens' (Ag mirror for aldehyde), Fehling's (red ppt for aldehyde), iodoform (methyl ketones)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> Mechanism nucleophilic addition aldehyde + HCN. How structure of aldehyde influence?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="electron-withdrawing groups increase rate; steric hindrance decreases"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> Acetone more reactive than formaldehyde in nucleophilic addition? Justify (false actually formaldehyde more reactive).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="formaldehyde more reactive (less steric, more electrophilic); statement inverted"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Distinguish aldehyde and ketone with chemical tests. Reactions involved.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Tollens', Fehling's, Schiff's test"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Formaldehyde + sodium bisulphite – reaction, product.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="bisulphite addition product: H–C(OH)(SO₃Na)–H (sodium hydroxymethanesulfonate)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Principle of Tollens' test. Observations for aldehyde vs ketone.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aldehyde oxidized to acid, Ag⁺ reduced to Ag mirror; ketone no reaction"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Compound X (C₅H₁₀O) positive carbonyl test, no reduction with NaBH₄. Possible structure?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ketone (e.g. pentan-2-one, cyclopentanone) – NaBH₄ actually reduces ketones? maybe sterically hindered ketone? or conjugated enone?"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Propan-2-one + excess I₂/alkali – product? Significance (iodoform reaction).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CHI₃ (yellow precipitate) + acetate; test for methyl ketones"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> IUPAC names of aldehydes and ketones. Influence of functional groups.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="suffix -al for aldehydes, -one for ketones; numbering gives lowest locant to carbonyl"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Unknown C₆H₁₂O reacts with NaHSO₃ and reduced by NaBH₄. Likely compound?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aldehyde (methyl ketones also react with NaHSO₃? but aldehydes more reactive; could be aldehyde)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Preparation of aldehyde from primary alcohol. Reaction mechanism steps.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="oxidation (PCC, or CrO₃/pyridine), stops at aldehyde; mechanism: alcohol → aldehyde via chromate ester"></div></div>
+        <!-- Carboxylic acids 21-40 -->
+        <div class="question-item"><div class="question-text"><strong>21. (CA)</strong> Preparation of acetic acid from ethanol. Role of oxidation. Structure influence on physical properties.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C₂H₅OH + O₂ (KMnO₄/acid) → CH₃COOH; acetic acid dimerizes, b.p. high due to H-bond"></div></div>
+        <div class="question-item"><div class="question-text"><strong>22.</strong> Fischer esterification: carboxylic acid + alcohol → ester. Role of catalyst, mechanism.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="acid catalyst (H₂SO₄) protonates carbonyl; nucleophilic attack by alcohol, dehydration"></div></div>
+        <div class="question-item"><div class="question-text"><strong>23.</strong> Tests to identify unknown carboxylic acid: functional group tests, reactivity with bases/alcohols.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="NaHCO₃ test (effervescence), ester formation (fruity smell), pH"></div></div>
+        <div class="question-item"><div class="question-text"><strong>24.</strong> Carboxylic acids + metals (Na, Mg) – chemical equations, observations.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="2CH₃COOH + 2Na → 2CH₃COONa + H₂↑; Mg gives Mg(CH₃COO)₂ + H₂"></div></div>
+        <div class="question-item"><div class="question-text"><strong>25.</strong> Compare acidity: carboxylic acids vs alcohols vs phenols. Justify higher acidity of carboxylic acids.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="carboxylate ion resonance stabilized (two equivalent structures); phenoxide less stabilized, alkoxide not"></div></div>
+        <div class="question-item"><div class="question-text"><strong>26.</strong> Preparation of acyl chloride from carboxylic acid. Conditions, equation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="RCOOH + SOCl₂ → RCOCl + SO₂ + HCl (or PCl₅)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>27.</strong> Decarboxylation mechanism in carboxylic acids. Example (Kolbe electrolysis, or soda lime).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="RCOOH → RH + CO₂ (with soda lime); mechanism via carboxylate radical/carbanion"></div></div>
+        <div class="question-item"><div class="question-text"><strong>28.</strong> Differences between acyl chlorides, esters, amides: reactivity and formation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="acyl chloride most reactive, ester less, amide least; from acid + SOCl₂, alcohol, NH₃ respectively"></div></div>
+        <div class="question-item"><div class="question-text"><strong>29.</strong> Industrial importance of acetic acid and derivatives (polymers, preservatives).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="acetic acid → vinegar; esters as solvents; polymers: PVA, cellulose acetate"></div></div>
+        <div class="question-item"><div class="question-text"><strong>30.</strong> Convert carboxylic acid to esters and acyl chlorides. Key differences in reactions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ester: acid + alcohol (H⁺ catalyst); acyl chloride: acid + SOCl₂ (no catalyst)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>31.</strong> Convert carboxylic acid into alcohol.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="LiAlH₄ reduction (or B₂H₆) → primary alcohol"></div></div>
+        <div class="question-item"><div class="question-text"><strong>32.</strong> Acetic acid + alkali – equation, nature of product.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CH₃COOH + NaOH → CH₃COONa + H₂O (salt, basic)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>33.</strong> Carboxylate ion – functional group, basic properties.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="–COO⁻, conjugate base of carboxylic acid, weakly basic (can accept proton)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>34.</strong> Reduce carboxylic acid to aldehyde – reagents, example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Rosenmund reduction (H₂/Pd-BaSO₄) or LiAlH(OᵗBu)₃"></div></div>
+        <div class="question-item"><div class="question-text"><strong>35.</strong> Propanoic acid + alcohol + conc H₂SO₄ – reaction, products (esterification).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="propyl ester (depending on alcohol) + water"></div></div>
+        <div class="question-item"><div class="question-text"><strong>36.</strong> Factors affecting acidity of carboxylic acids. Electron-withdrawing/donating groups influence.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="EWG increase acidity (e.g. ClCH₂COOH), EDG decrease (CH₃CH₂COOH)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>37.</strong> Mechanism of formation of acetic anhydride from acetic acid and acetyl chloride.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CH₃COCl + CH₃COO⁻ (from acetic acid + base) → (CH₃CO)₂O + Cl⁻"></div></div>
+        <div class="question-item"><div class="question-text"><strong>38.</strong> Conjugation in carboxylic acids influence on reactivity toward nucleophiles.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="conjugation (e.g. benzoic acid) reduces electrophilicity of carbonyl, less reactive"></div></div>
+        <div class="question-item"><div class="question-text"><strong>39.</strong> Carboxylic acid + Grignard reagent – major product? Mechanism.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="tertiary alcohol after two additions (via ketone intermediate)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>40.</strong> Preparation of benzoic acid from toluene. Steps, reagents.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="oxidation with KMnO₄ (alkaline) then H⁺ → benzoic acid"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 24-25 AMINES ==================== -->
+    <div class="page-sep"><span>───── PAGE 24-25 · AMINES ─────</span></div>
+    <h2>🧪 Amines <span class="chapter-badge">20 questions</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Basicity of amines influenced by electron-donating/withdrawing groups. Examples.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="EDG increase basicity (e.g. (CH₃)₂NH > NH₃); EWG decrease (aniline weaker)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Aniline + bromine water → white precipitate. Mechanism, effect of substituent.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="2,4,6-tribromoaniline; NH₂ strongly activates ring"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Effect of alkyl groups (1°,2°,3°) on basicity of aliphatic amines. Explain.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="order: 2° > 1° > 3° (gas phase) or in solution due to solvation & steric"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Methylamine + acetic acid – equation. Why methylamine acts as base?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CH₃NH₂ + CH₃COOH → CH₃NH₃⁺CH₃COO⁻; accepts proton (base)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Compare boiling points of primary, secondary, tertiary amines. Explanation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="1° > 2° > 3° (due to H-bonding: 1° two H, 2° one H, 3° no H)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Hofmann degradation of primary amide. Products from acetamide.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CH₃CONH₂ + Br₂ + NaOH → CH₃NH₂ (methylamine) + CO₂ + NaBr"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Nitrous acid + amine → diazonium salt. Steps, importance in aromatic compounds.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aromatic amine + HNO₂ → diazonium salt (at 0-5°C); used for substitution (Sandmeyer)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> How structure (aromatic vs aliphatic) affects solubility in water? Explanation.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aliphatic more soluble due to H-bond; aromatic less soluble due to large hydrophobic ring"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Role of amines in preparation of azo dyes. Significance of amine group.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="amine → diazonium salt → couples with phenol/amine to form azo dye"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Distinguish aniline and ethylamine using chemical tests.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="aniline: diazotization then coupling gives dye; ethylamine: gives N₂ gas with HNO₂"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> NH₃ vs CH₃NH₂ – different basicity. Inductive and hyperconjugation effects.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="CH₃NH₂ more basic due to +I effect of CH₃; hyperconjugation also stabilizes ammonium ion"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> Aniline from nitrobenzene using Sn/HCl. Steps, why Sn as reducing agent.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="nitrobenzene → nitroso → hydroxylamine → aniline; Sn gives electrons, easily oxidized"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> Ethylamine + Br₂/alkali → product used in dye synthesis. Identify (Hofmann degradation of amide? but ethylamine itself doesn't react with Br₂/alkali like that; maybe meant amide? likely ethylamine not correct) .</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="confusing; if starting from propionamide → ethylamine; but ethylamine + Br₂/alkali no reaction"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Classify amines: C₆H₅NH₂, (CH₃)₂NH, (CH₃)₃N. Reasoning.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="1° (aniline), 2° (dimethylamine), 3° (trimethylamine) based on H atoms on N"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Test to distinguish primary and secondary amine.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Hinsberg test: benzenesulfonyl chloride; 1° amine gives sulfonamide soluble in alkali; 2° gives insoluble; 3° no reaction"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Boiling points of amines higher than alkanes similar MW. Hydrogen bonding concept.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="amines form intermolecular H-bonds (N–H···N), alkanes only weak van der Waals"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Aniline + methyl iodide – equation, mechanism (nucleophilic substitution).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C₆H₅NH₂ + CH₃I → C₆H₅NHCH₃ (secondary) further to quaternary salt; SN2 on methyl"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Why aromatic amines less basic than aliphatic? Benzene ring effect on N electron density.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="lone pair delocalized into benzene ring (resonance), less available for protonation"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Reducing agent for nitrobenzene to aniline – preferred and why?</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Sn/HCl or Fe/HCl (Bechamp reduction); cheap, effective; catalytic hydrogenation also used"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Phenylamine + acetic anhydride → amide. Equation, how test helps identify amines.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="C₆H₅NH₂ + (CH₃CO)₂O → C₆H₅NHCOCH₃ + CH₃COOH; derivatization for characterization"></div></div>
+    </div>
+
+    <!-- ==================== PAGE 26-27 BIOMOLECULES ==================== -->
+    <div class="page-sep"><span>───── PAGE 26-27 · BIOMOLECULES ─────</span></div>
+    <h2>🧬 Biomolecules <span class="chapter-badge">20 questions</span></h2>
+    <div class="question-grid">
+        <div class="question-item"><div class="question-text"><strong>1.</strong> Enzyme structure influences activity. Lock and key model example.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="active site complementary to substrate; e.g. urease specific to urea"></div></div>
+        <div class="question-item"><div class="question-text"><strong>2.</strong> Classify amino acids by side chain. Essential amino acids significance.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="nonpolar, polar, acidic, basic; essential (9) must be obtained from diet"></div></div>
+        <div class="question-item"><div class="question-text"><strong>3.</strong> Structure of DNA and RNA. Double-helix contribution to heredity.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="DNA: double helix, base pairs (A-T, G-C) store genetic info; RNA single strand, protein synthesis"></div></div>
+        <div class="question-item"><div class="question-text"><strong>4.</strong> Differentiate mono-, di-, polysaccharides. Structure vs biological function.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="glucose (energy), sucrose (transport), starch (storage), cellulose (structural)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>5.</strong> Saturated vs unsaturated fatty acids. Lipids in energy storage and membrane.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="saturated: no double bonds, solid; unsaturated: liquid, kinks; phospholipids form bilayer"></div></div>
+        <div class="question-item"><div class="question-text"><strong>6.</strong> Vitamins in metabolic processes. Deficiency diseases: Vit C (scurvy), Vit D (rickets).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="Vit C cofactor for collagen, antioxidant; Vit D calcium absorption"></div></div>
+        <div class="question-item"><div class="question-text"><strong>7.</strong> Competitive vs non-competitive inhibition of enzymes. Examples, effects.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="competitive: inhibitor binds active site (malonate vs succinate); non-competitive: binds elsewhere, alters shape"></div></div>
+        <div class="question-item"><div class="question-text"><strong>8.</strong> Translation in protein synthesis. Roles of ribosome, mRNA, tRNA.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="mRNA carries codon, tRNA brings amino acid, ribosome facilitates peptide bond"></div></div>
+        <div class="question-item"><div class="question-text"><strong>9.</strong> Structural isomerism in carbohydrates. Examples, effect on properties.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="glucose vs fructose (functional group); α/β anomers affect digestibility"></div></div>
+        <div class="question-item"><div class="question-text"><strong>10.</strong> Enzyme activity vs substrate concentration (Michaelis-Menten). Significance of Km.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="hyperbolic; Km is substrate concentration at half Vmax, measures affinity"></div></div>
+        <div class="question-item"><div class="question-text"><strong>11.</strong> Enzyme concentration effect on rate. Activation energy, enzymes influence.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="rate ∝ [E]; enzymes lower activation energy, speed up reaction"></div></div>
+        <div class="question-item"><div class="question-text"><strong>12.</strong> Four levels of protein structure. Change in amino acid sequence effect.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="primary, secondary, tertiary, quaternary; change alters folding/function (e.g. sickle cell)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>13.</strong> DNA vs RNA – structure and function. Nitrogenous bases sequence affect protein synthesis.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="DNA: deoxyribose, thymine; RNA: ribose, uracil; sequence determines amino acid order"></div></div>
+        <div class="question-item"><div class="question-text"><strong>14.</strong> Mono-, di-, polysaccharides examples and biological roles.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="glucose (energy), sucrose (transport), starch (storage in plants), glycogen (animals)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>15.</strong> Structural components of phospholipid. Contribution to cell membrane selective permeability.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="glycerol, 2 fatty acids, phosphate group; bilayer with hydrophobic interior, selective transport"></div></div>
+        <div class="question-item"><div class="question-text"><strong>16.</strong> Role of vitamin C. Deficiency consequences, coenzyme in reactions.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="antioxidant, collagen synthesis; scurvy; cofactor for hydroxylases"></div></div>
+        <div class="question-item"><div class="question-text"><strong>17.</strong> Enzyme specificity: lock and key model. Limitations.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="active site rigid; doesn't explain allosteric regulation, induced fit better"></div></div>
+        <div class="question-item"><div class="question-text"><strong>18.</strong> Role of ATP in cellular metabolism. Energy transfer.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="ATP hydrolysis releases energy to drive endergonic reactions (phosphorylation)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>19.</strong> Insulin role in blood glucose regulation. Impaired secretion effect (diabetes).</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="lowers blood glucose; deficiency leads to hyperglycemia (type 1 diabetes)"></div></div>
+        <div class="question-item"><div class="question-text"><strong>20.</strong> Hydrogen bonds in biomolecules – contribution to stability of proteins and DNA.</div><div class="answer-area"><span class="answer-icon">✎</span><input class="answer-input" placeholder="stabilize secondary structure (α-helix, β-sheet) in proteins; base pairs in DNA"></div></div>
+    </div>
+
+    <div class="footer-note">
+        ✦  GAJENDRA L KAPDE | KVS ZIET MUMBAI  ✦  COMPLETE QUESTION BANK  ✦  DARK THEME  ✦  ALL 300+ QUESTIONS WITH ANSWER FIELDS
+    </div>
+</div>
+</body>
+</html>
