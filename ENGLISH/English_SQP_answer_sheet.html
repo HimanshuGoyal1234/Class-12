@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>English SQP - Answer Key (Dark Mode)</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                background-color: #1a1e24;
+                color: #e0e0e0;
+                margin: 20px;
+                padding: 20px;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                background-color: #1e242b;
+                border-radius: 12px;
+            }
+
+            h1 {
+                text-align: center;
+                color: #8bb9fe;
+                border-bottom: 3px solid #4b7bec;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            h2 {
+                background-color: #2a313c;
+                padding: 10px 15px;
+                border-left: 6px solid #4b7bec;
+                margin-top: 35px;
+                margin-bottom: 20px;
+                color: #9fc5ff;
+                border-radius: 0 8px 8px 0;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            h3 {
+                color: #7ee0b5;
+                margin-top: 25px;
+                border-bottom: 1px dashed #3a4a5a;
+                padding-bottom: 5px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+                background-color: #2e3b4e;
+                padding: 5px 15px;
+                border-radius: 30px;
+                display: inline-block;
+                margin-bottom: 20px;
+                color: #b8d0f0;
+                border: 1px solid #4b7bec;
+            }
+
+            .question-block {
+                background-color: #252c35;
+                border: 1px solid #3a4350;
+                border-radius: 10px;
+                padding: 15px 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: transform 0.1s ease;
+            }
+
+            .question-block:hover {
+                border-color: #5f7fb0;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            }
+
+            .ques {
+                font-weight: 700;
+                color: #aac8ff;
+                margin-bottom: 8px;
+                font-size: 1.05rem;
+            }
+
+            .ans {
+                margin-left: 25px;
+                padding: 12px 15px;
+                background-color: #1f2a33;
+                border-left: 5px solid #3fcb8a;
+                border-radius: 0 8px 8px 0;
+                color: #d0e0f0;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+            }
+
+            .mcq-options {
+                margin-left: 30px;
+                list-style-type: upper-alpha;
+                color: #c0cbd8;
+            }
+
+            .note {
+                background-color: #2d2a1f;
+                padding: 8px 15px;
+                border-left: 4px solid #f1c40f;
+                font-style: italic;
+                color: #e5d9b0;
+                border-radius: 0 6px 6px 0;
+            }
+
+            hr {
+                border: 0;
+                height: 1px;
+                background-image: linear-gradient(to right, rgba(100, 150, 255, 0), rgba(100, 150, 255, 0.5), rgba(100, 150, 255, 0));
+            }
+
+            footer {
+                margin-top: 40px;
+                text-align: center;
+                font-size: 0.9rem;
+                color: #99a8b9;
+                border-top: 1px solid #3a4552;
+                padding-top: 15px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 15px 0;
+                background-color: #252e38;
+            }
+
+            th,
+            td {
+                border: 1px solid #3e4b5a;
+                padding: 10px;
+                text-align: left;
+                color: #d5e2f0;
+            }
+
+            th {
+                background-color: #2e3b4a;
+                color: #b8d4ff;
+                font-weight: 600;
+            }
+
+            .bordered-box {
+                border: 2px solid #4b7bec;
+                padding: 15px;
+                font-family: monospace;
+                background-color: #1b232c;
+                width: fit-content;
+                margin: 10px 0;
+                color: #c5dcff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(75, 123, 236, 0.2);
+            }
+
+            a {
+                color: #8bb9fe;
+            }
+
+            ::selection {
+                background-color: #4b7bec;
+                color: #fff;
+            }
+
+            /* width */
+            ::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #1e242b;
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #3e5068;
+                border-radius: 6px;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #5f7fb0;
+            }
+
+            /* For inline code or references */
+            code {
+                background-color: #2c3642;
+                padding: 2px 6px;
+                border-radius: 4px;
+                color: #ffd966;
+                border: 1px solid #4e5f73;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a href="ENGLISH SQP.pdf" class="file-link"
+            style="box-shadow: 5px 5px 10px black; display:block;text-align:center;background:#e54646;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">CLICK
+            TO OPEN QUESTION PAPER</a>
+        <h1>🌙 ENGLISH CORE (SQP) – FULL SOLUTIONS <span
+                style="font-size:0.9rem; background:#2a333f; padding:3px 10px; border-radius:20px; margin-left:10px;">DARK
+                THEME</span></h1>
+        <p style="text-align:center; color:#b0c4de;"><strong>Section A (Reading), Section B (Creative Writing), Section
+                C (Literature)</strong> — All questions answered as per CBSE marking scheme.</p>
+
+        <!-- SECTION A -->
+        <h2>🔹 SECTION A: READING SKILLS (22 marks)</h2>
+
+        <!-- PASSAGE 1 -->
+        <h3>📄 Passage 1: Smartphones & Connectivity</h3>
+        <div class="question-block">
+            <div class="ques">I. According to paragraph 1, what effect do smartphone notifications have on the people in
+                the room?</div>
+            <div class="ans">Notifications constantly interrupt conversations, making people instinctively reach for
+                their phones. The 'ping' and vibration distract them from real-life interactions, blurring the boundary
+                between virtual and real.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">II. How does the author use the metaphor of 'autumn leaves in the wind' to interpret the
+                passing of time?</div>
+            <div class="ans">Just as autumn leaves drift away aimlessly and are lost, moments slip away unnoticed while
+                people are engrossed in their smartphones. It suggests time passes fleetingly and irretrievably when we
+                are distracted.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">III. Complete the sentence: Choose the correct response.</div>
+            <div class="ans"><strong>A. a deep (psychological) dependence on technology for a sense of wholeness or
+                    connection.</strong> The analogy points towards psychological dependence, not physical damage.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">IV. Complete suitably with ONE advantage (para 2): Designating specific hours to avoid
+                digital devices can help...</div>
+            <div class="ans">...reduce anxiety and the 'fear of missing out', allowing individuals to be more present
+                and mentally peaceful.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">V. Why does the writer refer to digital noise as 'dissonance'? Choose:</div>
+            <div class="ans"><strong>C. It interferes with our ability to engage with meaningful aspects of our
+                    life.</strong> (Dissonance = harsh combination of sounds, here it disrupts life's true rhythm.)
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">VI. Provide ONE textual evidence that perpetual engagement manifests in the body (para 3).
+            </div>
+            <div class="ans">"The weight of constant connectivity forms a hunch upon our shoulders" – showing physical
+                strain (posture deterioration) due to continuous device use.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">VII. What does 'true rhythm of life' refer to? (para 3-4)</div>
+            <div class="ans">It refers to authentic human experiences, deep connections, and meaningful moments that are
+                lost in the chaos of digital distractions.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">VIII. Complete analogy: whisper : quietly :: loudly : ? (one word from para 4)</div>
+            <div class="ans"><strong>clamour</strong> (whisper is to quietly as clamour is to loudly – antonym context).
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">IX. Why is the statement about 'increasingly isolated in a sea of digital faces' ironic?
+            </div>
+            <div class="ans"><strong>A. Despite the intent to connect more effectively, the result is the
+                    opposite.</strong> – irony lies in the contrast between effort (connect digitally) and outcome
+                (isolation).</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">X. Assess potential challenges/benefits of relying on survey outcomes for health
+                interventions (para 5).</div>
+            <div class="ans"><strong>Benefits:</strong> Targeted strategies based on actual data;
+                <strong>Challenges:</strong> Surveys may have biases, self-reporting errors, and may not capture deep
+                behavioural nuances.</div>
+        </div>
+
+        <!-- PASSAGE 2 -->
+        <h3>📄 Passage 2: Snacking Preferences Survey</h3>
+        <div class="question-block">
+            <div class="ques">I. Complete suitably: In introduction, linking hasty lifestyle with snack choice
+                highlights...</div>
+            <div class="ans">...that modern hurried lifestyles often lead to unhealthy snacking, making it crucial to
+                study preferences for better health outcomes.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">II. "To examine snacking preferences across age groups and assess health implications" is
+                classified as:</div>
+            <div class="ans"><strong>A. Primary purpose</strong> (the main goal of the study).</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">III. Give two points why fresh fruits were likely an option in the survey.</div>
+            <div class="ans">1. Fruits are a common, healthy snack option. 2. To compare health-conscious choices (like
+                fruits) against packaged snacks, revealing diet patterns.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">IV. Classify as 'influence' or 'motivation':</div>
+            <div class="ans">Sentence 1: Peer pressure leads teenagers to prefer packaged snacks →
+                <strong>influence</strong> (external).<br>Sentence 2: Drive to maintain health makes middle-aged choose
+                fruits → <strong>motivation</strong> (internal).</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">V. Identify Seema, Mohan, Arindam's demographics:</div>
+            <div class="ans"><strong>B. Seema – teenager; Mohan – middle-age; Arindam – child.</strong> (Seema's
+                chips/cool drinks = teen; Mohan oranges/nuts = middle-age health conscious; Arindam mix = child).</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">VI. Why is preference for seasonal fruits highest among elderly?</div>
+            <div class="ans">Elderly have highest health concerns, digestive ease, and traditional belief in natural
+                foods; they prioritize nutrition over convenience.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">VII. How can targeted interventions improve health outcomes?</div>
+            <div class="ans">By addressing specific needs: for teens – tackle peer influence; for children – educate
+                parents; for elderly – promote fruits. Tailored campaigns increase effectiveness.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">VIII. Ultimate goal for stakeholders based on insights?</div>
+            <div class="ans"><strong>B. Building healthier communities.</strong></div>
+        </div>
+
+        <!-- SECTION B -->
+        <h2>🔹 SECTION B: CREATIVE WRITING SKILLS (18 marks)</h2>
+
+        <h3>📝 3. Notice (50 words)</h3>
+        <div class="question-block">
+            <div class="ques">OR (A) Notice: Inter-class Seminar on Mental Health</div>
+            <div class="ans bordered-box">
+                <strong>ABC SCHOOL, DELHI</strong><br>
+                NOTICE<br>
+                15 March 2025<br>
+                <strong>INTER-CLASS SEMINAR: IMPORTANCE OF MENTAL HEALTH</strong><br>
+                The school is organising a seminar on 25 March, 10 am – 1 pm in the auditorium for classes XI-XII.
+                Experts will address adolescent mental wellness. Interested students register with undersigned by 20
+                March. Limited seats.<br>
+                <em>Ravi Sharma</em><br>
+                Head, Organising Committee
+            </div>
+        </div>
+
+        <h3>📝 4. Invitation/Reply (50 words)</h3>
+        <div class="question-block">
+            <div class="ques">OR (A) Invitation: 'Each One Teach One' programme launch</div>
+            <div class="ans bordered-box">
+                <strong>Vani Gopalan</strong><br>
+                Chief Project Officer, EducateNGO<br>
+                18 March 2025<br>
+                Dear Principal/Coordinator,<br>
+                You are cordially invited to the launch of <strong>'Each One Teach One'</strong> on 25 March, 11 am at
+                India International Centre. The programme pairs student volunteers with underprivileged learners. Your
+                partnership can transform lives. Kindly grace the occasion.<br>
+                RSVP: vani@educate.org
+            </div>
+        </div>
+
+        <h3>📝 5. Letter / Job Application (120-150 words)</h3>
+        <div class="question-block">
+            <div class="ques">OR (A) Letter to Editor: Financial literacy for children</div>
+            <div class="ans">
+                <strong>Chitra Mahapatra</strong><br>
+                Counsellor, 12 Lake Road, Puri, Odisha<br>
+                20 March 2025<br>
+                The Editor, The Daily Chronicle, Puri.<br>
+                <strong>Subject: Need for financial literacy among children.</strong><br>
+                Sir,<br>
+                In today’s consumerist world, teaching children money management is essential. Financial independence
+                from a young age builds responsible adults. Understanding power of compounding, budgeting, and saving
+                early leads to lifelong security. Skills learnt in childhood—like delayed gratification—have lasting
+                impact. Schools should introduce basic economics through activities; parents must discuss family
+                budgets. Workshops and games can make learning fun. Let’s equip our youth for a secure future.<br>
+                Yours truly,<br>
+                Chitra Mahapatra
+            </div>
+        </div>
+
+        <h3>📝 6. Article / Report (120-150 words)</h3>
+        <div class="question-block">
+            <div class="ques">OR (B) Report on Yoga Day celebrations</div>
+            <div class="ans">
+                <strong>YOGA DAY CELEBRATED WITH ENTHUSIASM</strong><br>
+                <em>By Hina Aziz, XII-D, Editorial Board</em><br>
+                New Delhi, 22 June: Our school marked the 10th International Day of Yoga with a vibrant hour-long
+                session in the sports complex. Over 500 students, teachers, and staff participated. The event began with
+                a guided meditation by Yoga Guru Ms. Anju, followed by asanas like Surya Namaskar, Tadasana, and
+                breathing exercises. The PE department demonstrated the 'Common Yoga Protocol'. Principal motivated
+                everyone to adopt yoga for holistic health. The event concluded with a pledge to practise yoga weekly.
+                It infused positivity and calmness across the campus.
+            </div>
+        </div>
+
+        <!-- SECTION C -->
+        <h2>🔹 SECTION C: LITERATURE (26 marks)</h2>
+
+        <h3>📖 7. Poetry Extract (Any one) – Keeping Quiet / Roadside Stand</h3>
+        <div class="question-block">
+            <div class="ques">A. Keeping Quiet (Extract based)</div>
+            <div class="ans">
+                I. Common outcome of wars: <strong>Total destruction with 'no survivors' (victory with no
+                    survivors).</strong><br>
+                II. 'Walking with brothers in shade' represents: <strong>C. A moment of unity and peaceful
+                    reflection.</strong><br>
+                III. 'Clean clothes' symbolises: <strong>outward purity or pretence of innocence while they cause
+                    destruction.</strong><br>
+                IV. Speaker (condemns) the destructive nature of war.<br>
+                V. Assertion & Reason: <strong>B. Both true but reason not correct explanation.</strong> (Doing nothing
+                = introspection, not just stopping action).<br>
+                VI. Message applied: We must pause and reflect; wars lead to mutual loss; choosing stillness can prevent
+                annihilation.
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">B. Roadside Stand (Extract based)</div>
+            <div class="ans">
+                I. Phrase suggesting imposed help: <strong>"enforcing benefits"</strong>.<br>
+                II. 'Swarm' does NOT represent: <strong>A. Coordinated help.</strong> (It represents overwhelming force,
+                discomfort).<br>
+                III. 'Ancient way' refers to: <strong>natural, traditional sleep (undisturbed by modern
+                    interventions).</strong><br>
+                IV. Illustrates: <strong>irony</strong> (greedy good-doers are contradictory).<br>
+                V. Assertion & Reason: <strong>C. Assertion is true, but reason is false.</strong> (It instills
+                lethargy, not ambition).<br>
+                VI. Caution to rural poor: Beware of false benefactors who soothe you with promises but exploit your
+                dependence.
+            </div>
+        </div>
+
+        <h3>📖 8. Prose Extract – Journey to the end of the Earth / Memories of Childhood</h3>
+        <div class="question-block">
+            <div class="ques">A. Journey to the end of the Earth</div>
+            <div class="ans">
+                I. Visiting Antarctica offers insight into geological processes and Earth's history by
+                <strong>witnessing continental drift evidence (like Cordilleran folds, pre-Cambrian shields) and
+                    understanding evolution.</strong><br>
+                II. Author implies that knowing geological past helps predict future changes (e.g., formation of
+                Himalayas, Drake Passage) and climate patterns.<br>
+                III. Impact on writer: <strong>A. Feels overwhelmed by the vastness of geological time
+                    scales.</strong><br>
+                IV. Understanding these processes helps predict polar ice melt, climate shifts, and plan mitigation
+                strategies (e.g., carbon reduction).
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">B. Memories of Childhood (Zitkala-Sa)</div>
+            <div class="ans">
+                I. Conveys abandonment through portrayal of <strong>lack of comfort, no one to reason with her, being
+                    treated as 'one of many little animals'.</strong><br>
+                II. Emotion: <strong>Anguish / humiliation / powerlessness.</strong><br>
+                III. Metaphor of puppet shows: <strong>B. manipulated and controlled.</strong><br>
+                IV. 'Shingled like a coward's' hair symbolises <strong>erasure of cultural identity (long hair was
+                    sacred in her culture) and forceful imposition of alien norms.</strong>
+            </div>
+        </div>
+
+        <h3>📖 9. Prose Extract – Last Lesson / Lost Spring</h3>
+        <div class="question-block">
+            <div class="ques">A. Last Lesson</div>
+            <div class="ans">
+                I. 'Thunderclap' purpose: <strong>to convey sudden shocking news (order from Berlin) that altered their
+                    lives.</strong><br>
+                II. Exclamatory marks show: <strong>intense emotions.</strong><br>
+                III. Preference for: <strong>play / outdoor activities / seeking birds' eggs over school.</strong><br>
+                IV. Shift: earlier feared M. Hamel, now sees him as a suffering patriot; ready to forgive his
+                strictness.<br>
+                V. Sense of panic: <strong>C. Oh, the wretches; that was what they had put up at the
+                    town-hall!</strong><br>
+                VI. Line about books being 'old friends' showcases: <strong>A. realization</strong> (of their value only
+                when about to lose them).
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">B. Lost Spring</div>
+            <div class="ans">
+                I. Saheb's statement shows <strong>his poverty yet hope; even small money excites him, but it also
+                    highlights the bleak reality that his aspirations are limited to finding rupees in
+                    garbage.</strong><br>
+                II. 'Gold' metaphor reveals: <strong>desperate conditions.</strong><br>
+                III. Children scrounge because <strong>of the hope of finding something valuable; for them it holds
+                    wonder.</strong><br>
+                IV. Children view garbage with wonder, elders as survival means.<br>
+                V. Rag-picking as 'fine art' implies: <strong>B. evolved into a complex skill valued in
+                    community.</strong><br>
+                VI. Saheb's eyes light up due to: <strong>A. immediate experience of finding something
+                    valuable.</strong>
+            </div>
+        </div>
+
+        <h3>📝 10. Five out of Six Short Questions (40-50 words each)</h3>
+        <div class="question-block">
+            <div class="ques">I. Hope/Resilience in Lost Spring?</div>
+            <div class="ans">Saheb's determination to find a rupee in garbage shows resilience despite abject poverty.
+                His eyes light up with hope, reflecting theme of unquenchable human spirit even in stolen childhood.
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">II. Visual imagery by Kamala Das for passage of time?</div>
+            <div class="ans">In 'My Mother at Sixty-Six', she uses images like 'late winter's moon', 'ashen face' to
+                depict ageing. The 'young trees' and 'merry children' contrast with mother's decay, showing time's
+                fleeting nature.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">III. Church clock vs Prussian trumpets in Last Lesson?</div>
+            <div class="ans">Church clock represents peaceful, orderly French life; Prussian trumpets symbolize harsh
+                German military force. Their contrast marks the violent takeover of Alsace and loss of linguistic
+                freedom.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">IV. Author's style in 'The Interview' affects understanding?</div>
+            <div class="ans">The writer uses both perspectives (Ekland's praise and Umberto Eco's modesty) to present
+                interview as a complex genre—both 'an art' and 'a threat'—making readers reflect on its dual nature.
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">V. Rattrap symbolises dual aspects of human nature?</div>
+            <div class="ans">Rattrap signifies the world's temptations that trap people (material greed). Yet, it also
+                shows kindness (Edla's) can redeem, revealing both the baser and nobler sides of human nature.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">VI. Factors instrumental in peasants' victory in Indigo?</div>
+            <div class="ans">Gandhi's leadership, his resolve, mass support, and legal astuteness (appointing Charles
+                Andrews) united the peasants. The authorities capitulated due to moral pressure and fear of mass
+                uprising.</div>
+        </div>
+
+        <h3>📝 11. Any two out of three (40-50 words each)</h3>
+        <div class="question-block">
+            <div class="ques">I. Significance of toy tiger in 'Tiger King' climax?</div>
+            <div class="ans">The wooden toy tiger, though harmless, ironically causes the king's death (by a splinter).
+                It fulfills the prophecy that the king would be killed by a tiger, highlighting the absurdity of fate.
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="ques">II. Literal and metaphorical journeys in 'The Third Level'?</div>
+            <div class="ans">Literal journey is Charley's supposed train ride to Galesburg. Metaphorically, it's an
+                escape from modern anxiety into a peaceful past; also his psychological journey to find security.</div>
+        </div>
+        <div class="question-block">
+            <div class="ques">III. Pessimism and optimism in 'On the Face of It'?</div>
+            <div class="ans">Mr. Lamb's optimistic outlook ("life is what you make") contrasts Derry's pessimism (burnt
+                face). Their interaction brings hope; yet Lamb's accidental death leaves a tinge of sadness—blend of
+                both.</div>
+        </div>
+
+        <h3>📝 12. Long answer (120-150 words) – Any one</h3>
+        <div class="question-block">
+            <div class="ques">A. Inequality in 'A Roadside Stand' and 'Aunt Jennifer's Tigers'</div>
+            <div class="ans">Both poems portray exploitation. In 'Roadside Stand', the rural poor are ignored by city
+                dwellers; their poverty is perpetuated by an uncaring system. Similarly, Aunt Jennifer's oppressed
+                married life symbolizes gender inequality; her heavy ordeals reflect male dominance. The impact: both
+                bearers suffer silently—the villagers wait endlessly for aid that never comes; Aunt embroiders tigers as
+                a fantasy of freedom. The tigers prance proudly, contrasting her subjugation. Inequality robs them of
+                dignity and joy, but art offers fleeting escape. Frost's poem exposes economic disparity, while Rich's
+                highlights patriarchy. Both demand empathy and structural change.</div>
+        </div>
+
+        <h3>📝 13. Long answer (120-150 words) – Any one</h3>
+        <div class="question-block">
+            <div class="ques">A. Influence of traditions (religion, family, patriotism) in 'The Enemy'</div>
+            <div class="ans">Pearl S. Buck uses tradition to drive conflict. Dr. Sadao's patriotism (Japanese) clashes
+                with his professional ethics as a doctor. His father's traditional values of honour and duty influence
+                Sadao's initial dilemma. Family bonds (Hana's support) motivate them to save the American POW despite
+                risk. The servant's superstition (belief that救治白人 brings bad luck) adds tension. Ultimately, Sadao
+                transcends narrow patriotism through universal humanism, yet tradition of loyalty to nation remains. The
+                setting—wartime Japan—and the motivation to uphold family name create narrative depth. The pacing slows
+                at moral dilemmas, emphasizing inner conflict between tradition and humanity.</div>
+        </div>
+
+        <footer>
+            ⚡ <span style="color:#8bb9fe;">Dark mode prepared</span> | All answers are indicative, written in
+            student-friendly language. ⚡
+        </footer>
+    </body>
+
+</html>
