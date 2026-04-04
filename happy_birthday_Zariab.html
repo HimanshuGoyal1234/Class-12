@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <title>🎂 Happy Birthday Zariab! 🎉</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 10% 30%, #ffb88c, #ff6a6a);
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', 'Poppins', 'Helvetica Neue', system-ui, -apple-system, 'Inter', 'SF Pro Text', sans-serif;
+      padding: 16px;
+      position: relative;
+    }
+
+    /* floating sparkles background */
+    .sparkle-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .sparkle {
+      position: absolute;
+      background: radial-gradient(circle, rgba(255,240,150,0.8) 0%, rgba(255,200,100,0) 70%);
+      border-radius: 50%;
+      animation: floatSparkle 8s infinite ease-in-out;
+      opacity: 0.5;
+    }
+
+    @keyframes floatSparkle {
+      0% { transform: translateY(0px) scale(1); opacity: 0; }
+      20% { opacity: 0.7; }
+      80% { opacity: 0.5; }
+      100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+    }
+
+    /* main card - glassmorphic premium */
+    .birthday-card {
+      max-width: 560px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(2px);
+      border-radius: 72px 72px 80px 80px;
+      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 220, 150, 0.6);
+      overflow: hidden;
+      transition: transform 0.25s ease;
+      animation: cardGlide 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    @keyframes cardGlide {
+      0% { opacity: 0; transform: translateY(50px) scale(0.94); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* header party zone */
+    .hero {
+      background: linear-gradient(145deg, #ffe6b0, #ffc8a2);
+      padding: 30px 20px 45px;
+      text-align: center;
+      position: relative;
+      border-bottom-left-radius: 55px;
+      border-bottom-right-radius: 55px;
+    }
+
+    .balloons-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .balloon {
+      width: 60px;
+      height: 78px;
+      background: #ff8c8c;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: -4px 6px 12px rgba(0,0,0,0.15);
+      animation: balloonFloat 2.5s infinite alternate ease-in-out;
+      transform-origin: bottom;
+    }
+    .balloon:after {
+      content: "🧵";
+      position: absolute;
+      bottom: -24px;
+      left: 24px;
+      font-size: 16px;
+      transform: rotate(8deg);
+      opacity: 0.8;
+    }
+    .balloon:nth-child(1) { background: #ffad60; animation-delay: 0s; }
+    .balloon:nth-child(2) { background: #ff6b6b; animation-delay: 0.15s; }
+    .balloon:nth-child(3) { background: #a29bfe; animation-delay: 0.3s; }
+    .balloon:nth-child(4) { background: #55efc4; animation-delay: 0.1s; }
+    .balloon:nth-child(5) { background: #fd79a8; animation-delay: 0.25s; }
+    .balloon:nth-child(6) { background: #fdcb6e; animation-delay: 0.4s; }
+
+    @keyframes balloonFloat {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-12px) rotate(2deg); }
+    }
+
+    .cake-zone {
+      font-size: 95px;
+      filter: drop-shadow(0 15px 18px rgba(0,0,0,0.2));
+      margin: 8px 0 5px;
+      display: inline-block;
+      animation: bounceCake 1.4s infinite alternate ease;
+    }
+
+    @keyframes bounceCake {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(3deg); }
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12, #e84393);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+      margin: 10px 0 4px;
+    }
+
+    .glow-name {
+      font-size: 2.9rem;
+      font-weight: 800;
+      background: linear-gradient(145deg, #d63031, #6c5ce7, #0984e3);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    /* main wish area */
+    .content {
+      padding: 32px 26px 45px;
+      text-align: center;
+    }
+
+    .wish-card {
+      background: linear-gradient(125deg, #fffaf0, #fff5e6);
+      border-radius: 56px;
+      padding: 24px 18px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,200,0.8);
+      border: 1px solid #ffe2b5;
+    }
+
+    .greeting-text {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #b3413b;
+    }
+
+    .big-name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(120deg, #e84393, #f39c12);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin: 8px 0;
+    }
+
+    .message-line {
+      font-size: 1.25rem;
+      color: #2d3436;
+      margin: 12px 0;
+      font-weight: 500;
+    }
+
+    .heart-emoji-badge {
+      background: #ffe0b5;
+      border-radius: 60px;
+      display: inline-flex;
+      gap: 8px;
+      padding: 8px 18px;
+      font-weight: 600;
+      color: #c0392b;
+      margin-top: 12px;
+    }
+
+    /* special bestie zone */
+    .bestie-zone {
+      background: rgba(108, 92, 231, 0.12);
+      border-radius: 48px;
+      padding: 22px 12px;
+      margin: 20px 0 18px;
+      border: 2px dashed #a29bfe;
+      backdrop-filter: blur(3px);
+    }
+
+    .bestie-zone p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .zariab-special {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(145deg, #e17055, #d63031);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin: 6px 0;
+      letter-spacing: -0.3px;
+    }
+
+    .roast-love {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 15px 0 5px;
+    }
+
+    .tag {
+      background: white;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* party button */
+    .party-button {
+      background: linear-gradient(105deg, #ff9f4a, #ff6a4b);
+      border: none;
+      padding: 18px 28px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: white;
+      border-radius: 70px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: 0 16px 24px rgba(230, 100, 50, 0.4);
+      transition: all 0.2s ease;
+      margin: 18px 0 12px;
+      width: auto;
+    }
+
+    .party-button:active {
+      transform: scale(0.96);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .footer-message {
+      background: #faf3e0;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-weight: 500;
+      color: #e67e22;
+      margin-top: 18px;
+      font-size: 0.9rem;
+    }
+
+    /* canvas confetti */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* mobile fine-tune */
+    @media (max-width: 520px) {
+      .birthday-card {
+        border-radius: 55px 55px 65px 65px;
+      }
+      .content {
+        padding: 26px 18px 38px;
+      }
+      .greeting-text {
+        font-size: 1.3rem;
+      }
+      .big-name {
+        font-size: 1.9rem;
+      }
+      .message-line {
+        font-size: 1.05rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      .glow-name {
+        font-size: 2.3rem;
+      }
+      .cake-zone {
+        font-size: 75px;
+      }
+      .balloon {
+        width: 48px;
+        height: 64px;
+      }
+      .balloon:after {
+        left: 18px;
+      }
+      .party-button {
+        padding: 14px 24px;
+        font-size: 1.2rem;
+      }
+      .zariab-special {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sparkle-bg" id="sparkleBg"></div>
+
+<div class="birthday-card">
+  <div class="hero">
+    <div class="balloons-group">
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+    </div>
+    <div class="cake-zone">🎂🎈🎁✨</div>
+    <h1>HAPPY BIRTHDAY</h1>
+    <div class="glow-name">ZARIAB! 🎉🥳</div>
+  </div>
+
+  <div class="content">
+    <div class="wish-card">
+      <div class="greeting-text">🎀 To the coolest friend ever 🎀</div>
+      <div class="big-name">✨ Zariab ✨</div>
+      <div class="message-line">Wishing you a year full of <strong>crazy adventures, sweet wins, and endless smiles</strong> 🌈</div>
+      <div class="message-line">May every candle on your cake bring magic into your life 🕯️</div>
+      <div class="heart-emoji-badge">💗🧡💛 Made with love — just for YOU 💛🧡💗</div>
+    </div>
+
+    <div class="bestie-zone">
+      <p>💎 From your buddy's heart to yours 💎</p>
+      <div class="zariab-special">Zariab Bhai / Bestie 💫</div>
+      <p>🌟 You're the kind of friend everyone deserves —<br> loyal, legendary & full of life! 🌟</p>
+      <div class="roast-love">
+        <span class="tag">🤝 Partner in crime</span>
+        <span class="tag">🎯 Ultimate vibe</span>
+        <span class="tag">👑 King of hearts</span>
+      </div>
+      <p style="margin-top: 12px;">🤍 So lucky to have you in my life 🤍</p>
+    </div>
+
+    <button class="party-button" id="celebrateBtn">
+      🎉 LET'S CELEBRATE 🎉
+    </button>
+    
+    <div class="footer-message">
+      🎂 Your friend made this special HTML just for you, Zariab! 🎂
+    </div>
+    <div style="font-size: 12px; margin-top: 12px; opacity: 0.6;">✨ tap the button for epic confetti + sparkle magic ✨</div>
+  </div>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<script>
+  (function() {
+    // ---- SPARKLE BACKGROUND GENERATOR (more festive) ----
+    const sparkleContainer = document.getElementById('sparkleBg');
+    function createSparkles() {
+      for (let i = 0; i < 40; i++) {
+        const spark = document.createElement('div');
+        spark.classList.add('sparkle');
+        const size = 4 + Math.random() * 12;
+        spark.style.width = size + 'px';
+        spark.style.height = size + 'px';
+        spark.style.left = Math.random() * 100 + '%';
+        spark.style.top = Math.random() * 100 + '%';
+        spark.style.animationDuration = 4 + Math.random() * 8 + 's';
+        spark.style.animationDelay = Math.random() * 5 + 's';
+        spark.style.background = `radial-gradient(circle, rgba(255, 220, 100, 0.9) 0%, rgba(255, 160, 60, 0.2) 80%)`;
+        sparkleContainer.appendChild(spark);
+      }
+    }
+    createSparkles();
+
+    // ---- CONFETTI PRO SYSTEM ----
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let particles = [];
+    let activeConfetti = false;
+    let animFrame = null;
+
+    function resizeCanvas() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      if (!activeConfetti) ctx.clearRect(0, 0, width, height);
+    });
+
+    class Particle {
+      constructor(x, y, size, color, vx, vy, rot, spin) {
+        this.x = x; this.y = y; this.size = size; this.color = color;
+        this.vx = vx; this.vy = vy; this.rot = rot; this.spin = spin;
+        this.alpha = 1; this.decay = 0.985 + Math.random() * 0.015;
+        this.gravity = 0.12;
+        this.wind = 0.02;
+      }
+      update() {
+        this.vy += this.gravity;
+        this.vx += this.wind * (Math.random() - 0.5) * 0.2;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.rot += this.spin;
+        this.alpha *= this.decay;
+        return this.alpha > 0.02 && this.y < height + 150 && this.x > -150 && this.x < width + 150;
+      }
+      draw(ctx) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rot);
+        ctx.globalAlpha = this.alpha * 0.9;
+        ctx.fillStyle = this.color;
+        ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size * 0.7);
+        ctx.restore();
+      }
+    }
+
+    function burstConfetti(baseCount = 190) {
+      const colors = ['#FFB347', '#FF6B6B', '#A29BFE', '#55EFC4', '#FDCB6E', '#FF9FF3', '#FD79A8', '#74B9FF', '#E17055', '#6C5CE7'];
+      const newParts = [];
+      const centerX = width / 2;
+      const centerY = height / 2.8;
+      for (let i = 0; i < baseCount; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 3 + Math.random() * 9;
+        const vx = Math.cos(angle) * speed * (0.5 + Math.random() * 0.8);
+        const vy = Math.sin(angle) * speed * (0.6 + Math.random() * 0.7) - 3.5;
+        const size = 7 + Math.random() * 14;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const spin = (Math.random() - 0.5) * 0.25;
+        const offsetX = (Math.random() - 0.5) * 130;
+        const offsetY = (Math.random() - 0.5) * 90;
+        newParts.push(new Particle(centerX + offsetX, centerY + offsetY, size, color, vx, vy, Math.random() * Math.PI * 2, spin));
+      }
+      // add some extra star-shaped squares
+      return newParts;
+    }
+
+    let endingTimeout = null;
+    function startEpicConfetti(duration = 3200) {
+      if (activeConfetti) {
+        const extra = burstConfetti(80);
+        particles.push(...extra);
+        return;
+      }
+      if (animFrame) cancelAnimationFrame(animFrame);
+      activeConfetti = true;
+      particles = [];
+      const initialWave = burstConfetti(210);
+      particles.push(...initialWave);
+      
+      function animate() {
+        if (!activeConfetti && particles.length === 0) {
+          if (animFrame) cancelAnimationFrame(animFrame);
+          animFrame = null;
+          ctx.clearRect(0, 0, width, height);
+          return;
+        }
+        ctx.clearRect(0, 0, width, height);
+        let alive = false;
+        for (let i = 0; i < particles.length; i++) {
+          const isAlive = particles[i].update();
+          if (isAlive) {
+            alive = true;
+            particles[i].draw(ctx);
+          } else {
+            particles.splice(i,1);
+            i--;
+          }
+        }
+        if (alive || particles.length > 0) {
+          animFrame = requestAnimationFrame(animate);
+        } else {
+          activeConfetti = false;
+          ctx.clearRect(0, 0, width, height);
+          if (animFrame) cancelAnimationFrame(animFrame);
+          animFrame = null;
+        }
+      }
+      animate();
+      if (endingTimeout) clearTimeout(endingTimeout);
+      endingTimeout = setTimeout(() => {
+        activeConfetti = false;
+      }, duration);
+    }
+
+    // UI BUTTON WITH SUPER EFFECTS
+    const btn = document.getElementById('celebrateBtn');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        startEpicConfetti(3500);
+        if (window.navigator && window.navigator.vibrate) {
+          window.navigator.vibrate(60);
+        }
+        // card pop animation
+        const card = document.querySelector('.birthday-card');
+        card.style.transform = 'scale(1.02)';
+        setTimeout(() => { card.style.transform = ''; }, 180);
+        
+        // change button text temporarily
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '🎊✨ PARTY EXPLOSION! ✨🎊';
+        setTimeout(() => { btn.innerHTML = originalHTML; }, 1300);
+        
+        // floating message that appears
+        const flyMsg = document.createElement('div');
+        flyMsg.innerText = '🥳 HAPPY BIRTHDAY ZARIAB! 🥳';
+        flyMsg.style.position = 'fixed';
+        flyMsg.style.bottom = '20%';
+        flyMsg.style.left = '50%';
+        flyMsg.style.transform = 'translateX(-50%)';
+        flyMsg.style.backgroundColor = '#f9ca24';
+        flyMsg.style.color = '#b71540';
+        flyMsg.style.fontWeight = 'bold';
+        flyMsg.style.fontSize = '1.5rem';
+        flyMsg.style.padding = '12px 28px';
+        flyMsg.style.borderRadius = '100px';
+        flyMsg.style.fontFamily = 'inherit';
+        flyMsg.style.boxShadow = '0 20px 25px rgba(0,0,0,0.2)';
+        flyMsg.style.zIndex = '2001';
+        flyMsg.style.whiteSpace = 'nowrap';
+        flyMsg.style.backdropFilter = 'blur(8px)';
+        flyMsg.style.border = '2px solid #ffb142';
+        flyMsg.style.letterSpacing = '1px';
+        document.body.appendChild(flyMsg);
+        setTimeout(() => {
+          flyMsg.style.transition = 'all 0.4s ease';
+          flyMsg.style.opacity = '0';
+          flyMsg.style.transform = 'translateX(-50%) translateY(-30px)';
+          setTimeout(() => flyMsg.remove(), 500);
+        }, 2200);
+        
+        // also make a small extra spark
+        for (let i = 0; i < 12; i++) {
+          const twinkle = document.createElement('div');
+          twinkle.innerText = ['🎉','✨','🎂','🎈','🥳','💥'][Math.floor(Math.random()*6)];
+          twinkle.style.position = 'fixed';
+          twinkle.style.left = Math.random() * 90 + 5 + '%';
+          twinkle.style.top = Math.random() * 80 + 10 + '%';
+          twinkle.style.fontSize = (20 + Math.random() * 30) + 'px';
+          twinkle.style.pointerEvents = 'none';
+          twinkle.style.zIndex = '2002';
+          twinkle.style.opacity = '0.9';
+          twinkle.style.animation = 'floatSparkle 1s forwards';
+          document.body.appendChild(twinkle);
+          setTimeout(() => twinkle.remove(), 1000);
+        }
+      });
+    }
+    
+    // tiny welcome confetti when page loads
+    setTimeout(() => {
+      startEpicConfetti(2000);
+    }, 300);
+    
+    resizeCanvas();
+
+    // Additional dynamic style for disappearing sparks
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+      @keyframes floatSparkle {
+        0% { transform: translateY(0) scale(0.3); opacity: 0; }
+        20% { opacity: 1; transform: translateY(-15px) scale(1); }
+        100% { transform: translateY(-50px) scale(0.2); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+  })();
+</script>
+</body>
+</html>
