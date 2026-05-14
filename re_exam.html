@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Zenith Schedule · 45 Day PCM Warrior</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at 20% 30%, #0b0f1c, #03050b);
+      color: #eef5ff;
+      line-height: 1.5;
+      padding: 1.5rem 1rem;
+      transition: all 0.2s;
+    }
+
+    /* glassmorphism + sticky bar */
+    .glass-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10, 20, 35, 0.7);
+      border-radius: 2rem;
+      padding: 0.8rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rgba(72, 187, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #C084FC, #60A5FA);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+    .logo p {
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .countdown {
+      background: rgba(0,0,0,0.55);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      font-weight: 600;
+      font-size: 1rem;
+      border-left: 3px solid #facc15;
+    }
+
+    /* grid layout */
+    .dashboard {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* stats row */
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .stat-card {
+      background: rgba(20, 30, 45, 0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 1.8rem;
+      padding: 1rem 1.6rem;
+      flex: 1;
+      min-width: 140px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.2s ease;
+    }
+    .stat-card:hover { transform: translateY(-3px); border-color: #60a5fa40; background: rgba(30,45,65,0.7); }
+    .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; }
+    .stat-number { font-size: 1.8rem; font-weight: 800; margin-top: 6px; line-height: 1; }
+
+    .today-focus {
+      background: linear-gradient(125deg, rgba(76, 29, 149, 0.4), rgba(20, 30, 55, 0.7));
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      padding: 1.2rem 1.8rem;
+      border: 1px solid rgba(196, 132, 252, 0.4);
+    }
+    .focus-title { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+    .subject-badge { display: inline-block; width: 12px; height: 12px; border-radius: 20px; margin-right: 6px; }
+
+    /* timetable table */
+    .timetable-card {
+      background: rgba(15, 25, 40, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(255,255,240,0.08);
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 4px solid #facc15;
+      padding-left: 12px;
+    }
+    .timetable {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .timetable th, .timetable td {
+      text-align: left;
+      padding: 12px 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .timetable th { color: #bbd7ff; font-weight: 500; }
+    .task-check { width: 24px; height: 24px; accent-color: #38bdf8; cursor: pointer; transform: scale(1.1); }
+
+    /* chapter grid + progress */
+    .chapters-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .subject-section {
+      background: rgba(0,0,0,0.3);
+      border-radius: 1.5rem;
+      padding: 1rem;
+    }
+    .subject-header {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .progress-bar-bg {
+      background: #1e2a3e;
+      border-radius: 40px;
+      height: 8px;
+      overflow: hidden;
+      width: 100%;
+      margin: 8px 0;
+    }
+    .progress-fill {
+      width: 0%;
+      height: 8px;
+      background: linear-gradient(90deg, #38bdf8, #a855f7);
+      border-radius: 40px;
+      transition: width 0.5s ease;
+    }
+    .chapter-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .chapter-item {
+      background: #0f172a80;
+      padding: 6px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .chapter-item.completed {
+      background: #2b3b5c;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+    .motivation-quote {
+      text-align: center;
+      font-style: italic;
+      padding: 0.8rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 400;
+      backdrop-filter: blur(4px);
+    }
+    .weekly-progress {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .week-day {
+      background: #1f2a44;
+      border-radius: 1rem;
+      padding: 6px 12px;
+      font-size: 0.7rem;
+      flex: 1;
+      text-align: center;
+    }
+    button, .edit-icon {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .edit-task {
+      color: #90e0ff;
+      font-size: 0.7rem;
+      margin-left: 12px;
+      background: #2a3c5c80;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    @media (max-width: 760px) {
+      .timetable th, .timetable td { font-size: 0.7rem; padding: 8px 4px; }
+      .stat-number { font-size: 1.2rem; }
+      .glass-nav { flex-direction: column; gap: 10px; align-items: stretch; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glass-nav">
+  <div class="logo">
+    <h1>📘 戦士 · 45 Day Sprint</h1>
+    <p>PCM · CBSE/NIOS · martial arts discipline</p>
+  </div>
+  <div class="countdown" id="countdownDisplay">⚡ loading countdown...</div>
+</div>
+
+<div class="dashboard">
+  <!-- stats row -->
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-label">🔥 DAILY STREAK</div><div class="stat-number" id="streakCount">0</div></div>
+    <div class="stat-card"><div class="stat-label">📚 CHAPS DONE</div><div class="stat-number" id="totalChaptersDone">0</div></div>
+    <div class="stat-card"><div class="stat-label">✅ TASKS TODAY</div><div class="stat-number" id="tasksCompletedToday">0</div></div>
+    <div class="stat-card"><div class="stat-label">📈 WEEK PROGRESS</div><div class="stat-number" id="weekProgressPercent">0%</div></div>
+  </div>
+
+  <!-- today focus & quote row -->
+  <div class="today-focus" id="todayFocusSection">
+    <div class="focus-title">🎯 Today's Mission</div>
+    <div id="todayHighlight" style="margin-top: 8px;">loading schedule...</div>
+  </div>
+
+  <!-- Timetable (daily schedule) -->
+  <div class="timetable-card">
+    <div class="section-title">⚔️ DAILY TIMETABLE · realistic flow</div>
+    <table class="timetable" id="dailyScheduleTable">
+      <thead>
+        <tr><th>Time</th><th>Activity</th><th style="width:40px">Done ✔️</th></tr>
+      </thead>
+      <tbody id="scheduleBody"></tbody>
+    </table>
+    <div class="motivation-quote" id="quoteBox">“Consistency over intensity — one chapter at a time.”</div>
+  </div>
+
+  <!-- Weekly chapter targets + editable tasks + chapter tracker -->
+  <div class="timetable-card">
+    <div class="section-title">📖 WEEKLY CHAPTER TARGETS + PROGRESS</div>
+    <div class="chapters-wrapper" id="chaptersTrackerContainer"></div>
+  </div>
+
+  <!-- revision & PYQ reminders + weekly overview -->
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-label">📌 REVISION SLOT</div><div class="stat-number">🔄 30 min daily</div><div style="font-size:12px">Morning: formulas | Night: PYQs</div></div>
+    <div class="stat-card"><div class="stat-label">📝 PYQ REMINDER</div><div class="stat-number">⚡ 5 Questions/day</div><div style="font-size:12px">physics+chemistry+maths mix</div></div>
+  </div>
+  <div class="timetable-card">
+    <div class="section-title">📅 Weekly overview (mock test on Sunday)</div>
+    <div id="weeklyOverview" class="weekly-progress"></div>
+  </div>
+</div>
+
+<script>
+  // ----------------------------- DATA: full 45 days schedule (15 May -> 30 June)
+  const START_DATE = new Date(2026, 4, 15); // May 15 2026
+  const END_DATE = new Date(2026, 5, 30);   // June 30 2026
+  const TOTAL_DAYS = 45;
+  
+  // Predefined daily chapters & tasks (rotating priority topics)
+  // Physics chapters list
+  const physicsChapters = ["Electrostatics", "Current Electricity", "Magnetism", "EMI", "Optics", "Modern Physics"];
+  const chemistryChapters = ["Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry", "NCERT Revision", "Reactions Practice"];
+  const mathsChapters = ["Matrices", "Determinants", "Differentiation", "Integration", "Probability", "Vectors", "3D Geometry"];
+  const allSubjectsChapters = {
+    Physics: physicsChapters,
+    Chemistry: chemistryChapters,
+    Maths: mathsChapters
+  };
+  
+  // Helper: get which day index (0 based)
+  function getDayIndex() {
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const start = new Date(START_DATE);
+    start.setHours(0,0,0,0);
+    const diff = Math.floor((today - start) / (1000 * 60 * 60 * 24));
+    if(diff < 0) return 0;
+    if(diff >= TOTAL_DAYS) return TOTAL_DAYS-1;
+    return diff;
+  }
+  
+  // generate daily chapter focus based on dayIndex priority (cover all major topics cyclically)
+  function getDailyChapters(dayIdx) {
+    const phys = physicsChapters[dayIdx % physicsChapters.length];
+    const chem = chemistryChapters[dayIdx % chemistryChapters.length];
+    const mathsTopic = mathsChapters[dayIdx % mathsChapters.length];
+    // additional revision days: every 3 days revision, weekends heavier
+    let revisionNote = (dayIdx % 3 === 0) ? " + Revision of last 2 days" : "";
+    if(dayIdx % 7 === 6) revisionNote = " + Full chapter PYQ practice"; // Sunday extra
+    return { Physics: phys, Chemistry: chem, Maths: mathsTopic, revisionFlag: revisionNote };
+  }
+  
+  // Timetable for each day (structure same, but tasks check editable)
+  const baseSchedule = [
+    { time: "06:30 AM - 07:30 AM", activity: "🌅 Wake up + Revision (Formulas / Reactions)" },
+    { time: "07:30 AM - 08:30 AM", activity: "📖 STUDY BLOCK 1 (Physics / Numericals)" },
+    { time: "08:30 AM - 09:00 AM", activity: "Breakfast & Refresh" },
+    { time: "09:00 AM - 10:30 AM", activity: "📐 STUDY BLOCK 2 (Maths – core theory)" },
+    { time: "10:30 AM - 10:45 AM", activity: "Short break / stretch" },
+    { time: "10:45 AM - 12:15 PM", activity: "⚛️ STUDY BLOCK 3 (Chemistry – Organic/Physical)" },
+    { time: "12:15 PM - 01:00 PM", activity: "📝 PYQ practice (5 questions) + quick notes" },
+    { time: "01:00 PM - 03:00 PM", activity: "🍽️ LUNCH + rest (flexible / video editing max 1h)" },
+    { time: "03:00 PM - 04:30 PM", activity: "📘 Deep study / numericals (weak subject focus)" },
+    { time: "04:30 PM - 05:00 PM", activity: "Prepare for martial arts + quick snack" },
+    { time: "05:00 PM - 08:00 PM", activity: "🥋 MARTIAL ARTS TRAINING (discipline & stamina)" },
+    { time: "08:00 PM - 09:00 PM", activity: "🎥 Client work / video editing (max 1h)" },
+    { time: "09:00 PM - 10:30 PM", activity: "⭐ Revision + Today's PYQ error analysis + Mock test prep" },
+    { time: "10:30 PM - 11:00 PM", activity: "Plan tomorrow + Wind down / reading" }
+  ];
+  
+  // additional Sunday mock flag
+  function updateTimetableWithSunday(dayIdx, tbody) {
+    const isSunday = (new Date(START_DATE.getTime() + dayIdx*86400000).getDay() === 0);
+    let scheduleRows = [...baseSchedule];
+    if(isSunday) {
+      scheduleRows = scheduleRows.map(row => {
+        if(row.activity.includes("STUDY BLOCK")) return { ...row, activity: row.activity + " (📝 MOCK TEST focus)" };
+        if(row.activity.includes("Deep study")) return { ...row, activity: "🔄 Full syllabus mock + analysis" };
+        return row;
+      });
+    }
+    tbody.innerHTML = "";
+    scheduleRows.forEach((item, idx) => {
+      const row = tbody.insertRow();
+      const cellTime = row.insertCell(0); cellTime.innerText = item.time;
+      const cellAct = row.insertCell(1); cellAct.innerText = item.activity;
+      const cellCheck = row.insertCell(2);
+      const checkId = `task_${dayIdx}_${idx}`;
+      const chk = document.createElement("input");
+      chk.type = "checkbox";
+      chk.className = "task-check";
+      chk.id = checkId;
+      const saved = localStorage.getItem(checkId);
+      if(saved === "true") chk.checked = true;
+      chk.addEventListener("change", (e) => {
+        localStorage.setItem(checkId, chk.checked);
+        updateStatsAndProgress(dayIdx);
+      });
+      cellCheck.appendChild(chk);
+    });
+  }
+  
+  // chapter completion + localstorage
+  function initChapterTracker(dayIdx) {
+    const container = document.getElementById("chaptersTrackerContainer");
+    const daily = getDailyChapters(dayIdx);
+    const allChaps = [
+      {subj:"Physics", chap: daily.Physics}, 
+      {subj:"Chemistry", chap: daily.Chemistry},
+      {subj:"Maths", chap: daily.Maths}
+    ];
+    let html = "";
+    for(let sub of ["Physics","Chemistry","Maths"]) {
+      let chapList = allSubjectsChapters[sub];
+      html += `<div class="subject-section"><div class="subject-header"><span class="subject-badge" style="background: ${sub==='Physics'?'#3b82f6':sub==='Chemistry'?'#10b981':'#f97316'}"></span> ${sub}</div>`;
+      html += `<div class="chapter-list" id="chapters-${sub}">`;
+      chapList.forEach(ch => {
+        const key = `chap_${sub}_${ch}`;
+        const completed = localStorage.getItem(key) === "true";
+        html += `<div class="chapter-item ${completed ? 'completed' : ''}" data-sub="${sub}" data-chap="${ch}">
+                   <span>📘 ${ch}</span> <span style="font-size:12px">${completed ? '✓' : '○'}</span>
+                 </div>`;
+      });
+      html += `</div><div class="progress-bar-bg"><div class="progress-fill" id="progress-${sub}"></div></div></div>`;
+    }
+    container.innerHTML = html;
+    // attach click events
+    document.querySelectorAll(".chapter-item").forEach(el => {
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const sub = el.dataset.sub;
+        const chap = el.dataset.chap;
+        const key = `chap_${sub}_${chap}`;
+        const newState = localStorage.getItem(key) !== "true";
+        localStorage.setItem(key, newState);
+        if(newState) el.classList.add("completed");
+        else el.classList.remove("completed");
+        updateChapterProgressBars();
+        updateStatsAndProgress(dayIdx);
+        saveStreakAndStats();
+      });
+    });
+    updateChapterProgressBars();
+  }
+  
+  function updateChapterProgressBars() {
+    for(let sub of ["Physics","Chemistry","Maths"]) {
+      const total = allSubjectsChapters[sub].length;
+      let completed = 0;
+      allSubjectsChapters[sub].forEach(ch => {
+        if(localStorage.getItem(`chap_${sub}_${ch}`) === "true") completed++;
+      });
+      const percent = total ? (completed/total)*100 : 0;
+      const fillDiv = document.getElementById(`progress-${sub}`);
+      if(fillDiv) fillDiv.style.width = `${percent}%`;
+    }
+    const totalChapsAll = Object.values(allSubjectsChapters).flat().length;
+    let completedAll = 0;
+    for(let sub of ["Physics","Chemistry","Maths"]) {
+      allSubjectsChapters[sub].forEach(ch => {
+        if(localStorage.getItem(`chap_${sub}_${ch}`) === "true") completedAll++;
+      });
+    }
+    document.getElementById("totalChaptersDone").innerText = `${completedAll}/${totalChapsAll}`;
+  }
+  
+  // today focus highlight
+  function updateTodayFocus(dayIdx) {
+    const daily = getDailyChapters(dayIdx);
+    const isSunday = (new Date(START_DATE.getTime() + dayIdx*86400000).getDay() === 0);
+    let focusText = `📚 Today's core: ${daily.Physics} | ${daily.Chemistry} | ${daily.Maths} ${daily.revisionFlag}. `;
+    focusText += isSunday ? "🔁 SUNDAY MOCK TEST + full revision session." : "⚡ Revise formulas + 5 PYQs before martial arts.";
+    document.getElementById("todayHighlight").innerHTML = `<strong>🎯 ${focusText}</strong> <br><span style="font-size:13px;">✔️ Use checkboxes to track daily tasks & chapters.</span>`;
+    const tableBody = document.getElementById("scheduleBody");
+    updateTimetableWithSunday(dayIdx, tableBody);
+  }
+  
+  function updateWeeklyOverview(dayIdx) {
+    const container = document.getElementById("weeklyOverview");
+    const weeks = ["Week1 (15-21 May)","Week2 (22-28 May)","Week3 (29 May-4 June)","Week4 (5-11 June)","Week5 (12-18 June)","Week6 (19-25 June)","Week7 (26-30 June)"];
+    let html = "";
+    weeks.forEach((w,i) => {
+      let progress = Math.min(100, Math.floor((dayIdx+1) / TOTAL_DAYS * 100) + (i*5) % 40);
+      if(i=== Math.floor(dayIdx/7)) progress = Math.min(100, Math.floor((dayIdx%7+1)/7*100));
+      html += `<div class="week-day">${w}<div class="progress-bar-bg" style="margin-top:6px"><div class="progress-fill" style="width:${progress}%"></div></div>${progress}%</div>`;
+    });
+    container.innerHTML = html;
+  }
+  
+  // countdown + streak + daily tasks tracking
+  function updateCountdown() {
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const end = new Date(END_DATE);
+    end.setHours(0,0,0,0);
+    const diff = Math.ceil((end - today) / (1000*60*60*24));
+    if(diff>=0) document.getElementById("countdownDisplay").innerHTML = `⏳ ${diff} days left till 30 June`;
+    else document.getElementById("countdownDisplay").innerHTML = `🎯 Exam mode · Target achieved!`;
+  }
+  
+  function getTodayTasksCompleted(dayIdx) {
+    let completed = 0;
+    const scheduleRows = baseSchedule.length;
+    for(let i=0;i<scheduleRows;i++){
+      const key = `task_${dayIdx}_${i}`;
+      if(localStorage.getItem(key) === "true") completed++;
+    }
+    return completed;
+  }
+  
+  function updateStatsAndProgress(dayIdx) {
+    const tasksDone = getTodayTasksCompleted(dayIdx);
+    const totalTasks = baseSchedule.length;
+    document.getElementById("tasksCompletedToday").innerText = `${tasksDone}/${totalTasks}`;
+    let streak = parseInt(localStorage.getItem("streak") || "0");
+    const lastDate = localStorage.getItem("lastActiveDate");
+    const todayStr = new Date().toDateString();
+    if(lastDate !== todayStr && tasksDone > 0) {
+      if(lastDate && (new Date(lastDate).getTime() === new Date().getTime()-86400000)) streak++;
+      else if(!lastDate) streak=1;
+      else streak=1;
+      localStorage.setItem("streak", streak);
+      localStorage.setItem("lastActiveDate", todayStr);
+    }
+    document.getElementById("streakCount").innerText = streak;
+    const weekPercent = Math.min(100, Math.floor((tasksDone/totalTasks)*100));
+    document.getElementById("weekProgressPercent").innerText = `${weekPercent}%`;
+    updateChapterProgressBars();
+  }
+  
+  function saveStreakAndStats(){}
+  
+  // dynamic day rendering
+  function renderDay() {
+    const dayIndex = getDayIndex();
+    const currentDate = new Date(START_DATE.getTime() + dayIndex*86400000);
+    const formatted = currentDate.toLocaleDateString('en-IN', {day:'numeric', month:'short'});
+    document.querySelector(".logo p").innerHTML = `Day ${dayIndex+1}/45 · ${formatted} · ${currentDate.toLocaleString('default',{weekday:'long'})}`;
+    updateTodayFocus(dayIndex);
+    initChapterTracker(dayIndex);
+    updateWeeklyOverview(dayIndex);
+    updateStatsAndProgress(dayIndex);
+    updateCountdown();
+    // quote rotation
+    const quotes = [
+      "“Discipline equals freedom — 45 days to rewrite your potential.”",
+      "“Every master was once a beginner. Keep practicing.”",
+      "“Revise like it's the night before exam, daily.”",
+      "“Small daily improvements are the key to staggering long-term results.”"
+    ];
+    document.getElementById("quoteBox").innerHTML = `✨ ${quotes[dayIndex % quotes.length]} ✨`;
+    // editable tasks (inline edit option)
+    const editBtns = document.querySelectorAll(".edit-task");
+    // just add style to show custom editing: allow activity double click
+    const scheduleBody = document.getElementById("scheduleBody");
+    if(scheduleBody){
+      for(let i=0; i<scheduleBody.rows.length; i++){
+        const actCell = scheduleBody.rows[i].cells[1];
+        if(actCell){
+          actCell.style.cursor = "pointer";
+          actCell.setAttribute("title", "double-click to edit task");
+          actCell.ondblclick = (e) => {
+            const newText = prompt("Edit your study/activity:", actCell.innerText);
+            if(newText && newText.trim()) {
+              actCell.innerText = newText.trim();
+              // optional save edit to localStorage? not needed persistent across days but ok for custom
+              const rowIdx = i;
+              const keyEdit = `edit_activity_${dayIndex}_${rowIdx}`;
+              localStorage.setItem(keyEdit, newText.trim());
+            }
+          };
+          const savedEdit = localStorage.getItem(`edit_activity_${dayIndex}_${i}`);
+          if(savedEdit) actCell.innerText = savedEdit;
+        }
+      }
+    }
+  }
+  
+  // also re-apply on any checkbox changes
+  window.addEventListener("load", () => {
+    renderDay();
+    // refresh after any change events
+    window.addEventListener("storage", () => renderDay());
+  });
+  // ensure dynamic progress bars update with chapter toggles
+  window.updateChapterProgressBars = updateChapterProgressBars;
+</script>
+</body>
+</html>
