@@ -140,39 +140,53 @@
             margin-top: 2rem;
         }
 
-        .chapter-card {
-            background: rgba(8, 6, 12, 0.75);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(180, 40, 50, 0.55);
-            border-radius: 28px;
-            padding: 1.7rem 1.2rem;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            cursor: pointer;
-            text-align: center;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.7);
-            position: relative;
-            overflow: hidden;
-        }
-        .chapter-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(200,30,30,0.08) 0%, transparent 70%);
-            transition: 0.4s;
-            opacity: 0;
-        }
-        .chapter-card:hover::after {
-            opacity: 1;
-        }
-        .chapter-card:hover {
-            transform: translateY(-8px);
-            border-color: #dd3b4c;
-            box-shadow: 0 0 28px rgba(199, 40, 60, 0.6);
-            background: rgba(20, 6, 12, 0.95);
-        }
+       .chapter-card {
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(180, 40, 50, 0.55);
+    border-radius: 5px;
+    padding: 1.7rem 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: inset 0px 0px 10px darkred;
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Background layer */
+.chapter-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url(chapters/sss.png) center center / cover no-repeat;
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+
+    z-index: 0;
+}
+
+/* Keep content above image */
+.chapter-card * {
+    position: relative;
+    z-index: 1;
+}
+
+.chapter-card:hover {
+    transform: translateY(-8px);
+    border-color: #dd3b4c;
+    box-shadow: 0 0 28px rgba(199, 40, 60, 0.6);
+}
+
+/* Fade in image */
+.chapter-card:hover::before {
+    opacity: 1;
+}
         .card-number {
             font-size: 0.85rem;
             color: #ff8989;
@@ -211,6 +225,80 @@
             padding-top: 2rem;
         }
         
+        /* GLITCH ANIMATION FOR BLOOD SPLATTER */
+        @keyframes glitchEffect {
+            0% {
+                transform: translate(0);
+                filter: hue-rotate(0deg);
+            }
+            20% {
+                transform: translate(-5px, 2px);
+                filter: hue-rotate(15deg);
+            }
+            40% {
+                transform: translate(5px, -2px);
+                filter: hue-rotate(-10deg);
+            }
+            60% {
+                transform: translate(-3px, 1px);
+                filter: hue-rotate(8deg);
+            }
+            80% {
+                transform: translate(3px, -1px);
+                filter: hue-rotate(-5deg);
+            }
+            100% {
+                transform: translate(0);
+                filter: hue-rotate(0deg);
+            }
+        }
+        
+        @keyframes screenGlitch {
+            0% {
+                text-shadow: 2px 0 red, -2px 0 blue;
+                opacity: 0.8;
+            }
+            25% {
+                text-shadow: -3px 0 cyan, 3px 0 magenta;
+                opacity: 1;
+            }
+            50% {
+                text-shadow: 4px 0 lime, -4px 0 purple;
+                opacity: 0.9;
+            }
+            75% {
+                text-shadow: -2px 0 yellow, 2px 0 red;
+                opacity: 1;
+            }
+            100% {
+                text-shadow: 0 0 0 transparent;
+                opacity: 0.8;
+            }
+        }
+        
+        /* RGB Split Glitch */
+        @keyframes rgbGlitch {
+            0% {
+                transform: translate(0);
+                filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 cyan);
+            }
+            25% {
+                transform: translate(-4px, 1px);
+                filter: drop-shadow(-4px 0 red) drop-shadow(4px 0 blue);
+            }
+            50% {
+                transform: translate(4px, -1px);
+                filter: drop-shadow(4px 0 lime) drop-shadow(-4px 0 magenta);
+            }
+            75% {
+                transform: translate(-2px, 2px);
+                filter: drop-shadow(-3px 0 yellow) drop-shadow(3px 0 red);
+            }
+            100% {
+                transform: translate(0);
+                filter: drop-shadow(0 0 0 transparent);
+            }
+        }
         </style>
 </head>
 <body>
@@ -220,8 +308,6 @@
     <script>
         // ============================================================
         // NOIR VALE - AUTO DETECT CHAPTERS FROM FILENAME
-        // Automatically extracts chapter number and title from filename
-        // Format: "CHAPTER - X Title Here.txt" or "CHAPTER-X Title.txt"
         // ============================================================
         
         let CHAPTERS = [];
@@ -277,7 +363,7 @@
         let totalChapters = 0;
         let chapterList = [];
         let bloodTimeout = null;
-        let bloodShown = false; // Track if blood already shown
+        let bloodShown = false;
         const app = document.getElementById('appRoot');
         let animationFrameId = null;
         let rainActive = true;
@@ -389,7 +475,7 @@
                 const div = document.createElement('div');
                 div.id = 'cinematicLoader';
                 div.className = 'cinematic-loader';
-                div.innerHTML = `<div class="broken-crown">⛧ CROWNSLESS ⛧</div><div class="loading-text">LOADING FRAGMENTS ...</div>`;
+                div.innerHTML = `<div class="broken-crown">⛧ NOIR VALE ⛧</div><div class="loading-text">LOADING FRAGMENTS ...</div>`;
                 document.body.appendChild(div);
                 setTimeout(() => {
                     const ld = document.getElementById('cinematicLoader');
@@ -416,10 +502,72 @@
             }
             const overlay = document.getElementById('dynamicBloodOverlay');
             if (overlay) overlay.remove();
+            const glitchOverlay = document.getElementById('glitchOverlay');
+            if (glitchOverlay) glitchOverlay.remove();
         }
 
         function resetBloodFlag() {
             bloodShown = false;
+        }
+
+        // STRONG GLITCH EFFECT FUNCTION
+        function applyStrongGlitch() {
+            // Create a fullscreen glitch overlay
+            const glitchDiv = document.createElement('div');
+            glitchDiv.id = 'glitchOverlay';
+            glitchDiv.style.position = 'fixed';
+            glitchDiv.style.top = '0';
+            glitchDiv.style.left = '0';
+            glitchDiv.style.width = '100%';
+            glitchDiv.style.height = '100%';
+            glitchDiv.style.pointerEvents = 'none';
+            glitchDiv.style.zIndex = '9998';
+            glitchDiv.style.background = 'repeating-linear-gradient(0deg, rgba(255,0,0,0.1) 0px, rgba(255,0,0,0.1) 2px, transparent 2px, transparent 6px)';
+            glitchDiv.style.animation = 'screenGlitch 0.3s ease-in-out 3';
+            document.body.appendChild(glitchDiv);
+            
+            // Add RGB split effect
+            const rgbDiv = document.createElement('div');
+            rgbDiv.style.position = 'fixed';
+            rgbDiv.style.top = '0';
+            rgbDiv.style.left = '0';
+            rgbDiv.style.width = '100%';
+            rgbDiv.style.height = '100%';
+            rgbDiv.style.pointerEvents = 'none';
+            rgbDiv.style.zIndex = '9997';
+            rgbDiv.style.background = 'radial-gradient(circle, rgba(255,0,0,0.2) 0%, rgba(0,255,0,0.1) 50%, rgba(0,0,255,0.2) 100%)';
+            rgbDiv.style.mixBlendMode = 'screen';
+            rgbDiv.style.animation = 'rgbGlitch 0.4s ease-out';
+            document.body.appendChild(rgbDiv);
+            
+            // Remove glitch overlays after animation
+            setTimeout(() => {
+                if (glitchDiv && glitchDiv.remove) glitchDiv.remove();
+                if (rgbDiv && rgbDiv.remove) rgbDiv.remove();
+            }, 600);
+            
+            // Also add glitch to text content temporarily
+            const storyText = document.querySelector('.story-text');
+            if (storyText) {
+                storyText.style.animation = 'glitchEffect 0.3s ease-in-out';
+                setTimeout(() => {
+                    if (storyText) storyText.style.animation = '';
+                }, 300);
+            }
+            
+            // Flash white screen quickly
+            const flashDiv = document.createElement('div');
+            flashDiv.style.position = 'fixed';
+            flashDiv.style.top = '0';
+            flashDiv.style.left = '0';
+            flashDiv.style.width = '100%';
+            flashDiv.style.height = '100%';
+            flashDiv.style.backgroundColor = 'white';
+            flashDiv.style.pointerEvents = 'none';
+            flashDiv.style.zIndex = '9996';
+            flashDiv.style.opacity = '0.3';
+            document.body.appendChild(flashDiv);
+            setTimeout(() => flashDiv.remove(), 80);
         }
 
         function injectReaderStyles() {
@@ -537,7 +685,7 @@
                     color: #c05656;
                 }
                 
-                /* BLOOD SPLATTER JUMPSCARE - BIGGER SIZE */
+                /* BLOOD SPLATTER JUMPSCARE */
                 .blood-splatter-overlay {
                     position: fixed;
                     top: 0;
@@ -545,7 +693,7 @@
                     width: 100%;
                     height: 100%;
                     background: url('chapters/toppng.com-transparent-png-blood-splatter-532x561.png') center center no-repeat;
-                    background-size: 35% auto;
+                    background-size: 45% auto;
                     pointer-events: none;
                     z-index: 9999;
                     opacity: 0;
@@ -553,18 +701,45 @@
                 }
                 .blood-splatter-overlay.active {
                     opacity: 1;
+                    animation: glitchEffect 0.5s ease-in-out;
                 }
                 
                 @keyframes fadeSlide {
                     from { opacity: 0; transform: translateY(12px); }
                     to { opacity: 1; transform: translateY(0); }
                 }
+                
+                @keyframes glitchEffect {
+                    0% { transform: translate(0); filter: hue-rotate(0deg); }
+                    20% { transform: translate(-8px, 3px); filter: hue-rotate(20deg); }
+                    40% { transform: translate(8px, -3px); filter: hue-rotate(-15deg); }
+                    60% { transform: translate(-4px, 2px); filter: hue-rotate(10deg); }
+                    80% { transform: translate(4px, -2px); filter: hue-rotate(-8deg); }
+                    100% { transform: translate(0); filter: hue-rotate(0deg); }
+                }
+                
+                @keyframes screenGlitch {
+                    0% { text-shadow: 2px 0 red, -2px 0 blue; opacity: 0.8; }
+                    25% { text-shadow: -3px 0 cyan, 3px 0 magenta; opacity: 1; }
+                    50% { text-shadow: 4px 0 lime, -4px 0 purple; opacity: 0.9; }
+                    75% { text-shadow: -2px 0 yellow, 2px 0 red; opacity: 1; }
+                    100% { text-shadow: 0 0 0 transparent; opacity: 0.8; }
+                }
+                
+                @keyframes rgbGlitch {
+                    0% { transform: translate(0); filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 cyan); }
+                    25% { transform: translate(-4px, 1px); filter: drop-shadow(-4px 0 red) drop-shadow(4px 0 blue); }
+                    50% { transform: translate(4px, -1px); filter: drop-shadow(4px 0 lime) drop-shadow(-4px 0 magenta); }
+                    75% { transform: translate(-2px, 2px); filter: drop-shadow(-3px 0 yellow) drop-shadow(3px 0 red); }
+                    100% { transform: translate(0); filter: drop-shadow(0 0 0 transparent); }
+                }
+                
                 @media (max-width: 700px) {
                     .reader-container { padding: 1.5rem 1rem; }
                     .story-text { font-size: 1rem; padding: 1rem; }
                     .nav-btn { padding: 5px 16px; font-size: 0.8rem; }
                     .blood-splatter-overlay {
-                        background-size: 100% auto;
+                        background-size: 80% auto;
                     }
                 }
             `;
@@ -572,7 +747,10 @@
         }
 
         function showBloodSplatterOnce() {
-            if (bloodShown) return; // Only show once
+            if (bloodShown) return;
+            
+            // Apply strong glitch effect FIRST
+            applyStrongGlitch();
             
             let overlay = document.getElementById('dynamicBloodOverlay');
             if (!overlay) {
@@ -588,10 +766,15 @@
             void overlay.offsetWidth;
             overlay.classList.add('active');
             
+            // Add extra glitch class to body
+            document.body.style.animation = 'screenGlitch 0.3s ease-in-out';
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 300);
+            
             // Remove after 1.5 seconds
             setTimeout(() => {
                 if (overlay) overlay.classList.remove('active');
-                // Optionally remove overlay after fade out
                 setTimeout(() => {
                     if (overlay && overlay.parentNode) overlay.remove();
                 }, 500);
@@ -602,7 +785,7 @@
             if (bloodTimeout) clearTimeout(bloodTimeout);
             bloodTimeout = setTimeout(() => {
                 showBloodSplatterOnce();
-            }, 15000); // 15 seconds delay
+            }, 15000);
         }
 
         // ----- RENDER HOME -----
@@ -647,7 +830,7 @@
             removeProgressListener();
         }
 
-        // ----- OPEN READER WITH SINGLE BLOOD SPLATTER -----
+        // ----- OPEN READER WITH GLITCH + BLOOD -----
         async function openReader(index) {
             stopBloodSplatter();
             resetBloodFlag();
@@ -691,7 +874,7 @@
                 if (storyDiv) storyDiv.innerHTML = `<div class="error-chapter">⚠️ [FILE MISSING] — "${chapter.filename}" not found inside /chapters/ folder.</div>`;
             }
             
-            // Schedule blood splatter - ONLY ONCE after 15 seconds
+            // Schedule blood splatter with glitch after 15 seconds
             scheduleBloodSplatterOnce();
             
             const prevBtn = document.getElementById('prevChapterBtn');
@@ -760,13 +943,12 @@
 
         async function init() {
             setupRainCanvas();
-            bindGlitchEvents();
             addSubwayAtmosphere();
             await renderHome();
             setTimeout(() => {
                 const fakeLoader = document.getElementById('cinematicLoader');
                 if(fakeLoader) fakeLoader.remove();
-            }, 300);
+            }, 100);
         }
         
         init();
