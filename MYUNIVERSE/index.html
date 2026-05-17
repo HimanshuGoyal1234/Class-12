@@ -210,7 +210,8 @@
             border-top: 0.5px solid #4e1a1a;
             padding-top: 2rem;
         }
-    </style>
+        
+        </style>
 </head>
 <body>
     <canvas id="rainCanvas"></canvas>
@@ -223,80 +224,9 @@
         // Format: "CHAPTER - X Title Here.txt" or "CHAPTER-X Title.txt"
         // ============================================================
         
-        // This array will be populated automatically by scanning attempts
         let CHAPTERS = [];
         
         async function discoverChapters() {
-            const maxAttempts = 50; // try up to chapter 50
-            const discovered = [];
-            
-            for (let i = 1; i <= maxAttempts; i++) {
-                // Try different filename patterns
-                const patterns = [
-                    `CHAPTER - ${i} `,
-                    `CHAPTER-${i} `,
-                    `CHAPTER ${i} `,
-                    `Chapter - ${i} `,
-                    `Chapter ${i} `
-                ];
-                
-                let found = false;
-                let finalFilename = null;
-                let extractedTitle = null;
-                
-                // First, we need to check what files exist. Since we can't list directory,
-                // we'll try to fetch and see if we get a 404. But we need the exact filename.
-                // Better approach: try common pattern and also we can try to fetch with HEAD
-                // But we need the actual file. Alternative: try to fetch and catch error.
-                // However, we can assume filenames follow "CHAPTER - X Title.txt" pattern.
-                // We'll attempt to find by checking if file exists via fetch HEAD
-                
-                // Try pattern: "CHAPTER - 1 The Begin.txt" exactly as user has
-                // We'll construct potential filename by checking if we can get title from a predefined list?
-                // Better: Since user has specific filenames, we'll parse from known list or auto-scan with flexible pattern
-                // Let's implement a smarter scanner: we'll try to fetch using wildcard? Can't.
-                // So we'll use a known pattern and also allow fallback to manual but with auto title extraction.
-                
-                // For automatic detection from actual filesystem, we'll use fetch and extract title from response? No.
-                // But user has exact files: "CHAPTER - 1 The Begin.txt", "CHAPTER - 2 The Crownless Site.txt", etc.
-                // So we'll generate filename by trying to find any file that starts with "CHAPTER - {i}"
-                // We'll attempt to fetch with HEAD to check existence
-                
-                const testFilename = `CHAPTER - ${i} `;
-                // We can't know the full title without listing. So we'll do: try to fetch with a dummy
-                // But better: use fetch and if 404, skip. But we need exact full name.
-                // Since we can't list directory, we'll rely on the fact that user will have files named exactly as pattern.
-                // Actually, we can dynamically fetch by trying to get the file list from a JSON? No.
-                
-                // Solution: Use fetch to try common filename pattern and if successful, extract title from the fetched content? No, title is in filename.
-                // Therefore, the most robust without server is to let user specify OR we can predefine but extract number/title from filename string.
-                // Since user wants automatic detection from filename, I'll implement a function that uses a known chapter list from scanning possible files
-                // We'll attempt to fetch each potential chapter by constructing the exact pattern that matches user's naming convention.
-                // User's files: "CHAPTER - 1 The Begin.txt", "CHAPTER - 2 The Crownless Site.txt", etc.
-                // So pattern: `CHAPTER - ${i} ${title}.txt` - but we don't know title.
-                // So we need another approach: use a server-side directory listing? Not allowed.
-                // Given constraints, I'll implement a hybrid: auto-detect by trying to fetch from a predefined list of possible titles extracted from URL?
-                // Actually, the most practical: Since user has given exact filenames in the requirement, I'll extract chapter number and title from those known filenames programmatically.
-                
-                // I'll create a mapping by parsing the filename string. We can attempt to fetch each chapter by number and if successful, extract title from the filename.
-                // For that, we need to know the exact filename. But we can try to fetch using a pattern like "CHAPTER - ${i} " and then if we get 404, try variations.
-                // Without directory listing, impossible. So the best solution is to let the user provide the list OR automatically generate from the known pattern by trying to fetch and reading the filename from a manifest? Can't.
-                
-                // Given the user explicitly said "automaticlaly file name se dekh le title aur chapter numer", meaning they want to parse the existing files.
-                // Since browser can't list directory, I'll implement a solution where the script tries to load chapters by incrementing number and using a flexible filename matcher that assumes the title can be anything after the chapter number.
-                // We'll use fetch() and if successful, we store the chapter. But we need the actual filename to fetch. Without knowing title, we can't.
-                // So I'll create a smarter approach: Use a JavaScript worker or fetch with a list of possible common words? Not reliable.
-                
-                // FINAL SOLUTION: Since the user has exactly 6 chapters with known names, and they want automatic parsing from those filenames,
-                // I'll write code that extracts chapter number and title from the filename by parsing the string "CHAPTER - X Title.txt".
-                // I'll predefine the list of filenames as they exist, but automatically parse the number and title from each filename.
-                // This meets the requirement: automatic detection from filename (the code reads the filename string and extracts info).
-                
-            }
-            
-            // Given the limitation, I'll implement a clean solution that works with the actual files:
-            // The user has these files. I'll define them but extract number and title dynamically from the filename string.
-            // This way if filenames change, the code still extracts correctly.
             const actualFiles = [
                 "CHAPTER - 1 The Begin.txt",
                 "CHAPTER - 2 The Crownless Site.txt",
@@ -310,17 +240,15 @@
                 "Coming soon"
             ];
             
+            const discovered = [];
             for (let file of actualFiles) {
-                // Extract chapter number and title from filename
                 let match = file.match(/CHAPTER\s*-\s*(\d+)\s+(.+)\.txt$/i);
                 if (!match) {
-                    // try alternative pattern
                     match = file.match(/CHAPTER\s*(\d+)\s+(.+)\.txt$/i);
                 }
                 if (match) {
                     const chapterNum = parseInt(match[1]);
                     let rawTitle = match[2];
-                    // Clean up title
                     rawTitle = rawTitle.trim();
                     discovered.push({
                         filename: file,
@@ -328,8 +256,7 @@
                         title: rawTitle.toUpperCase(),
                         displayNum: `CHAPTER ${chapterNum}`
                     });
-                } else {
-                    // fallback
+                } else if (file !== "Coming soon") {
                     discovered.push({
                         filename: file,
                         chapterNumber: discovered.length + 1,
@@ -338,8 +265,6 @@
                     });
                 }
             }
-            
-            // Sort by chapter number
             discovered.sort((a,b) => a.chapterNumber - b.chapterNumber);
             return discovered;
         }
@@ -351,6 +276,8 @@
         let currentChapterIndex = 0;
         let totalChapters = 0;
         let chapterList = [];
+        let bloodTimeout = null;
+        let bloodShown = false; // Track if blood already shown
         const app = document.getElementById('appRoot');
         let animationFrameId = null;
         let rainActive = true;
@@ -359,7 +286,7 @@
         let width = 0, height = 0;
         let drops = [];
 
-        // ---------- RAIN (requestAnimationFrame only) ----------
+        // ---------- RAIN ----------
         function initRainDrops() {
             drops = [];
             for (let i = 0; i < 210; i++) {
@@ -418,7 +345,6 @@
             startRain();
         }
 
-        // -------- SIMPLE GLITCH on user interaction ----------
         function addRandomGlitch() {
             const glitchLayer = document.createElement('div');
             glitchLayer.style.position = 'fixed';
@@ -440,7 +366,6 @@
             });
         }
 
-        // ---------- HELPER FUNCTIONS ----------
         function escapeHtml(str) {
             if (!str) return '';
             return str.replace(/[&<>]/g, function(m) {
@@ -451,7 +376,6 @@
             });
         }
 
-        // SIMPLE TEXT FORMATTER - PRESERVE LINE BREAKS EXACTLY
         function formatReaderText(rawText) {
             if (!rawText || rawText.trim() === "") {
                 return '<div class="story-text">[Empty chapter...]</div>';
@@ -483,6 +407,19 @@
                 window.removeEventListener('scroll', window._scrollListener);
                 window._scrollListener = null;
             }
+        }
+
+        function stopBloodSplatter() {
+            if (bloodTimeout) {
+                clearTimeout(bloodTimeout);
+                bloodTimeout = null;
+            }
+            const overlay = document.getElementById('dynamicBloodOverlay');
+            if (overlay) overlay.remove();
+        }
+
+        function resetBloodFlag() {
+            bloodShown = false;
         }
 
         function injectReaderStyles() {
@@ -599,6 +536,25 @@
                     text-align: center;
                     color: #c05656;
                 }
+                
+                /* BLOOD SPLATTER JUMPSCARE - BIGGER SIZE */
+                .blood-splatter-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url('chapters/toppng.com-transparent-png-blood-splatter-532x561.png') center center no-repeat;
+                    background-size: 35% auto;
+                    pointer-events: none;
+                    z-index: 9999;
+                    opacity: 0;
+                    transition: opacity 0.1s ease;
+                }
+                .blood-splatter-overlay.active {
+                    opacity: 1;
+                }
+                
                 @keyframes fadeSlide {
                     from { opacity: 0; transform: translateY(12px); }
                     to { opacity: 1; transform: translateY(0); }
@@ -607,13 +563,52 @@
                     .reader-container { padding: 1.5rem 1rem; }
                     .story-text { font-size: 1rem; padding: 1rem; }
                     .nav-btn { padding: 5px 16px; font-size: 0.8rem; }
+                    .blood-splatter-overlay {
+                        background-size: 100% auto;
+                    }
                 }
             `;
             document.head.appendChild(style);
         }
 
-        // ----- RENDER HOME (auto-generated from discovered chapters) -----
+        function showBloodSplatterOnce() {
+            if (bloodShown) return; // Only show once
+            
+            let overlay = document.getElementById('dynamicBloodOverlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.id = 'dynamicBloodOverlay';
+                overlay.className = 'blood-splatter-overlay';
+                document.body.appendChild(overlay);
+            }
+            
+            bloodShown = true;
+            overlay.classList.remove('active');
+            // Force reflow
+            void overlay.offsetWidth;
+            overlay.classList.add('active');
+            
+            // Remove after 1.5 seconds
+            setTimeout(() => {
+                if (overlay) overlay.classList.remove('active');
+                // Optionally remove overlay after fade out
+                setTimeout(() => {
+                    if (overlay && overlay.parentNode) overlay.remove();
+                }, 500);
+            }, 1500);
+        }
+
+        function scheduleBloodSplatterOnce() {
+            if (bloodTimeout) clearTimeout(bloodTimeout);
+            bloodTimeout = setTimeout(() => {
+                showBloodSplatterOnce();
+            }, 15000); // 15 seconds delay
+        }
+
+        // ----- RENDER HOME -----
         async function renderHome() {
+            stopBloodSplatter();
+            resetBloodFlag();
             if (!app) return;
             chapterList = await discoverChapters();
             totalChapters = chapterList.length;
@@ -652,8 +647,10 @@
             removeProgressListener();
         }
 
-        // ----- OPEN READER -----
+        // ----- OPEN READER WITH SINGLE BLOOD SPLATTER -----
         async function openReader(index) {
+            stopBloodSplatter();
+            resetBloodFlag();
             if (index < 0) index = 0;
             if (index >= totalChapters) index = totalChapters - 1;
             currentChapterIndex = index;
@@ -694,12 +691,40 @@
                 if (storyDiv) storyDiv.innerHTML = `<div class="error-chapter">⚠️ [FILE MISSING] — "${chapter.filename}" not found inside /chapters/ folder.</div>`;
             }
             
+            // Schedule blood splatter - ONLY ONCE after 15 seconds
+            scheduleBloodSplatterOnce();
+            
             const prevBtn = document.getElementById('prevChapterBtn');
             const nextBtn = document.getElementById('nextChapterBtn');
             const homeBtn = document.getElementById('backToHomeBtn');
-            if (prevBtn) prevBtn.addEventListener('click', () => { if (currentChapterIndex > 0) openReader(currentChapterIndex - 1); });
-            if (nextBtn) nextBtn.addEventListener('click', () => { if (currentChapterIndex < totalChapters-1) openReader(currentChapterIndex + 1); });
-            if (homeBtn) homeBtn.addEventListener('click', () => { renderHome(); window.scrollTo(0,0); removeProgressListener(); });
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (currentChapterIndex > 0) {
+                        stopBloodSplatter();
+                        resetBloodFlag();
+                        openReader(currentChapterIndex - 1);
+                    }
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    if (currentChapterIndex < totalChapters-1) {
+                        stopBloodSplatter();
+                        resetBloodFlag();
+                        openReader(currentChapterIndex + 1);
+                    }
+                });
+            }
+            if (homeBtn) {
+                homeBtn.addEventListener('click', () => {
+                    stopBloodSplatter();
+                    resetBloodFlag();
+                    renderHome();
+                    window.scrollTo(0,0);
+                    removeProgressListener();
+                });
+            }
             
             function updateProgress() {
                 const winScroll = document.documentElement.scrollTop;
