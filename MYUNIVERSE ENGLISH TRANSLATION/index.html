@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <title>NOIR VALE · Crownless Chronicles</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: #030105;
+                font-family: 'Inter', 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Courier New', monospace;
+                color: #e6e6e6;
+                overflow-x: hidden;
+                min-height: 100vh;
+            }
+
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #0a0a0f;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #ac1c2e;
+                border-radius: 20px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #ff2f45;
+                box-shadow: 0 0 6px #ff0000;
+            }
+
+            #rainCanvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 0;
+                opacity: 0.45;
+            }
+
+            .site-wrapper {
+                position: relative;
+                z-index: 2;
+                min-height: 100vh;
+            }
+
+            .cinematic-loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #000000dd;
+                backdrop-filter: blur(8px);
+                z-index: 999;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: monospace;
+                transition: opacity 0.8s ease;
+                pointer-events: none;
+            }
+
+            .broken-crown {
+                font-size: 4rem;
+                font-weight: 900;
+                color: #8b0000;
+                text-shadow: 0 0 15px crimson, 0 0 30px #4a0000;
+                letter-spacing: 8px;
+                animation: pulseCrown 1.6s infinite alternate;
+            }
+
+            @keyframes pulseCrown {
+                0% {
+                    opacity: 0.4;
+                    text-shadow: 0 0 0px crimson;
+                    transform: scale(0.98);
+                }
+
+                100% {
+                    opacity: 1;
+                    text-shadow: 0 0 20px #ff3a3a;
+                    transform: scale(1.02);
+                }
+            }
+
+            .loading-text {
+                margin-top: 1.5rem;
+                color: #b66b6b;
+                letter-spacing: 3px;
+                font-size: 0.8rem;
+            }
+
+            .home-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 2rem 2rem 5rem;
+            }
+
+            .hero {
+                text-align: center;
+                padding: 2.5rem 1rem 2rem;
+                border-bottom: 2px solid #6b0f1a;
+                margin-bottom: 3rem;
+                position: relative;
+            }
+
+            .hero h1 {
+                font-size: 5rem;
+                font-weight: 800;
+                letter-spacing: 8px;
+                background: linear-gradient(135deg, #f0a3a3, #9a1f2f, #4a0404);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-transform: uppercase;
+                filter: drop-shadow(0 0 12px #b00030);
+                animation: glitchTitle 3s infinite;
+            }
+
+            @keyframes glitchTitle {
+
+                0%,
+                100% {
+                    text-shadow: 2px 0 red, -2px 0 #600;
+                }
+
+                5% {
+                    text-shadow: -3px 0 #ff4444, 3px 0 #3a0000;
+                }
+
+                10% {
+                    text-shadow: 2px 0 #aa2222, -2px 0 #ff0000;
+                }
+
+                15% {
+                    text-shadow: none;
+                }
+            }
+
+            .sub-main {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+                color: #cf9f9f;
+                background: rgba(0, 0, 0, 0.55);
+                display: inline-block;
+                padding: 0.6rem 2rem;
+                border-left: 3px solid #c41e2e;
+                border-right: 3px solid #c41e2e;
+                backdrop-filter: blur(4px);
+                margin-top: 1rem;
+            }
+
+            .chapter-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .chapter-card {
+                backdrop-filter: blur(5px);
+                border: 1px solid rgba(180, 40, 50, 0.55);
+                border-radius: 5px;
+                padding: 1.7rem 1.2rem;
+                cursor: pointer;
+                text-align: center;
+                box-shadow: inset 0px 0px 10px darkred;
+                position: relative;
+                overflow: hidden;
+
+                transition:
+                    transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            /* Background layer */
+            .chapter-card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+
+                background: url(chapters/sss.png) center center / cover no-repeat;
+
+                opacity: 0;
+                transition: opacity 0.35s ease;
+
+                z-index: 0;
+            }
+
+            /* Keep content above image */
+            .chapter-card * {
+                position: relative;
+                z-index: 1;
+            }
+
+            .chapter-card:hover {
+                transform: translateY(-8px);
+                border-color: #dd3b4c;
+                box-shadow: 0 0 28px rgba(199, 40, 60, 0.6);
+            }
+
+            /* Fade in image */
+            .chapter-card:hover::before {
+                opacity: 1;
+            }
+
+            .card-number {
+                font-size: 0.85rem;
+                color: #ff8989;
+                letter-spacing: 2px;
+                border-bottom: 1px dashed #af2c2c;
+                display: inline-block;
+                padding-bottom: 5px;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin: 0.8rem 0;
+                color: #ffcdcd;
+                text-transform: uppercase;
+                word-break: break-word;
+            }
+
+            .card-desc {
+                font-size: 0.75rem;
+                color: #b17878;
+                font-style: italic;
+            }
+
+            @media (max-width: 720px) {
+                .hero h1 {
+                    font-size: 2.8rem;
+                    letter-spacing: 4px;
+                }
+
+                .home-container {
+                    padding: 1rem 1rem 3rem;
+                }
+
+                .chapter-grid {
+                    gap: 1rem;
+                    grid-template-columns: 1fr;
+                }
+
+                .card-title {
+                    font-size: 1.2rem;
+                }
+            }
+
+            footer {
+                text-align: center;
+                margin-top: 4rem;
+                font-size: 0.7rem;
+                opacity: 0.5;
+                border-top: 0.5px solid #4e1a1a;
+                padding-top: 2rem;
+            }
+
+            /* GLITCH ANIMATION FOR BLOOD SPLATTER */
+            @keyframes glitchEffect {
+                0% {
+                    transform: translate(0);
+                    filter: hue-rotate(0deg);
+                }
+
+                20% {
+                    transform: translate(-5px, 2px);
+                    filter: hue-rotate(15deg);
+                }
+
+                40% {
+                    transform: translate(5px, -2px);
+                    filter: hue-rotate(-10deg);
+                }
+
+                60% {
+                    transform: translate(-3px, 1px);
+                    filter: hue-rotate(8deg);
+                }
+
+                80% {
+                    transform: translate(3px, -1px);
+                    filter: hue-rotate(-5deg);
+                }
+
+                100% {
+                    transform: translate(0);
+                    filter: hue-rotate(0deg);
+                }
+            }
+
+            @keyframes screenGlitch {
+                0% {
+                    text-shadow: 2px 0 red, -2px 0 blue;
+                    opacity: 0.8;
+                }
+
+                25% {
+                    text-shadow: -3px 0 cyan, 3px 0 magenta;
+                    opacity: 1;
+                }
+
+                50% {
+                    text-shadow: 4px 0 lime, -4px 0 purple;
+                    opacity: 0.9;
+                }
+
+                75% {
+                    text-shadow: -2px 0 yellow, 2px 0 red;
+                    opacity: 1;
+                }
+
+                100% {
+                    text-shadow: 0 0 0 transparent;
+                    opacity: 0.8;
+                }
+            }
+
+            /* RGB Split Glitch */
+            @keyframes rgbGlitch {
+                0% {
+                    transform: translate(0);
+                    filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 cyan);
+                }
+
+                25% {
+                    transform: translate(-4px, 1px);
+                    filter: drop-shadow(-4px 0 red) drop-shadow(4px 0 blue);
+                }
+
+                50% {
+                    transform: translate(4px, -1px);
+                    filter: drop-shadow(4px 0 lime) drop-shadow(-4px 0 magenta);
+                }
+
+                75% {
+                    transform: translate(-2px, 2px);
+                    filter: drop-shadow(-3px 0 yellow) drop-shadow(3px 0 red);
+                }
+
+                100% {
+                    transform: translate(0);
+                    filter: drop-shadow(0 0 0 transparent);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="rainCanvas"></canvas>
+        <div class="site-wrapper" id="appRoot"></div>
+
+        <script>
+            // ============================================================
+            // NOIR VALE - AUTO DETECT CHAPTERS FROM FILENAME
+            // ============================================================
+
+            let CHAPTERS = [];
+
+            async function discoverChapters() {
+                const actualFiles = [
+                    "CHAPTER - 1 The Begin.txt",
+                    "CHAPTER - 2 The Crownless Site.txt",
+                    "CHAPTER - 3 Flashback.txt",
+                    "CHAPTER - 4 The Invitation.txt",
+                    "CHAPTER - 5 White Shirt.txt",
+                    "CHAPTER - 6 Next Stop Crownless Arena.txt",
+                    "CHAPTER - 7 Real Platform.txt",
+                    "CHAPTER - 8 Broken Masks.txt",
+                    "CHAPTER - 9 Mugami Hito.txt",
+                    "CHAPTER - 10 The Girl Who Wanted To Fly.txt",
+                    "CHAPTER - 11 Her Dream His Silence.txt",
+                    "CHAPTER - 12 Confession Silence and Another Death.txt",
+                    "CHAPTER - 13 Crownless Rage.txt",
+                    "CHAPTER - 14 The Beginning of Revenge.txt",
+                    "CHAPTER - 15 Weakness Dies Here.txt",
+                    "CHAPTER - 16 Deadly Smile.txt",
+                    "CHAPTER - 17 Rage.txt",
+                    "CHAPTER - 18 Cold Eyes.txt",
+                    "CHAPTER - 19 Monster Arena.txt",
+                    "CHAPTER - 20 Welcome Back.txt",
+                    "CHAPTER - 21 No Way Back.txt",
+                    "Coming soon"
+                ];
+
+                const discovered = [];
+                for (let file of actualFiles) {
+                    let match = file.match(/CHAPTER\s*-\s*(\d+)\s+(.+)\.txt$/i);
+                    if (!match) {
+                        match = file.match(/CHAPTER\s*(\d+)\s+(.+)\.txt$/i);
+                    }
+                    if (match) {
+                        const chapterNum = parseInt(match[1]);
+                        let rawTitle = match[2];
+                        rawTitle = rawTitle.trim();
+                        discovered.push({
+                            filename: file,
+                            chapterNumber: chapterNum,
+                            title: rawTitle.toUpperCase(),
+                            displayNum: `CHAPTER ${ chapterNum }`
+                        });
+                    } else if (file !== "Coming soon") {
+                        discovered.push({
+                            filename: file,
+                            chapterNumber: discovered.length + 1,
+                            title: file.replace(/\.txt$/i, '').replace(/CHAPTER\s*-\s*\d+\s*/i, '').toUpperCase(),
+                            displayNum: `CHAPTER ${ discovered.length + 1 }`
+                        });
+                    }
+                }
+                discovered.sort((a, b) => a.chapterNumber - b.chapterNumber);
+                return discovered;
+            }
+
+            function getChapterURL(filename) {
+                return `./chapters/${ encodeURIComponent(filename) }`;
+            }
+
+            let currentChapterIndex = 0;
+            let totalChapters = 0;
+            let chapterList = [];
+            let bloodTimeout = null;
+            let bloodShown = false;
+            const app = document.getElementById('appRoot');
+            let animationFrameId = null;
+            let rainActive = true;
+            let canvas = null;
+            let ctx = null;
+            let width = 0, height = 0;
+            let drops = [];
+
+            // ---------- RAIN ----------
+            function initRainDrops() {
+                drops = [];
+                for (let i = 0; i < 210; i++) {
+                    drops.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        len: Math.random() * 20 + 10,
+                        speed: Math.random() * 6 + 3,
+                        opacity: Math.random() * 0.35 + 0.1
+                    });
+                }
+            }
+
+            function resizeCanvas() {
+                if (!canvas) return;
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+                initRainDrops();
+            }
+
+            function drawRain() {
+                if (!ctx || !rainActive) return;
+                ctx.clearRect(0, 0, width, height);
+                for (let d of drops) {
+                    ctx.beginPath();
+                    ctx.moveTo(d.x, d.y);
+                    ctx.lineTo(d.x, d.y + d.len);
+                    ctx.strokeStyle = `rgba(180, 40, 55, ${ d.opacity * 0.7 })`;
+                    ctx.lineWidth = 1.2;
+                    ctx.stroke();
+                    d.y += d.speed;
+                    if (d.y > height) {
+                        d.y = -d.len;
+                        d.x = Math.random() * width;
+                    }
+                }
+                animationFrameId = requestAnimationFrame(drawRain);
+            }
+
+            function startRain() {
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
+                rainActive = true;
+                drawRain();
+            }
+
+            function setupRainCanvas() {
+                canvas = document.getElementById('rainCanvas');
+                if (!canvas) return;
+                ctx = canvas.getContext('2d');
+                resizeCanvas();
+                window.addEventListener('resize', () => {
+                    resizeCanvas();
+                });
+                startRain();
+            }
+
+            function addRandomGlitch() {
+                const glitchLayer = document.createElement('div');
+                glitchLayer.style.position = 'fixed';
+                glitchLayer.style.top = '0';
+                glitchLayer.style.left = '0';
+                glitchLayer.style.width = '100%';
+                glitchLayer.style.height = '100%';
+                glitchLayer.style.pointerEvents = 'none';
+                glitchLayer.style.background = 'radial-gradient(circle, rgba(180,20,30,0.03) 0%, transparent 80%)';
+                glitchLayer.style.zIndex = '98';
+                document.body.appendChild(glitchLayer);
+                setTimeout(() => glitchLayer.remove(), 80);
+            }
+
+            function bindGlitchEvents() {
+                const events = ['click', 'mousemove', 'scroll'];
+                events.forEach(ev => {
+                    window.addEventListener(ev, () => addRandomGlitch(), { passive: true });
+                });
+            }
+
+            function escapeHtml(str) {
+                if (!str) return '';
+                return str.replace(/[&<>]/g, function (m) {
+                    if (m === '&') return '&amp;';
+                    if (m === '<') return '&lt;';
+                    if (m === '>') return '&gt;';
+                    return m;
+                });
+            }
+
+            function formatReaderText(rawText) {
+                if (!rawText || rawText.trim() === "") {
+                    return '<div class="story-text">[Empty chapter...]</div>';
+                }
+                return `<div class="story-text">${ escapeHtml(rawText) }</div>`;
+            }
+
+            function showCinematicLoader(visible) {
+                let loaderDiv = document.getElementById('cinematicLoader');
+                if (!loaderDiv && visible) {
+                    const div = document.createElement('div');
+                    div.id = 'cinematicLoader';
+                    div.className = 'cinematic-loader';
+                    div.innerHTML = `<div class="broken-crown">⛧ NOIR VALE ⛧</div><div class="loading-text">LOADING FRAGMENTS ...</div>`;
+                    document.body.appendChild(div);
+                    setTimeout(() => {
+                        const ld = document.getElementById('cinematicLoader');
+                        if (ld) ld.style.opacity = '0';
+                        setTimeout(() => { if (ld && ld.remove) ld.remove(); }, 800);
+                    }, 1100);
+                } else if (!visible && loaderDiv) {
+                    loaderDiv.style.opacity = '0';
+                    setTimeout(() => loaderDiv.remove(), 700);
+                }
+            }
+
+            function removeProgressListener() {
+                if (window._scrollListener) {
+                    window.removeEventListener('scroll', window._scrollListener);
+                    window._scrollListener = null;
+                }
+            }
+
+            function stopBloodSplatter() {
+                if (bloodTimeout) {
+                    clearTimeout(bloodTimeout);
+                    bloodTimeout = null;
+                }
+                const overlay = document.getElementById('dynamicBloodOverlay');
+                if (overlay) overlay.remove();
+                const glitchOverlay = document.getElementById('glitchOverlay');
+                if (glitchOverlay) glitchOverlay.remove();
+            }
+
+            function resetBloodFlag() {
+                bloodShown = false;
+            }
+
+            // STRONG GLITCH EFFECT FUNCTION
+            function applyStrongGlitch() {
+                // Create a fullscreen glitch overlay
+                const glitchDiv = document.createElement('div');
+                glitchDiv.id = 'glitchOverlay';
+                glitchDiv.style.position = 'fixed';
+                glitchDiv.style.top = '0';
+                glitchDiv.style.left = '0';
+                glitchDiv.style.width = '100%';
+                glitchDiv.style.height = '100%';
+                glitchDiv.style.pointerEvents = 'none';
+                glitchDiv.style.zIndex = '9998';
+                glitchDiv.style.background = 'repeating-linear-gradient(0deg, rgba(255,0,0,0.1) 0px, rgba(255,0,0,0.1) 2px, transparent 2px, transparent 6px)';
+                glitchDiv.style.animation = 'screenGlitch 0.3s ease-in-out 3';
+                document.body.appendChild(glitchDiv);
+
+                // Add RGB split effect
+                const rgbDiv = document.createElement('div');
+                rgbDiv.style.position = 'fixed';
+                rgbDiv.style.top = '0';
+                rgbDiv.style.left = '0';
+                rgbDiv.style.width = '100%';
+                rgbDiv.style.height = '100%';
+                rgbDiv.style.pointerEvents = 'none';
+                rgbDiv.style.zIndex = '9997';
+                rgbDiv.style.background = 'radial-gradient(circle, rgba(255,0,0,0.2) 0%, rgba(0,255,0,0.1) 50%, rgba(0,0,255,0.2) 100%)';
+                rgbDiv.style.mixBlendMode = 'screen';
+                rgbDiv.style.animation = 'rgbGlitch 0.4s ease-out';
+                document.body.appendChild(rgbDiv);
+
+                // Remove glitch overlays after animation
+                setTimeout(() => {
+                    if (glitchDiv && glitchDiv.remove) glitchDiv.remove();
+                    if (rgbDiv && rgbDiv.remove) rgbDiv.remove();
+                }, 600);
+
+                // Also add glitch to text content temporarily
+                const storyText = document.querySelector('.story-text');
+                if (storyText) {
+                    storyText.style.animation = 'glitchEffect 0.3s ease-in-out';
+                    setTimeout(() => {
+                        if (storyText) storyText.style.animation = '';
+                    }, 300);
+                }
+
+                // Flash white screen quickly
+                const flashDiv = document.createElement('div');
+                flashDiv.style.position = 'fixed';
+                flashDiv.style.top = '0';
+                flashDiv.style.left = '0';
+                flashDiv.style.width = '100%';
+                flashDiv.style.height = '100%';
+                flashDiv.style.backgroundColor = 'white';
+                flashDiv.style.pointerEvents = 'none';
+                flashDiv.style.zIndex = '9996';
+                flashDiv.style.opacity = '0.3';
+                document.body.appendChild(flashDiv);
+                setTimeout(() => flashDiv.remove(), 80);
+            }
+
+            function injectReaderStyles() {
+                if (document.getElementById('dynamicReaderStyles')) return;
+                const style = document.createElement('style');
+                style.id = 'dynamicReaderStyles';
+                style.textContent = `
+                .reader-container {
+                    max-width: 880px;
+                    margin: 0 auto;
+                    padding: 2rem 1.8rem 4rem;
+                    background: rgba(0, 0, 0, 0.75);
+                    min-height: 100vh;
+                    position: relative;
+                    backdrop-filter: blur(2px);
+                }
+                .progress-wrapper {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background: #1a0a0e;
+                    z-index: 200;
+                }
+                .reading-progress-bar {
+                    height: 4px;
+                    width: 0%;
+                    background: linear-gradient(90deg, #ed1c3a, #9e1028);
+                    box-shadow: 0 0 8px #ff2a44;
+                    transition: width 0.08s linear;
+                }
+                .reader-nav {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 2rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid #a12939;
+                    flex-wrap: wrap;
+                    gap: 12px;
+                }
+                .nav-btn {
+                    background: #120708;
+                    border: 1px solid #bb2e42;
+                    padding: 8px 26px;
+                    border-radius: 60px;
+                    color: #ffbfbf;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    font-family: monospace;
+                }
+                .nav-btn:hover:not(:disabled) {
+                    background: #a51e31;
+                    color: #010101;
+                    box-shadow: 0 0 14px #ff3a4a;
+                    transform: scale(1.02);
+                }
+                .nav-btn:disabled {
+                    opacity: 0.4;
+                    cursor: default;
+                }
+                .chapter-badge {
+                    background: #1f0b0b;
+                    padding: 6px 18px;
+                    border-radius: 30px;
+                    color: #e69494;
+                    font-weight: 500;
+                    border-left: 3px solid #e33;
+                }
+                .story-text {
+                    font-size: 1.2rem;
+                    line-height: 1.8;
+                    font-family: 'Georgia', 'Times New Roman', 'Inter', serif;
+                    white-space: pre-wrap;
+                    word-break: break-word;
+                    background: rgba(5, 3, 8, 0.4);
+                    padding: 1.8rem;
+                    border-radius: 24px;
+                    margin-top: 1rem;
+                    color: #efe3db;
+                    text-shadow: 0 1px 1px black;
+                    animation: fadeSlide 0.65s ease-out;
+                }
+                .error-chapter {
+                    background: #1f0707;
+                    padding: 2rem;
+                    border-left: 6px solid red;
+                    white-space: pre-wrap;
+                }
+                .ghost-btn {
+                    background: transparent;
+                    border: 1px solid #a03333;
+                    padding: 10px 26px;
+                    color: #e6a3a3;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    border-radius: 50px;
+                    margin-top: 2rem;
+                    width: fit-content;
+                    font-weight: 500;
+                }
+                .ghost-btn:hover {
+                    background: #3f1212;
+                    border-color: #ff5050;
+                    box-shadow: 0 0 8px red;
+                }
+                .back-home-btn {
+                    display: flex;
+                    justify-content: center;
+                }
+                .loader-text {
+                    text-align: center;
+                    color: #c05656;
+                }
+                
+                /* BLOOD SPLATTER JUMPSCARE */
+                .blood-splatter-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url('chapters/toppng.com-transparent-png-blood-splatter-532x561.png') center center no-repeat;
+                    background-size: 45% auto;
+                    pointer-events: none;
+                    z-index: 9999;
+                    opacity: 0;
+                    transition: opacity 0.1s ease;
+                }
+                .blood-splatter-overlay.active {
+                    opacity: 1;
+                    animation: glitchEffect 0.5s ease-in-out;
+                }
+                
+                @keyframes fadeSlide {
+                    from { opacity: 0; transform: translateY(12px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                
+                @keyframes glitchEffect {
+                    0% { transform: translate(0); filter: hue-rotate(0deg); }
+                    20% { transform: translate(-8px, 3px); filter: hue-rotate(20deg); }
+                    40% { transform: translate(8px, -3px); filter: hue-rotate(-15deg); }
+                    60% { transform: translate(-4px, 2px); filter: hue-rotate(10deg); }
+                    80% { transform: translate(4px, -2px); filter: hue-rotate(-8deg); }
+                    100% { transform: translate(0); filter: hue-rotate(0deg); }
+                }
+                
+                @keyframes screenGlitch {
+                    0% { text-shadow: 2px 0 red, -2px 0 blue; opacity: 0.8; }
+                    25% { text-shadow: -3px 0 cyan, 3px 0 magenta; opacity: 1; }
+                    50% { text-shadow: 4px 0 lime, -4px 0 purple; opacity: 0.9; }
+                    75% { text-shadow: -2px 0 yellow, 2px 0 red; opacity: 1; }
+                    100% { text-shadow: 0 0 0 transparent; opacity: 0.8; }
+                }
+                
+                @keyframes rgbGlitch {
+                    0% { transform: translate(0); filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 cyan); }
+                    25% { transform: translate(-4px, 1px); filter: drop-shadow(-4px 0 red) drop-shadow(4px 0 blue); }
+                    50% { transform: translate(4px, -1px); filter: drop-shadow(4px 0 lime) drop-shadow(-4px 0 magenta); }
+                    75% { transform: translate(-2px, 2px); filter: drop-shadow(-3px 0 yellow) drop-shadow(3px 0 red); }
+                    100% { transform: translate(0); filter: drop-shadow(0 0 0 transparent); }
+                }
+                
+                @media (max-width: 700px) {
+                    .reader-container { padding: 1.5rem 1rem; }
+                    .story-text { font-size: 1rem; padding: 1rem; }
+                    .nav-btn { padding: 5px 16px; font-size: 0.8rem; }
+                    .blood-splatter-overlay {
+                        background-size: 80% auto;
+                    }
+                }
+            `;
+                document.head.appendChild(style);
+            }
+
+            function showBloodSplatterOnce() {
+                if (bloodShown) return;
+
+                // Apply strong glitch effect FIRST
+                applyStrongGlitch();
+
+                let overlay = document.getElementById('dynamicBloodOverlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.id = 'dynamicBloodOverlay';
+                    overlay.className = 'blood-splatter-overlay';
+                    document.body.appendChild(overlay);
+                }
+
+                bloodShown = true;
+                overlay.classList.remove('active');
+                // Force reflow
+                void overlay.offsetWidth;
+                overlay.classList.add('active');
+
+                // Add extra glitch class to body
+                document.body.style.animation = 'screenGlitch 0.3s ease-in-out';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 300);
+
+                // Remove after 1.5 seconds
+                setTimeout(() => {
+                    if (overlay) overlay.classList.remove('active');
+                    setTimeout(() => {
+                        if (overlay && overlay.parentNode) overlay.remove();
+                    }, 500);
+                }, 1500);
+            }
+
+            function scheduleBloodSplatterOnce() {
+                if (bloodTimeout) clearTimeout(bloodTimeout);
+                bloodTimeout = setTimeout(() => {
+                    showBloodSplatterOnce();
+                }, 15000);
+            }
+
+            // ----- RENDER HOME -----
+            async function renderHome() {
+                stopBloodSplatter();
+                resetBloodFlag();
+                if (!app) return;
+                chapterList = await discoverChapters();
+                totalChapters = chapterList.length;
+
+                let cardsHtml = '';
+                chapterList.forEach((ch, idx) => {
+                    cardsHtml += `
+                    <div class="chapter-card" data-chapter-index="${ idx }">
+                        <div class="card-number">✧ ${ ch.displayNum } ✧</div>
+                        <div class="card-title">${ escapeHtml(ch.title) }</div>
+                        <div class="card-desc">Enter the darkness of Noir Vale</div>
+                    </div>
+                `;
+                });
+
+                const homeHtml = `
+                <div class="home-container">
+                    <div class="hero">
+                        <h1>NOIR VALE</h1>
+                        <div class="sub-main">“In Noir Vale, survival matters more than justice.”</div>
+                    </div>
+                    <div class="chapter-grid" id="chapterGridHome">
+                        ${ cardsHtml || '<div class="loader-text">No chapters found. Add .txt files to /chapters/ folder</div>' }
+                    </div>
+                    <footer>✦ BROKEN CROWN CHRONICLES · RAIN NEVER FALLS SILENT ✦</footer>
+                </div>
+            `;
+                app.innerHTML = homeHtml;
+
+                document.querySelectorAll('.chapter-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const idx = card.getAttribute('data-chapter-index');
+                        if (idx !== null) openReader(parseInt(idx));
+                    });
+                });
+                removeProgressListener();
+            }
+
+            // ----- OPEN READER WITH GLITCH + BLOOD -----
+            async function openReader(index) {
+                stopBloodSplatter();
+                resetBloodFlag();
+                if (index < 0) index = 0;
+                if (index >= totalChapters) index = totalChapters - 1;
+                currentChapterIndex = index;
+                const chapter = chapterList[currentChapterIndex];
+                showCinematicLoader(true);
+
+                const readerHtml = `
+                <div class="reader-container" id="readerMainContainer">
+                    <div class="progress-wrapper">
+                        <div class="reading-progress-bar" id="readingProgressFill"></div>
+                    </div>
+                    <div class="reader-nav">
+                        <button class="nav-btn" id="prevChapterBtn" ${ currentChapterIndex === 0 ? 'disabled' : '' }>◀ PREV</button>
+                        <div class="chapter-badge" id="readerChapterBadge">${ escapeHtml(chapter.displayNum) } · ${ escapeHtml(chapter.title) }</div>
+                        <button class="nav-btn" id="nextChapterBtn" ${ currentChapterIndex === totalChapters - 1 ? 'disabled' : '' }>NEXT ▶</button>
+                    </div>
+                    <div id="storyTextContainer">
+                        <div class="loader-text">loading the transcript ...</div>
+                    </div>
+                    <div class="back-home-btn">
+                        <button id="backToHomeBtn" class="ghost-btn">⌂ RETURN TO HOME</button>
+                    </div>
+                </div>
+            `;
+                app.innerHTML = readerHtml;
+                injectReaderStyles();
+
+                const url = getChapterURL(chapter.filename);
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`HTTP ${ response.status }`);
+                    let rawText = await response.text();
+                    const formattedHTML = formatReaderText(rawText);
+                    const storyDiv = document.getElementById('storyTextContainer');
+                    if (storyDiv) storyDiv.innerHTML = formattedHTML;
+                } catch (err) {
+                    const storyDiv = document.getElementById('storyTextContainer');
+                    if (storyDiv) storyDiv.innerHTML = `<div class="error-chapter">⚠️ [FILE MISSING] — "${ chapter.filename }" not found inside /chapters/ folder.</div>`;
+                }
+
+                // Schedule blood splatter with glitch after 15 seconds
+                scheduleBloodSplatterOnce();
+
+                const prevBtn = document.getElementById('prevChapterBtn');
+                const nextBtn = document.getElementById('nextChapterBtn');
+                const homeBtn = document.getElementById('backToHomeBtn');
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        if (currentChapterIndex > 0) {
+                            stopBloodSplatter();
+                            resetBloodFlag();
+                            openReader(currentChapterIndex - 1);
+                        }
+                    });
+                }
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        if (currentChapterIndex < totalChapters - 1) {
+                            stopBloodSplatter();
+                            resetBloodFlag();
+                            openReader(currentChapterIndex + 1);
+                        }
+                    });
+                }
+                if (homeBtn) {
+                    homeBtn.addEventListener('click', () => {
+                        stopBloodSplatter();
+                        resetBloodFlag();
+                        renderHome();
+                        window.scrollTo(0, 0);
+                        removeProgressListener();
+                    });
+                }
+
+                function updateProgress() {
+                    const winScroll = document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    const fill = document.getElementById('readingProgressFill');
+                    if (fill) fill.style.width = scrolled + '%';
+                }
+                if (window._scrollListener) window.removeEventListener('scroll', window._scrollListener);
+                window._scrollListener = updateProgress;
+                window.addEventListener('scroll', window._scrollListener);
+                updateProgress();
+                showCinematicLoader(false);
+            }
+
+            function addSubwayAtmosphere() {
+                const styleNode = document.createElement('style');
+                styleNode.textContent = `
+                body::before {
+                    content: '';
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 60px;
+                    background: linear-gradient(0deg, #030005 0%, transparent);
+                    pointer-events: none;
+                    z-index: 3;
+                }
+            `;
+                document.head.appendChild(styleNode);
+            }
+
+            async function init() {
+                setupRainCanvas();
+                addSubwayAtmosphere();
+                await renderHome();
+                setTimeout(() => {
+                    const fakeLoader = document.getElementById('cinematicLoader');
+                    if (fakeLoader) fakeLoader.remove();
+                }, 100);
+            }
+
+            init();
+        </script>
+    </body>
+
+</html>
