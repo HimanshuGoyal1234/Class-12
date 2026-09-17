@@ -24,7 +24,6 @@ body {
   height: 60px;
   background: #1a1a1a;
   padding: 0 16px;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 100;
@@ -75,7 +74,7 @@ body {
 .container {
   display: flex;
   min-height: 100vh;
-  padding-top: 60px; /* Space for mobile header */
+  padding-top: 60px;
 }
 
 /* Sidebar */
@@ -192,6 +191,7 @@ body {
   border: 1px solid rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   transition: 0.2s ease;
+  white-space: pre-wrap;
 }
 
 .tab-content div:active {
@@ -223,11 +223,14 @@ body {
 }
 
 /* ================================= */
-/* MOBILE RESPONSIVE (100% optimized) */
+/* MOBILE RESPONSIVE */
 /* ================================= */
 
 @media (max-width: 768px) {
-  /* Hide desktop sidebar by default */
+  .mobile-header {
+    display: flex;
+  }
+
   .sidebar {
     position: fixed;
     left: -100%;
@@ -286,7 +289,6 @@ body {
   }
 }
 
-/* Small phones */
 @media (max-width: 480px) {
   .mobile-title {
     font-size: 16px;
@@ -323,7 +325,6 @@ body {
   }
 }
 
-/* iPhone SE and very small devices */
 @media (max-width: 375px) {
   .tabs button {
     font-size: 12px;
