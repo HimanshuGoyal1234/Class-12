@@ -2,7 +2,7 @@ let currentData = null;
 let currentChapter = null;
 let currentSubject = null;
 
-fetch('commerce/data.json')
+fetch('data.json')
   .then(res => res.json())
   .then(data => {
     currentData = data;
@@ -11,7 +11,7 @@ fetch('commerce/data.json')
   .catch(err => {
     console.error('Error loading data:', err);
     document.getElementById('tabContent').innerHTML = 
-      '<div class="empty-state">❌ Error loading data. Make sure commerce/data.json exists.</div>';
+      '<div class="empty-state">❌ Error loading data. Make sure data.json exists in the same folder.</div>';
   });
 
 function loadSidebar(data) {
