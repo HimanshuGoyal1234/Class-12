@@ -47,5 +47,53 @@
       ],
       "notes": "Chapter 1: Relations and Functions. Key points: (1) Relation = subset of Cartesian product. (2) Empty relation, Universal relation, Identity relation. (3) A function is a special relation. (4) Types of functions: Identity, Constant, Polynomial, Rational, Modulus, Signum, Greatest Integer. (5) Algebra of functions: (f±g)(x), (f·g)(x), (f/g)(x). (6) Invertible functions only when bijective. (7) Number of relations = 2^(mn). (8) Number of functions = n^m. (9) Number of one-one functions = nPm. (10) Number of onto functions = Σ(-1)^k nCk (n-k)^m."
     }
-  }
+  },
+  "Inverse Trigonometric Functions": {
+  "formulas": [
+    "sin⁻¹x + cos⁻¹x = π/2",
+    "tan⁻¹x + cot⁻¹x = π/2",
+    "sec⁻¹x + cosec⁻¹x = π/2",
+    "tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1-xy)), if xy < 1",
+    "tan⁻¹x - tan⁻¹y = tan⁻¹((x-y)/(1+xy)), if xy > -1",
+    "2tan⁻¹x = tan⁻¹(2x/(1-x²))",
+    "sin⁻¹(-x) = -sin⁻¹x, cos⁻¹(-x) = π - cos⁻¹x",
+    "tan⁻¹(-x) = -tan⁻¹x",
+    "sin⁻¹x = cosec⁻¹(1/x)",
+    "Principal value ranges: sin⁻¹: [-π/2, π/2], cos⁻¹: [0, π], tan⁻¹: (-π/2, π/2)",
+    "cot⁻¹: (0, π), sec⁻¹: [0, π] - {π/2}, cosec⁻¹: [-π/2, π/2] - {0}"
+  ],
+  "derivations": [
+    "Prove: sin⁻¹x + cos⁻¹x = π/2",
+    "Proof: Let sin⁻¹x = θ. Then sinθ = x, and cos(π/2 - θ) = sinθ = x. So cos⁻¹x = π/2 - θ. Hence sin⁻¹x + cos⁻¹x = θ + π/2 - θ = π/2.",
+    "Prove: tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1-xy))",
+    "Proof: Let tan⁻¹x = A, tan⁻¹y = B. Then tanA = x, tanB = y. tan(A+B) = (tanA+tanB)/(1-tanA·tanB) = (x+y)/(1-xy). So A+B = tan⁻¹((x+y)/(1-xy)). Hence tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1-xy)).",
+    "Prove: 2tan⁻¹x = tan⁻¹(2x/(1-x²))",
+    "Proof: Put y = x in tan⁻¹x + tan⁻¹y formula: 2tan⁻¹x = tan⁻¹((x+x)/(1-x·x)) = tan⁻¹(2x/(1-x²)).",
+    "Prove: 3tan⁻¹x = tan⁻¹((3x-x³)/(1-3x²))",
+    "Proof: 3tan⁻¹x = tan⁻¹x + 2tan⁻¹x = tan⁻¹x + tan⁻¹(2x/(1-x²)) = tan⁻¹((x + 2x/(1-x²))/(1 - x·2x/(1-x²))) = tan⁻¹((x(1-x²)+2x)/(1-x²-2x²)) = tan⁻¹((3x-x³)/(1-3x²))."
+  ],
+  "pyq": [
+    "Q1 (2023): Find principal value of sin⁻¹(-1/2). — Ans: -π/6",
+    "Q2 (2022): Prove tan⁻¹(1/2) + tan⁻¹(1/3) = π/4. — Ans: LHS = tan⁻¹((1/2+1/3)/(1-1/6)) = tan⁻¹((5/6)/(5/6)) = tan⁻¹(1) = π/4",
+    "Q3 (2021): Find value of cos⁻¹(1/2) + 2sin⁻¹(1/2). — Ans: π/3 + 2(π/6) = π/3 + π/3 = 2π/3",
+    "Q4 (2020): Solve tan⁻¹2x + tan⁻¹3x = π/4. — Ans: (2x+3x)/(1-6x²) = 1 ⇒ 5x = 1-6x² ⇒ 6x²+5x-1=0 ⇒ x = 1/6 or x = -1. x = -1 rejected (makes negative). x = 1/6",
+    "Q5 (2019): Find sin⁻¹(sin(2π/3)). — Ans: sin⁻¹(sin(2π/3)) = sin⁻¹(√3/2) = π/3 (since 2π/3 ∉ [-π/2,π/2])",
+    "Q6 (2023): Find cos⁻¹(cos(7π/6)). — Ans: cos⁻¹(cos(7π/6)) = cos⁻¹(-√3/2) = 5π/6 (since 7π/6 ∉ [0,π])",
+    "Q7 (2022): Find principal value of tan⁻¹(-1). — Ans: -π/4",
+    "Q8 (2021): Prove sin⁻¹(3/5) + sin⁻¹(8/17) = sin⁻¹(77/85). — Ans: Let sin⁻¹(3/5)=A, sin⁻¹(8/17)=B. sin(A+B) = sinA·cosB + cosA·sinB = (3/5)(15/17) + (4/5)(8/17) = 45/85 + 32/85 = 77/85. So A+B = sin⁻¹(77/85).",
+    "Q9 (2020): Find value of tan⁻¹(1) + tan⁻¹(2) + tan⁻¹(3). — Ans: tan⁻¹(1)+tan⁻¹(2) = tan⁻¹((1+2)/(1-2)) = tan⁻¹(-3) = π - tan⁻¹(3). Then π - tan⁻¹(3) + tan⁻¹(3) = π",
+    "Q10 (2019): Solve sin⁻¹x = π/6. — Ans: x = sin(π/6) = 1/2",
+    "Q11 (2023): Find value of sin(cos⁻¹(3/5)). — Ans: Let cos⁻¹(3/5) = θ. cosθ = 3/5, sinθ = 4/5. So sin(cos⁻¹(3/5)) = 4/5",
+    "Q12 (2022): Prove tan⁻¹(1/4) + tan⁻¹(2/9) = tan⁻¹(1/2). — Ans: LHS = tan⁻¹((1/4+2/9)/(1-(1/4)(2/9))) = tan⁻¹((17/36)/(34/36)) = tan⁻¹(1/2). RHS = tan⁻¹(1/2). Proved.",
+    "Q13 (2021): Find value of cos⁻¹(-1/2) + sin⁻¹(-1/2). — Ans: cos⁻¹(-1/2) = 2π/3, sin⁻¹(-1/2) = -π/6. Sum = 2π/3 - π/6 = 4π/6 - π/6 = 3π/6 = π/2",
+    "Q14 (2020): Find x if tan⁻¹(x+1) + tan⁻¹(x-1) = tan⁻¹(8/31). — Ans: ((x+1)+(x-1))/(1-(x+1)(x-1)) = 8/31 ⇒ 2x/(1-(x²-1)) = 8/31 ⇒ 2x/(2-x²) = 8/31 ⇒ 62x = 16 - 8x² ⇒ 8x²+62x-16=0 ⇒ 4x²+31x-8=0 ⇒ x = (-31±√(961+128))/8 = (-31±33)/8. x = 2/8 = 1/4 or x = -8. Check x=1/4 valid. x=-8 invalid (xy>1). So x = 1/4.",
+    "Q15 (2019): Find value of tan⁻¹(√3) - cot⁻¹(-√3). — Ans: tan⁻¹(√3) = π/3. cot⁻¹(-√3) = π - cot⁻¹(√3) = π - π/6 = 5π/6. So π/3 - 5π/6 = 2π/6 - 5π/6 = -3π/6 = -π/2",
+    "Q16 (2023): Prove cos⁻¹(4/5) + cos⁻¹(12/13) = cos⁻¹(33/65). — Ans: Let cos⁻¹(4/5)=A, cos⁻¹(12/13)=B. cos(A+B) = cosA·cosB - sinA·sinB = (4/5)(12/13) - (3/5)(5/13) = 48/65 - 15/65 = 33/65. So A+B = cos⁻¹(33/65).",
+    "Q17 (2022): Find value of sin⁻¹(1/2) + 2cos⁻¹(1/2). — Ans: π/6 + 2(π/3) = π/6 + 2π/3 = π/6 + 4π/6 = 5π/6",
+    "Q18 (2021): Solve for x: sin⁻¹x + sin⁻¹(1-x) = cos⁻¹x. — Ans: Let sin⁻¹x = A, sin⁻¹(1-x) = B. sin(A+B) = x·√(1-(1-x)²) + (1-x)·√(1-x²) = cos⁻¹x = π/2 - sin⁻¹x. This is complex. Standard answer: x = 0 or x = 1/2. Verify x=1/2: sin⁻¹(1/2)+sin⁻¹(1/2) = π/6+π/6 = π/3 = cos⁻¹(1/2). ✓",
+    "Q19 (2020): Find value of tan(2tan⁻¹(1/5)). — Ans: Let tan⁻¹(1/5) = θ. tan2θ = 2tanθ/(1-tan²θ) = 2(1/5)/(1-1/25) = (2/5)/(24/25) = (2/5)(25/24) = 10/24 = 5/12",
+    "Q20 (2019): Prove tan⁻¹(1/2) + tan⁻¹(1/5) + tan⁻¹(1/8) = π/4. — Ans: tan⁻¹(1/2)+tan⁻¹(1/5) = tan⁻¹((1/2+1/5)/(1-1/10)) = tan⁻¹((7/10)/(9/10)) = tan⁻¹(7/9). Then tan⁻¹(7/9)+tan⁻¹(1/8) = tan⁻¹((7/9+1/8)/(1-7/72)) = tan⁻¹((56+9)/72 / (65/72)) = tan⁻¹(65/65) = tan⁻¹(1) = π/4"
+  ],
+  "notes": "Chapter 2: Inverse Trigonometric Functions. Key points: (1) Inverse trig functions are defined only for restricted domains. (2) Principal value branch is the range where function is one-one and onto. (3) Graphs of sin⁻¹x, cos⁻¹x, tan⁻¹x. (4) Properties: sin⁻¹(sinθ) = θ only if θ ∈ [-π/2,π/2]. (5) Important: sin⁻¹x + cos⁻¹x = π/2 for all x ∈ [-1,1]. (6) tan⁻¹x + tan⁻¹y formula with conditions. (7) 2tan⁻¹x and 3tan⁻¹x formulas. (8) Principal value ranges must be remembered."
+}
 }
