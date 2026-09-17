@@ -1,0 +1,51 @@
+{
+  "MATHS": {
+    "Relations and Functions": {
+      "formulas": [
+        "A relation R from A to B is a subset of A × B.",
+        "Function: every element of A has exactly one image in B.",
+        "Types: One-one (Injective), Onto (Surjective), Bijective.",
+        "Composition: (fog)(x) = f(g(x))",
+        "Invertible function: f is bijective ⇒ f⁻¹ exists.",
+        "(f⁻¹)⁻¹ = f, (fog)⁻¹ = g⁻¹of⁻¹",
+        "Number of relations from A to B = 2^(m×n), where |A|=m, |B|=n",
+        "Number of functions from A to B = n^m",
+        "Number of one-one functions = nPm (if n≥m)",
+        "Number of onto functions from A to B (|A|=m, |B|=n) = Σ(-1)^k · nCk · (n-k)^m"
+      ],
+      "derivations": [
+        "Prove: If f: A→B and g: B→C are one-one, then gof is one-one.",
+        "Proof: Let x₁, x₂ ∈ A such that (gof)(x₁) = (gof)(x₂). ⇒ g(f(x₁)) = g(f(x₂)). Since g is one-one, f(x₁) = f(x₂). Since f is one-one, x₁ = x₂. Hence gof is one-one.",
+        "Prove: If f and g are onto, then gof is onto.",
+        "Proof: Let z ∈ C. Since g is onto, ∃ y ∈ B with g(y) = z. Since f is onto, ∃ x ∈ A with f(x) = y. Then (gof)(x) = g(f(x)) = g(y) = z. Hence gof is onto.",
+        "Prove: If f and g are bijective, then gof is bijective.",
+        "Proof: From above two results, gof is both one-one and onto. Hence bijective.",
+        "Prove: (fog)⁻¹ = g⁻¹of⁻¹.",
+        "Proof: Let f: A→B and g: B→C be bijective. Then gof: A→C is bijective. (gof)⁻¹: C→A. Also g⁻¹of⁻¹: C→A. For any x ∈ A, (gof)(x) = g(f(x)). Let y = f(x), z = g(y). Then (gof)⁻¹(z) = x. Also (g⁻¹of⁻¹)(z) = g⁻¹(f⁻¹(z)) = g⁻¹(y) = x. Hence (gof)⁻¹ = g⁻¹of⁻¹."
+      ],
+      "pyq": [
+        "Q1 (2023): Let f: R→R be defined by f(x) = 2x + 3. Find f⁻¹. — Ans: f⁻¹(x) = (x-3)/2",
+        "Q2 (2022): Show that f: R→R, f(x) = x³ is bijective. — Ans: One-one: f(x₁)=f(x₂) ⇒ x₁³=x₂³ ⇒ x₁=x₂. Onto: For y∈R, x=y^(1/3)∈R, f(x)=y. Hence bijective.",
+        "Q3 (2020): If f(x) = x² and g(x) = x+1, find fog and gof. — Ans: fog(x) = (x+1)², gof(x) = x²+1",
+        "Q4 (2019): Number of one-one functions from set A with 3 elements to set B with 4 elements. — Ans: ⁴P₃ = 24",
+        "Q5 (2018): Prove that the relation R = {(a,b): a ≤ b} on R is reflexive, transitive but not symmetric. — Ans: Reflexive: a≤a ✓. Transitive: a≤b, b≤c ⇒ a≤c ✓. Not symmetric: 2≤3 but 3≰2 ✗.",
+        "Q6 (2023): If f: R→R, f(x) = 3x-2, find f⁻¹(7). — Ans: f(x)=7 ⇒ 3x-2=7 ⇒ x=3. So f⁻¹(7)=3.",
+        "Q7 (2022): Let A = {1,2,3}, B = {4,5}. Find number of functions from A to B. — Ans: n^m = 2³ = 8",
+        "Q8 (2021): Check if f: R→R, f(x) = x² is one-one. — Ans: f(1)=1, f(-1)=1, but 1≠-1. So not one-one.",
+        "Q9 (2020): If f(x) = 2x+1 and g(x) = x², find (fog)(2). — Ans: g(2)=4, f(4)=9. So (fog)(2)=9.",
+        "Q10 (2019): Find the number of relations from A={a,b} to B={1,2,3}. — Ans: 2^(2×3) = 2⁶ = 64",
+        "Q11 (2023): Prove that f: R→R, f(x) = 5x+3 is bijective. — Ans: One-one: 5x₁+3=5x₂+3 ⇒ x₁=x₂. Onto: For y∈R, x=(y-3)/5∈R, f(x)=y. Hence bijective.",
+        "Q12 (2022): If f: R→R, f(x) = x²+1, find f⁻¹(5). — Ans: x²+1=5 ⇒ x²=4 ⇒ x=±2. Since f is not one-one, f⁻¹(5) is not unique. If we restrict domain to [0,∞), f⁻¹(5)=2.",
+        "Q13 (2021): Let f(x) = x+2, g(x) = 2x-1. Find (gof)(x) and (fog)(x). — Ans: (gof)(x) = g(x+2) = 2(x+2)-1 = 2x+3. (fog)(x) = f(2x-1) = 2x-1+2 = 2x+1.",
+        "Q14 (2020): If A has 3 elements and B has 2 elements, find number of onto functions from A to B. — Ans: Σ(-1)^k · ²Ck · (2-k)³ = 2³ - 2·1³ + 0 = 8-2 = 6",
+        "Q15 (2019): Show that R = {(1,1),(2,2),(1,2),(2,3)} on A={1,2,3} is not transitive. — Ans: (1,2) and (2,3) present but (1,3) absent. So not transitive.",
+        "Q16 (2023): If f(x) = |x| and g(x) = x-1, find (fog)(-2). — Ans: g(-2) = -3, f(-3) = 3. So (fog)(-2)=3.",
+        "Q17 (2022): Find number of bijective functions from A to B where |A|=|B|=4. — Ans: 4! = 24",
+        "Q18 (2021): If f: R→R, f(x) = x³+2, find f⁻¹(x). — Ans: y = x³+2 ⇒ x = (y-2)^(1/3). So f⁻¹(x) = (x-2)^(1/3).",
+        "Q19 (2020): Check if R = {(a,b): a divides b} on N is reflexive, symmetric, transitive. — Ans: Reflexive: a divides a ✓. Not symmetric: 2 divides 4 but 4 does not divide 2 ✗. Transitive: a|b, b|c ⇒ a|c ✓.",
+        "Q20 (2019): If f(x) = x², g(x) = √x, find (fog)(x) and (gof)(x). — Ans: (fog)(x) = f(√x) = x. (gof)(x) = g(x²) = |x|."
+      ],
+      "notes": "Chapter 1: Relations and Functions. Key points: (1) Relation = subset of Cartesian product. (2) Empty relation, Universal relation, Identity relation. (3) A function is a special relation. (4) Types of functions: Identity, Constant, Polynomial, Rational, Modulus, Signum, Greatest Integer. (5) Algebra of functions: (f±g)(x), (f·g)(x), (f/g)(x). (6) Invertible functions only when bijective. (7) Number of relations = 2^(mn). (8) Number of functions = n^m. (9) Number of one-one functions = nPm. (10) Number of onto functions = Σ(-1)^k nCk (n-k)^m."
+    }
+  }
+}
