@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class 12 Study Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- Mobile Header -->
+<div class="mobile-header">
+  <button class="menu-btn" id="menuBtn" onclick="toggleSidebar()">☰</button>
+  <h2 class="mobile-title">Class 12</h2>
+  <div class="spacer"></div>
+</div>
+
+<!-- Overlay for mobile -->
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar"></div>
+  
+  <!-- Main Content -->
+  <div class="content">
+    <h2 id="chapterTitle">Select a Chapter</h2>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs">
+      <button onclick="showTab('formulas')">📝 Formulas</button>
+      <button onclick="showTab('derivations')">📐 Derivations</button>
+      <button onclick="showTab('pyq')">📚 PYQ</button>
+      <button onclick="showTab('notes')">📖 Notes</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="tab-content" id="tabContent">
+      <div class="empty-state">👈 Select a chapter to start</div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
