@@ -47,7 +47,7 @@
       ],
       "notes": "Chapter 1: Relations and Functions. Key points: (1) Relation = subset of Cartesian product. (2) Empty relation, Universal relation, Identity relation. (3) A function is a special relation. (4) Types of functions: Identity, Constant, Polynomial, Rational, Modulus, Signum, Greatest Integer. (5) Algebra of functions: (f±g)(x), (f·g)(x), (f/g)(x). (6) Invertible functions only when bijective. (7) Number of relations = 2^(mn). (8) Number of functions = n^m. (9) Number of one-one functions = nPm. (10) Number of onto functions = Σ(-1)^k nCk (n-k)^m."
     }
-  },
+  ,
   "Inverse Trigonometric Functions": {
   "formulas": [
     "sin⁻¹x + cos⁻¹x = π/2",
@@ -96,4 +96,4 @@
   ],
   "notes": "Chapter 2: Inverse Trigonometric Functions. Key points: (1) Inverse trig functions are defined only for restricted domains. (2) Principal value branch is the range where function is one-one and onto. (3) Graphs of sin⁻¹x, cos⁻¹x, tan⁻¹x. (4) Properties: sin⁻¹(sinθ) = θ only if θ ∈ [-π/2,π/2]. (5) Important: sin⁻¹x + cos⁻¹x = π/2 for all x ∈ [-1,1]. (6) tan⁻¹x + tan⁻¹y formula with conditions. (7) 2tan⁻¹x and 3tan⁻¹x formulas. (8) Principal value ranges must be remembered."
 }
-}
+  }}
