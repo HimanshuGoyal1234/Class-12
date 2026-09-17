@@ -2,7 +2,7 @@ let currentData = null;
 let currentChapter = null;
 let currentSubject = null;
 
-fetch('commerce\\data.json')
+fetch('commerce/data.json')
   .then(res => res.json())
   .then(data => {
     currentData = data;
@@ -11,7 +11,7 @@ fetch('commerce\\data.json')
   .catch(err => {
     console.error('Error loading data:', err);
     document.getElementById('tabContent').innerHTML = 
-      '<div class="empty-state">❌ Error loading data. Make sure data.json exists.</div>';
+      '<div class="empty-state">❌ Error loading data. Make sure commerce/data.json exists.</div>';
   });
 
 function loadSidebar(data) {
@@ -29,11 +29,9 @@ function loadSidebar(data) {
       chap.className = "chapter";
       chap.onclick = () => {
         loadChapter(subject, chapter);
-        // Close sidebar on mobile after selection
         if (window.innerWidth <= 768) {
           toggleSidebar();
         }
-        // Remove active class from all chapters
         document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
         chap.classList.add('active');
       };
@@ -47,10 +45,8 @@ function loadChapter(subject, chapter) {
   currentChapter = currentData[subject][chapter];
   document.getElementById('chapterTitle').innerText = chapter;
   
-  // Reset active tab
   document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active-tab'));
   
-  // Show formulas by default
   showTab('formulas');
 }
 
@@ -61,7 +57,6 @@ function showTab(type) {
     return;
   }
 
-  // Update active tab
   document.querySelectorAll('.tabs button').forEach(btn => {
     btn.classList.remove('active-tab');
     if (btn.textContent.includes(type === 'formulas' ? 'Formulas' : 
@@ -74,7 +69,6 @@ function showTab(type) {
   const tabContent = document.getElementById('tabContent');
   tabContent.innerHTML = '';
 
-  // Handle notes (string)
   if (type === 'notes') {
     const div = document.createElement('div');
     div.innerText = currentChapter.notes || '📝 No notes available for this chapter.';
@@ -82,7 +76,6 @@ function showTab(type) {
     return;
   }
 
-  // Handle arrays (formulas, derivations, pyq)
   const items = currentChapter[type];
   if (!items || items.length === 0) {
     const div = document.createElement('div');
@@ -98,7 +91,6 @@ function showTab(type) {
   });
 }
 
-// Mobile sidebar toggle
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('overlay');
@@ -106,7 +98,6 @@ function toggleSidebar() {
   sidebar.classList.toggle('active');
   overlay.classList.toggle('active');
   
-  // Prevent body scroll when sidebar is open
   if (sidebar.classList.contains('active')) {
     document.body.style.overflow = 'hidden';
   } else {
@@ -114,7 +105,6 @@ function toggleSidebar() {
   }
 }
 
-// Close sidebar on orientation change
 window.addEventListener('orientationchange', () => {
   if (window.innerWidth > 768) {
     document.getElementById('sidebar').classList.remove('active');
