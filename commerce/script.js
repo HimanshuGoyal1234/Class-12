@@ -2,7 +2,7 @@ let currentData = null;
 let currentChapter = null;
 let currentSubject = null;
 
-fetch('data.json')
+fetch('commerce\\data.json')
   .then(res => res.json())
   .then(data => {
     currentData = data;
